@@ -1,38 +1,45 @@
 import { useLang } from '../i18n'
-import { useReveal } from '../hooks'
+import { WordsPullUpMultiStyle, FadeUp } from '../anim'
 
 export default function Contact() {
-  const ref = useReveal()
   const { t } = useLang()
   const { profile, ui } = t
   const c = ui.contact
 
   return (
-    <section className="contact" id="contact" ref={ref}>
+    <section className="contact" id="contact">
       <div className="container contact-top">
-        <p className="mono reveal" style={{ marginBottom: 28 }}>{c.no}</p>
-        <h2 className="contact-big reveal" data-delay="1">
-          {c.line1}<br />
-          {c.line2pre}<span className="stroke">{c.line2em}</span>
+        <p className="mono" style={{ marginBottom: 26 }}>{c.no}</p>
+        <h2 className="contact-big">
+          <WordsPullUpMultiStyle
+            segments={[
+              { text: c.line1, className: '' },
+              { text: c.line2pre + c.line2em, className: 'serif' },
+            ]}
+          />
         </h2>
-        <a className="contact-mail reveal" data-delay="2" href={`mailto:${profile.email}`}>
-          {profile.email} <span className="arr">↗</span>
-        </a>
+        <FadeUp delay={0.25}>
+          <a className="contact-mail" href={`mailto:${profile.email}`}>
+            {profile.email} <span>↗</span>
+          </a>
+        </FadeUp>
 
-        <div className="contact-grid reveal" data-delay="3">
-          <div className="cell">
-            <div className="mono">{c.phoneLabel}</div>
-            <div className="v">{profile.phone}</div>
+        <FadeUp delay={0.35}>
+          <div className="contact-grid">
+            <div className="cell">
+              <div className="mono">{c.phoneLabel}</div>
+              <div className="v">{profile.phone}</div>
+            </div>
+            <div className="cell">
+              <div className="mono">{c.locationLabel}</div>
+              <div className="v">{profile.location}</div>
+            </div>
+            <div className="cell">
+              <div className="mono">{c.lookingLabel}</div>
+              <div className="v">{c.lookingValue}</div>
+            </div>
           </div>
-          <div className="cell">
-            <div className="mono">{c.locationLabel}</div>
-            <div className="v">{profile.location}</div>
-          </div>
-          <div className="cell">
-            <div className="mono">{c.lookingLabel}</div>
-            <div className="v">{c.lookingValue}</div>
-          </div>
-        </div>
+        </FadeUp>
       </div>
 
       <div className="container">

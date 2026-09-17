@@ -76,9 +76,10 @@ export default function Nav({ onNav, onHome }) {
       </header>
 
       {/* 联系我：独立于导航，固定在页面右上角 */}
-      <button className="cta-fixed" onClick={(e) => jump(e, 'contact')}>
-        {t.ui.nav.cta}
-      </button>
+          <button className="cta-fixed" onClick={(e) => jump(e, 'contact')}>
+            {t.ui.nav.cta}
+            <span className="circle">→</span>
+          </button>
     </>
   )
 }

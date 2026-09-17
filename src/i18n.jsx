@@ -11,6 +11,13 @@ const zh = {
     tagline: ['在交互、AI 与产品之间，', '寻找体验的最优解。'],
     heroIntro:
       '我是王思涵，一名从产品设计出发、正在向交互与 AI 设计进发的设计师。用研究支撑决策，用 AI 放大产出，让每个像素都有理由。',
+    aboutSegments: [
+      { text: '我是王思涵，', className: '' },
+      { text: '一名在 AI 时代自学成长的设计师。', className: 'seg-italic' },
+      { text: '我擅长交互设计、AI 辅助设计与产品表达。', className: '' },
+    ],
+    aboutScrollText:
+      '过去三年，我在青岛理工大学接受系统的产品设计训练，同时把 AI 工具引入调研、草图与原型流程。从儿童学习 App 到关怀型硬件，我始终用研究支撑判断，让设计不止于好看。',
     location: '四川成都 · 求学于山东青岛',
     email: 'wsh15928698075@qq.com',
     phone: '15928698075',
@@ -40,7 +47,7 @@ const zh = {
       tags: ['移动端 App', '交互设计', '原型动效'],
       desc: '面向 7—13 岁儿童的中国传统文化轻量化学习 App。完成前期调研与产品定位，以 GPT 生成界面素材、Figma 加工排版，建立关卡跳转逻辑与「闯关—奖励」机制，产出 40 个界面的高保真原型与点击动效演示。',
       metrics: [{ k: '界面产出', v: '40+' }, { k: '核心机制', v: '关卡化学习路径' }],
-      cover: 'tiles', accent: '#8fd3ff',
+      cover: 'tiles', accent: '#dedbc8',
     },
     {
       id: 'calm', index: '02', year: '2026.04 — 06',
@@ -49,7 +56,7 @@ const zh = {
       tags: ['智能硬件', '用户研究', 'AI 辅助设计'],
       desc: '从政策与市场调研切入，明确选题方向；构建用户画像与旅程图，完成竞品分析与痛点总结。借助 AI 工具生成设计意向与草图，推进至产品建模与渲染，并制作介绍展板，用可灵 AI 与剪映产出产品介绍视频。',
       metrics: [{ k: '研究方法', v: '画像 / 旅程图 / 竞品' }, { k: '交付物', v: '建模渲染 + 介绍视频' }],
-      cover: 'halo', accent: '#b9f06a',
+      cover: 'halo', accent: '#d9c9a3',
     },
     {
       id: 'aroma', index: '03', year: '2026.05 — 06',
@@ -58,7 +65,7 @@ const zh = {
       tags: ['智能硬件', '移动端 App', '高保真 UI'],
       desc: '面向 25—35 岁中高端人群的智能香薰方案。确认产品外观后，用 Figma 完成低保真原型 30 余张；复盘调研确定界面风格后，产出高保真界面与切图 50 余张，并在 Figma Make 中完成可交互演示，配合即梦、可灵 AI 制作功能演示视频。',
       metrics: [{ k: '低保真', v: '30+' }, { k: '高保真切图', v: '50+' }],
-      cover: 'duo', accent: '#e8c48a',
+      cover: 'duo', accent: '#cfc9b4',
     },
   ],
   strengths: [
@@ -86,7 +93,17 @@ const zh = {
       backToWork: '去看看精选项目',
     },
     works: { no: '02 — Selected Works', title: '精选项目', sub: '三个代表项目：从儿童教育 App 到关怀硬件再到软硬一体，覆盖研究、交互、UI 与产品表达全链路。' },
-    strengths: { no: '03 — Strengths', title: '个人优势', sub: '设计判断、AI 工具链与产品表达，三条线拧成一股推进方案落地的能力。', toolkit: 'Toolkit' },
+    strengths: {
+      no: '03 — Strengths', title: '个人优势', sub: '设计判断、AI 工具链与产品表达，三条线拧成一股推进方案落地的能力。', toolkit: 'Toolkit',
+      line1: '给有想法的人，一套作品级的流程。',
+      line2: '为纯粹的愿景而建，被审美与技术驱动。',
+      videoLabel: '创作的起点，是一块空白画布。',
+    },
+    cards: [
+      { num: '01', title: '研究与洞察', items: ['市场数据与用户画像', '竞品分析与痛点归纳', '概念定位与方案发散'], more: '了解更多' },
+      { num: '02', title: 'AI 工具链', items: ['GPT 生成界面素材', '即梦 / 可灵 生成视觉', '剪映产出演示视频'], more: '了解更多' },
+      { num: '03', title: '原型与三维', items: ['Figma 高保真与点击动效', 'Rhino 建模 · Keyshot 渲染', '展板海报与视觉物料'], more: '了解更多' },
+    ],
     contact: {
       no: '04 — Contact', line1: '有想法？', line2pre: '让我们一起把它', line2em: '做出来。',
       phoneLabel: 'Phone / WeChat', locationLabel: 'Location', lookingLabel: 'Looking for',
@@ -105,6 +122,13 @@ const en = {
     tagline: ['Between interaction, AI and product,', 'I design for the optimal experience.'],
     heroIntro:
       "I'm Wang Sihan — trained in product design, moving into interaction and AI-driven design. Research grounds the decisions, AI amplifies the output, and every pixel has a reason.",
+    aboutSegments: [
+      { text: "I'm Wang Sihan,", className: '' },
+      { text: 'a designer growing up self-taught in the AI era.', className: 'seg-italic' },
+      { text: 'I work across interaction, AI-assisted and product design.', className: '' },
+    ],
+    aboutScrollText:
+      'Over the past three years I trained in product design at Qingdao University of Technology while pulling AI tools into research, sketching and prototyping. From a kids learning app to care-driven hardware, research grounds every judgment — design has to be more than good-looking.',
     location: 'Chengdu, Sichuan · Studying in Qingdao, Shandong',
     email: 'wsh15928698075@qq.com',
     phone: '15928698075',
@@ -134,7 +158,7 @@ const en = {
       tags: ['Mobile App', 'Interaction design', 'Prototype & motion'],
       desc: 'A lightweight app that teaches Chinese traditional culture to kids aged 7–13. Handled early research and product positioning, generated interface assets with GPT and refined them in Figma, built the level-jump logic and a challenge–reward loop, and delivered 40 high-fidelity screens with click-through motion.',
       metrics: [{ k: 'Screens', v: '40+' }, { k: 'Core loop', v: 'Level-based learning path' }],
-      cover: 'tiles', accent: '#8fd3ff',
+      cover: 'tiles', accent: '#dedbc8',
     },
     {
       id: 'calm', index: '02', year: '2026.04 — 06',
@@ -143,7 +167,7 @@ const en = {
       tags: ['Smart hardware', 'User research', 'AI-assisted design'],
       desc: 'Started from policy and market research to define the design direction; built user personas and journey maps, ran competitor analysis and pain-point synthesis. Used AI tools to generate design intents and sketches, then pushed through modeling and rendering, presentation boards, and a product film made with Kling AI and CapCut.',
       metrics: [{ k: 'Research', v: 'Persona / Journey / Competitor' }, { k: 'Deliverables', v: 'Renderings + product film' }],
-      cover: 'halo', accent: '#b9f06a',
+      cover: 'halo', accent: '#d9c9a3',
     },
     {
       id: 'aroma', index: '03', year: '2026.05 — 06',
@@ -152,7 +176,7 @@ const en = {
       tags: ['Smart hardware', 'Mobile App', 'High-fidelity UI'],
       desc: 'A premium aroma solution for ages 25–35. After the product form was confirmed, produced 30+ low-fi wireframes in Figma, then 50+ high-fidelity screens and cut assets, with an interactive demo in Figma Make and a feature film created with Jimeng and Kling AI.',
       metrics: [{ k: 'Low-fi', v: '30+' }, { k: 'Hi-fi screens', v: '50+' }],
-      cover: 'duo', accent: '#e8c48a',
+      cover: 'duo', accent: '#cfc9b4',
     },
   ],
   strengths: [
@@ -180,7 +204,17 @@ const en = {
       backToWork: 'See selected work',
     },
     works: { no: '02 — Selected Works', title: 'Selected work', sub: 'Three representative projects — from a kids learning app to care hardware and hardware-software as one, covering research, interaction, UI and product storytelling.' },
-    strengths: { no: '03 — Strengths', title: 'What I bring', sub: 'Design judgment, an AI toolchain and product storytelling — three threads braided into one ability to land solutions.', toolkit: 'Toolkit' },
+    strengths: {
+      no: '03 — Strengths', title: 'What I bring', sub: 'Design judgment, an AI toolchain and product storytelling — three threads braided into one ability to land solutions.', toolkit: 'Toolkit',
+      line1: 'Studio-grade workflows for people with ideas.',
+      line2: 'Built for pure vision. Powered by craft.',
+      videoLabel: 'Every project starts with a blank canvas.',
+    },
+    cards: [
+      { num: '01', title: 'Research & insight', items: ['Market data & user personas', 'Competitor & pain-point analysis', 'Concept positioning'], more: 'Learn more' },
+      { num: '02', title: 'AI toolchain', items: ['GPT for interface assets', 'Jimeng / Kling for visuals', 'CapCut for demo films'], more: 'Learn more' },
+      { num: '03', title: 'Prototype & 3D', items: ['Figma hi-fi & micro-motion', 'Rhino modeling · Keyshot renders', 'Boards, posters & visual assets'], more: 'Learn more' },
+    ],
     contact: {
       no: '04 — Contact', line1: 'Got an idea?', line2pre: "Let's make it ", line2em: 'real.',
       phoneLabel: 'Phone / WeChat', locationLabel: 'Location', lookingLabel: 'Looking for',

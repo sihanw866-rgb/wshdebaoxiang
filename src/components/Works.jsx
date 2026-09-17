@@ -1,5 +1,5 @@
 import { useLang } from '../i18n'
-import { useReveal } from '../hooks'
+import { FadeUp, CardIn } from '../anim'
 
 /* ---------- 项目封面：暗色抽象 SVG（后续可直接替换为真实截图） ---------- */
 function Cover({ variant, accent }) {
@@ -75,24 +75,22 @@ function Cover({ variant, accent }) {
 }
 
 export default function Works() {
-  const ref = useReveal()
   const { t } = useLang()
   const { projects, ui } = t
 
   return (
-    <section className="section works" id="works" ref={ref}>
+    <section className="section works" id="works">
       <div className="container">
-        <div className="section-head reveal">
-          <div>
-            <p className="mono" style={{ marginBottom: 14 }}>{ui.works.no}</p>
-            <h2>{ui.works.title}</h2>
-          </div>
-          <p className="sub">{ui.works.sub}</p>
-        </div>
+        <FadeUp className="section-head">
+          <p className="mono" style={{ marginBottom: 14 }}>{ui.works.no}</p>
+          <h2>{ui.works.title}</h2>
+          <p className="sub" style={{ marginTop: 14 }}>{ui.works.sub}</p>
+        </FadeUp>
 
         <div className="work-list">
-          {projects.map((p) => (
-            <article className="work-card reveal" key={p.id}>
+          {projects.map((p, i) => (
+            <CardIn index={i} key={p.id}>
+            <article className="work-card">
               <div className="work-cover">
                 <Cover variant={p.cover} accent={p.accent} />
               </div>
@@ -117,6 +115,7 @@ export default function Works() {
                 </div>
               </div>
             </article>
+            </CardIn>
           ))}
         </div>
       </div>
