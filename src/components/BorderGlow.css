@@ -18,7 +18,13 @@
 }
 
 /* 让内部容器不参与布局，卡片自身的栅格/弹性布局照常生效 */
+.border-glow-card.is-contents { overflow: visible; }
 .border-glow-card.is-contents > .border-glow-inner { display: contents; }
+/* 卡片自身不再裁剪后，需要由内层元素自己承担圆角裁切 */
+.border-glow-card.work-card > .work-cover { border-radius: 27px 0 0 27px; }
+.border-glow-card.feature-card > video,
+.border-glow-card.feature-card > .video-shade { border-radius: 20px; }
+.border-glow-card.about-card > * { border-radius: inherit; }
 
 .border-glow-card--light {
   border-color: rgb(24 24 27 / 12%);
