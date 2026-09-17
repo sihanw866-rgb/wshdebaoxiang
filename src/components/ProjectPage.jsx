@@ -1,0 +1,227 @@
+import { useLang } from '../i18n'
+import { CharsPullUp, ScrollRevealText, FadeUp, CardIn } from '../anim'
+import { Cover } from './Works'
+
+/* ---------- 过程物：抽象的暗色 SVG（后续可替换为真实过程截图） ---------- */
+function Shot({ kind, accent }) {
+  const c = accent
+  const line = 'rgba(255,255,255,0.10)'
+  const faint = 'rgba(255,255,255,0.05)'
+  const grid = 'rgba(255,255,255,0.035)'
+
+  if (kind === 'wireframe') {
+    return (
+      <svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+        <rect width="800" height="500" fill="#0c0e11" />
+        {Array.from({ length: 13 }).map((_, i) => (
+          <line key={`v${i}`} x1={40 + i * 60} y1="52" x2={40 + i * 60} y2="470" stroke={grid} />
+        ))}
+        {Array.from({ length: 8 }).map((_, i) => (
+          <line key={`h${i}`} x1="40" y1={52 + i * 60} x2="760" y2={52 + i * 60} stroke={grid} />
+        ))}
+        {[0, 1, 2].map((i) => {
+          const x = 70 + i * 230
+          return (
+            <g key={i}>
+              <rect x={x} y={118} width={180} height={300} rx={12} fill="#101318" stroke={line} />
+              <rect x={x + 16} y={140} width={80} height={9} rx={4} fill={faint} />
+              <rect x={x + 16} y={160} width={148} height={7} rx={3} fill={faint} />
+              <rect x={x + 16} y={184} width={148} height={92} rx={8} fill={faint} stroke={line} />
+              <rect x={x + 16} y={290} width={148} height={46} rx={8} fill={faint} stroke={line} />
+              <rect x={x + 16} y={352} width={96} height={12} rx={6} fill={c} fillOpacity="0.55" />
+              <circle cx={x + 156} cy={144} r={7} fill="none" stroke={c} strokeOpacity="0.7" strokeWidth="1.5" />
+            </g>
+          )
+        })}
+      </svg>
+    )
+  }
+
+  if (kind === 'flow') {
+    const node = (x, y, w, active) => (
+      <g key={`${x}-${y}`}>
+        <rect x={x} y={y} width={w} height={64} rx={10} fill="#101318" stroke={active ? c : line} strokeOpacity={active ? 0.7 : 1} />
+        <rect x={x + 16} y={y + 20} width={56} height={8} rx={4} fill={c} fillOpacity={active ? 0.8 : 0.28} />
+        <rect x={x + 16} y={y + 38} width={w - 32} height={6} rx={3} fill={faint} />
+      </g>
+    )
+    return (
+      <svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+        <rect width="800" height="500" fill="#0c0e11" />
+        <g stroke={c} strokeOpacity="0.42" strokeWidth="1.5" fill="none">
+          <path d="M 250 172 H 320" />
+          <path d="M 450 172 H 520" />
+          <path d="M 385 204 V 258" />
+          <path d="M 250 258 H 520" />
+          <path d="M 250 258 V 310" />
+          <path d="M 520 258 V 310" />
+        </g>
+        <g fill={c} fillOpacity="0.8">
+          <circle cx="320" cy="172" r="3" />
+          <circle cx="520" cy="172" r="3" />
+        </g>
+        {node(110, 140, 140, true)}
+        {node(320, 140, 140, false)}
+        {node(530, 140, 140, false)}
+        {node(180, 310, 140, false)}
+        {node(450, 310, 140, false)}
+      </svg>
+    )
+  }
+
+  /* ui */
+  return (
+    <svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+      <rect width="800" height="500" fill="#0c0e11" />
+      <rect x="72" y="72" width="248" height="360" rx="30" fill="#101318" stroke={line} />
+      <rect x="104" y="104" width="96" height={10} rx={5} fill={c} fillOpacity="0.8" />
+      <rect x="104" y="126" width="150" height={7} rx={3} fill={faint} />
+      <rect x="104" y="156" width="184" height="112" rx="12" fill={faint} stroke={line} />
+      <circle cx="196" cy="212" r="34" fill="none" stroke={c} strokeOpacity="0.72" strokeWidth="1.5" />
+      <circle cx="196" cy="212" r="9" fill={c} fillOpacity="0.9" />
+      <rect x="104" y="288" width="184" height="52" rx="10" fill={faint} stroke={line} />
+      <rect x="104" y="356" width="112" height="16" rx="8" fill={c} fillOpacity="0.85" />
+      <rect x="104" y="392" width="184" height="1" fill={line} />
+      {[0, 1, 2].map((i) => (
+        <g key={i}>
+          <rect x="400" y={110 + i * 96} width="320" height="72" rx="14" fill="#101318" stroke={line} />
+          <circle cx="432" cy={146 + i * 96} r="14" fill="none" stroke={c} strokeOpacity="0.6" strokeWidth="1.5" />
+          <rect x="460" y={132 + i * 96} width="120" height="8" rx="4" fill={faint} />
+          <rect x="460" y={150 + i * 96} width="180" height="6" rx="3" fill={faint} />
+          <rect x="640" y={138 + i * 96} width="52" height="18" rx="9" fill={c} fillOpacity={i === 0 ? 0.85 : 0.22} />
+        </g>
+      ))}
+    </svg>
+  )
+}
+
+export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
+  const { t } = useLang()
+  const { projects, profile, ui } = t
+  const s = ui.projectPage || {}
+
+  const found = projects.findIndex((p) => p.id === projectId)
+  const idx = found < 0 ? 0 : found
+  const p = projects[idx]
+  const next = projects[(idx + 1) % projects.length]
+  const d = p.detail || {}
+  const steps = d.process || []
+  const caps = s.shotCaps || []
+
+  const meta = [
+    { k: (s.labels || {}).role, v: d.role },
+    { k: (s.labels || {}).period, v: d.period },
+    { k: (s.labels || {}).team, v: d.team },
+    { k: (s.labels || {}).deliverables, v: d.deliverables },
+  ]
+
+  return (
+    <section className="page-project">
+      <div className="container">
+        <button className="back-link" onClick={onBack}>{s.back}</button>
+
+        <FadeUp className="proj-head">
+          <p className="mono" style={{ marginBottom: 16, color: 'var(--primary)' }}>
+            {p.index} — {s.projLabel}
+          </p>
+          <h1 className="proj-title">
+            <CharsPullUp text={p.title} />
+          </h1>
+          <p className="proj-subtitle">{p.subtitle}</p>
+          <ul className="proj-tags">
+            {p.tags.map((tag) => <li key={tag}>{tag}</li>)}
+          </ul>
+        </FadeUp>
+
+        <FadeUp delay={0.1}>
+          <div className="proj-cover">
+            <Cover variant={p.cover} accent={p.accent} />
+            <div className="noise-overlay" />
+          </div>
+        </FadeUp>
+
+        <div className="proj-meta">
+          {meta.map((m) => (
+            <div className="cell" key={m.k}>
+              <div className="mono">{m.k}</div>
+              <div className="v">{m.v}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="proj-body">
+          <div className="proj-body-main">
+            <p className="mono proj-block-label">{s.overview}</p>
+            <div className="proj-overview">
+              <ScrollRevealText text={d.overview || p.desc} />
+            </div>
+          </div>
+
+          <aside className="proj-side">
+            <p className="mono proj-block-label">{s.metrics}</p>
+            {p.metrics.map((m) => (
+              <div className="proj-metric" key={m.k}>
+                <div className="k mono">{m.k}</div>
+                <div className="v">{m.v}</div>
+              </div>
+            ))}
+          </aside>
+        </div>
+
+        {steps.length > 0 && (
+          <div className="proj-section">
+            <p className="mono">{s.process}</p>
+            <div className="process-grid">
+              {steps.map((st, i) => (
+                <CardIn index={i % 4} key={st.no + st.title}>
+                  <div className="process-card">
+                    <span className="no">{st.no}</span>
+                    <h4>{st.title}</h4>
+                    <p>{st.desc}</p>
+                  </div>
+                </CardIn>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="proj-section">
+          <p className="mono">{s.shots}</p>
+          <div className="shot-grid">
+            {['wireframe', 'flow', 'ui'].map((kind, i) => (
+              <FadeUp delay={i * 0.08} key={kind} className={`shot-cell${i === 0 ? ' wide' : ''}`}>
+                <figure className="shot">
+                  <Shot kind={kind} accent={p.accent} />
+                  <figcaption>{caps[i]}</figcaption>
+                </figure>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+
+        {d.reflection && (
+          <FadeUp>
+            <div className="proj-quote">
+              <p className="mono">{s.reflection}</p>
+              <p className="quote-text">{d.reflection}</p>
+            </div>
+          </FadeUp>
+        )}
+
+        <div className="proj-next">
+          <button className="link-arrow" onClick={() => onOpen && onOpen(next.id)}>
+            {s.next} · {next.title} <span>→</span>
+          </button>
+          <button className="link-arrow" onClick={onAll}>
+            {s.allWorks} <span>↗</span>
+          </button>
+        </div>
+
+        <div className="page-foot">
+          <span className="mono">© 2026 {profile.nameEn}</span>
+          <span className="mono">{p.year}</span>
+        </div>
+      </div>
+    </section>
+  )
+}

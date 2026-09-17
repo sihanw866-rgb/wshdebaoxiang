@@ -56,10 +56,35 @@ export function WordsPullUpMultiStyle({ segments, className = '', delay = 0 }) {
   )
 }
 
+/** 逐字上浮：用于中文标题（中文无空格，按字符切分） */
+export function CharsPullUp({ text, className = '', delay = 0, step = 0.045 }) {
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, margin: '-80px' })
+  const chars = Array.from(String(text))
+
+  return (
+    <span ref={ref} className={`pull-wrap ${className}`}>
+      {chars.map((c, i) => (
+        <span className="pull-mask" style={{ paddingRight: 0 }} key={`${c}-${i}`}>
+          <motion.span
+            className="pull-word"
+            initial={{ y: '110%' }}
+            animate={inView ? { y: '0%' } : {}}
+            transition={{ delay: delay + i * step, duration: 0.9, ease: EASE }}
+          >
+            {c}
+          </motion.span>
+        </span>
+      ))}
+    </span>
+  )
+}
+
 /** 滚动逐字显影：字符透明度随滚动位置从 0.2 → 1 */
 function AnimatedLetter({ char, index, total, progress }) {
   const p = index / total
-  const opacity = useTransform(progress, [p - 0.1, p + 0.05], [0.2, 1])
+  // 0.2 起始在深色卡片上几乎看不见，抬到 0.35 保证滚动前也读得出
+  const opacity = useTransform(progress, [p - 0.1, p + 0.05], [0.35, 1])
   return <motion.span style={{ opacity }}>{char}</motion.span>
 }
 

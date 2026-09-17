@@ -2,7 +2,7 @@ import { useLang } from '../i18n'
 import { FadeUp, CardIn } from '../anim'
 
 /* ---------- 项目封面：暗色抽象 SVG（后续可直接替换为真实截图） ---------- */
-function Cover({ variant, accent }) {
+export function Cover({ variant, accent }) {
   const c = accent
   const line = 'rgba(255,255,255,0.10)'
   const faint = 'rgba(255,255,255,0.05)'
@@ -74,7 +74,7 @@ function Cover({ variant, accent }) {
   )
 }
 
-export default function Works() {
+export default function Works({ onOpen }) {
   const { t } = useLang()
   const { projects, ui } = t
 
@@ -90,7 +90,13 @@ export default function Works() {
         <div className="work-list">
           {projects.map((p, i) => (
             <CardIn index={i} key={p.id}>
-            <article className="work-card">
+            <article
+              className="work-card"
+              onClick={() => onOpen && onOpen(p.id)}
+              role="link"
+              tabIndex={0}
+              onKeyDown={(e) => { if (e.key === 'Enter' && onOpen) onOpen(p.id) }}
+            >
               <div className="work-cover">
                 <Cover variant={p.cover} accent={p.accent} />
               </div>
