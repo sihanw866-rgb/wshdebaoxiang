@@ -1,9 +1,10 @@
 import { useLang } from '../i18n'
-import { WordsPullUpMultiStyle, ScrollRevealText, FadeUp } from '../anim'
+import { WordsPullUpMultiStyle, ScrollRevealText, FadeUp, CardIn } from '../anim'
+import ToolIcon from './ToolIcon'
 
 export default function AboutPage({ onBack, onToWork }) {
   const { t } = useLang()
-  const { profile, stats, ui } = t
+  const { profile, stats, tools, ui } = t
   const p = ui.aboutPage
 
   return (
@@ -31,31 +32,10 @@ export default function AboutPage({ onBack, onToWork }) {
               </figure>
             </FadeUp>
 
-            <div>
-              <div className="about-contact">
-                <div className="cell">
-                  <div className="mono">Email</div>
-                  <div className="v">{profile.email}</div>
-                </div>
-                <div className="cell">
-                  <div className="mono">Phone</div>
-                  <div className="v">{profile.phone}</div>
-                </div>
-                <div className="cell">
-                  <div className="mono">Location</div>
-                  <div className="v">{profile.location}</div>
-                </div>
-              </div>
-
-              <div className="stats">
-                {stats.map((s) => (
-                  <div className="stat" key={s.label}>
-                    <div className="num">{s.value}<i>{s.suffix}</i></div>
-                    <div className="label">{s.label}</div>
-                  </div>
-                ))}
-              </div>
-
+            <div className="about-extra">
+              {profile.aboutExtra.map((s, i) => (
+                <p key={i}>{s}</p>
+              ))}
               <div className="edu">
                 <div>
                   <div className="school">{profile.education.school}</div>
@@ -70,6 +50,39 @@ export default function AboutPage({ onBack, onToWork }) {
                 <div className="honor">{profile.education.honor}</div>
               </div>
             </div>
+          </div>
+
+          <div className="stats">
+            {stats.map((s) => (
+              <div className="stat" key={s.label}>
+                <div className="num">{s.value}<i>{s.suffix}</i></div>
+                <div className="label">{s.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 工具能力：图标 + 说明 + 熟练度 */}
+        <div className="tools-block">
+          <p className="mono">{p.toolsTitle}</p>
+          <p className="tools-note">{p.toolsNote}</p>
+          <div className="tool-grid">
+            {(tools || []).map((tool, i) => (
+              <CardIn index={i % 4} key={`${tool.name}-${i}`}>
+                <div className="tool-card">
+                  <span className="tool-icon">
+                    <ToolIcon kind={tool.key} />
+                  </span>
+                  <div className="tool-main">
+                    <h5 className="tool-name">{tool.name}</h5>
+                    <p className="tool-note">{tool.note}</p>
+                    <div className="tool-bar">
+                      <span style={{ width: `${tool.level}%` }} />
+                    </div>
+                  </div>
+                </div>
+              </CardIn>
+            ))}
           </div>
         </div>
 

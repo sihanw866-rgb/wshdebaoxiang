@@ -361,6 +361,38 @@ img { display: block; max-width: 100%; }
 .edu .school { font-size: 15px; font-weight: 700; color: var(--primary); }
 .edu .honor { color: var(--muted); font-size: 13px; }
 
+/* ---------- 关于页：自述 + 工具能力 ---------- */
+.about-extra p { color: var(--muted); font-size: 14.5px; line-height: 1.85; margin-bottom: 16px; }
+.about-extra .edu { margin-top: 26px; }
+
+.tools-block { margin-top: 64px; }
+.tools-note { margin-top: 12px; margin-bottom: 32px; color: var(--muted); font-size: 14px; max-width: 620px; }
+.tool-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.tool-card {
+  display: flex; gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px 22px;
+  height: 100%;
+  transition: border-color 0.4s, transform 0.4s var(--ease);
+}
+.tool-card:hover { border-color: var(--line-strong); transform: translateY(-3px); }
+.tool-icon {
+  flex: none;
+  width: 42px; height: 42px;
+  border-radius: 12px;
+  background: rgba(222, 219, 200, 0.07);
+  border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--primary);
+}
+.tool-main { flex: 1; min-width: 0; }
+.tool-name { font-size: 15px; font-weight: 700; color: var(--primary); letter-spacing: -0.01em; }
+.tool-note { margin-top: 6px; font-size: 13px; line-height: 1.6; color: rgba(225, 224, 204, 0.5); }
+.tool-bar { margin-top: 14px; height: 2px; background: rgba(225, 224, 204, 0.12); border-radius: 2px; overflow: hidden; }
+.tool-bar span { display: block; height: 100%; background: var(--primary); border-radius: 2px; }
+
 /* ---------- 精选项目 ---------- */
 .works { position: relative; }
 .work-list { display: flex; flex-direction: column; gap: 28px; }
@@ -442,6 +474,7 @@ img { display: block; max-width: 100%; }
 @media (max-width: 1280px) {
   .about-grid-2 { grid-template-columns: 280px 1fr; }
   .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  .tool-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 960px) {
   .section { padding: 90px 0; }
@@ -456,6 +489,7 @@ img { display: block; max-width: 100%; }
   .about-contact, .stats { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: 1fr; }
   .feature-grid { grid-template-columns: 1fr; }
+  .tool-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .nav-bar { gap: 14px; padding: 8px 18px 12px; }
   .cta-fixed { top: 10px; padding: 9px 16px; font-size: 12px; }

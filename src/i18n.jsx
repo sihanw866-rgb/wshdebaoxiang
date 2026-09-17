@@ -18,6 +18,10 @@ const zh = {
     ],
     aboutScrollText:
       '过去三年，我在青岛理工大学接受系统的产品设计训练，同时把 AI 工具引入调研、草图与原型流程。从儿童学习 App 到关怀型硬件，我始终用研究支撑判断，让设计不止于好看。',
+    aboutExtra: [
+      '我更愿意把自己定义为「把复杂问题翻译成清晰界面」的人。做项目时习惯先花足够时间泡在用户和市场里，再动手画第一个界面——方向错了，后面的精致都是浪费。',
+      '我持续跟进新工具，尤其是 AI 相关的那批。它们不会替我做判断，但能让我把想法验证得更快、把方案表达得更完整。',
+    ],
     location: '四川成都 · 求学于山东青岛',
     email: 'wsh15928698075@qq.com',
     phone: '15928698075',
@@ -76,6 +80,20 @@ const zh = {
     { index: '05', title: '视觉与品牌语言', desc: 'PS / AI / Canva 支撑海报、展板与文案的视觉表达，让产品界面与传播物料保持一致的气质与细节。' },
     { index: '06', title: '协作与推动力', desc: '生活权益部与科技创新协会的经历，让我擅长信息汇总、一对一沟通与跨角色协作，把事情按节点推进落地。' },
   ],
+  tools: [
+    { key: 'figma', name: 'Figma', note: '界面设计、高保真原型与组件体系，日常主战场', level: 95 },
+    { key: 'sparkle', name: 'Figma Make', note: '可交互演示，把静态稿变成能点的原型', level: 80 },
+    { key: 'rhino', name: 'Rhino', note: '产品三维建模与曲面推敲，从草图到实体', level: 85 },
+    { key: 'keyshot', name: 'Keyshot', note: '产品级渲染，材质、光影与最终表现力', level: 82 },
+    { key: 'ps', name: 'Photoshop', note: '图像处理、视觉物料与海报合成', level: 88 },
+    { key: 'ai', name: 'Illustrator', note: '矢量图形、图标与品牌视觉绘制', level: 78 },
+    { key: 'sparkle', name: 'GPT', note: '调研梳理、文案与界面素材生成', level: 90 },
+    { key: 'moon', name: '即梦 AI', note: '概念视觉与设计意向快速出图', level: 85 },
+    { key: 'film', name: '可灵 AI', note: '产品演示视频生成，让方案动起来', level: 78 },
+    { key: 'scissors', name: '剪映', note: '视频剪辑、字幕与成片输出', level: 85 },
+    { key: 'canva', name: 'Canva', note: '海报、展板与活动物料的快速产出', level: 88 },
+    { key: 'grid', name: 'Excel / PPT', note: '数据整理、图表与方案汇报', level: 85 },
+  ],
   toolset: ['Figma', 'Figma Make', 'Rhino', 'Keyshot', 'Photoshop', 'Illustrator', 'GPT', '即梦 AI', '可灵 AI', '剪映', 'Canva', 'Excel / PPT'],
   ui: {
     nav: { about: '关于我', works: '精选项目', strengths: '个人优势', contact: '联系', cta: '联系我 ↗' },
@@ -91,6 +109,8 @@ const zh = {
       title: '关于我',
       lead: '产品设计科班出身，向交互设计与 AI 设计延伸。相信好的体验来自扎实的研究与克制的表达。',
       backToWork: '去看看精选项目',
+      toolsTitle: '我常用的工具',
+      toolsNote: '工具是手段，判断力才是核心——这里是我最顺手的那一批。',
     },
     works: { no: '02 — Selected Works', title: '精选项目', sub: '三个代表项目：从儿童教育 App 到关怀硬件再到软硬一体，覆盖研究、交互、UI 与产品表达全链路。' },
     strengths: {
@@ -130,6 +150,10 @@ const en = {
     ],
     aboutScrollText:
       'Over the past three years I trained in product design at Qingdao University of Technology while pulling AI tools into research, sketching and prototyping. From a kids learning app to care-driven hardware, research grounds every judgment — design has to be more than good-looking.',
+    aboutExtra: [
+      'I see myself as someone who translates messy problems into clear interfaces. Before drawing a single screen I spend real time with users and market data — if the direction is wrong, every pixel of polish is wasted.',
+      'I keep close track of new tools, especially the AI ones. They never make the judgment call for me, but they let me test ideas faster and express a solution more completely.',
+    ],
     location: 'Chengdu, Sichuan · Studying in Qingdao, Shandong',
     email: 'wsh15928698075@qq.com',
     phone: '15928698075',
@@ -188,6 +212,20 @@ const en = {
     { index: '05', title: 'Visual & brand language', desc: 'PS / AI / Canva back up posters, boards and copy, keeping product UI and communication consistent in tone and detail.' },
     { index: '06', title: 'Collaboration & drive', desc: 'From student-union and innovation-club roles: strong at synthesizing information, one-on-one communication and shipping on schedule.' },
   ],
+  tools: [
+    { key: 'figma', name: 'Figma', note: 'Interface design, hi-fi prototypes and component systems — my daily driver', level: 95 },
+    { key: 'sparkle', name: 'Figma Make', note: 'Interactive demos that turn static screens into clickable flows', level: 80 },
+    { key: 'rhino', name: 'Rhino', note: '3D modeling and surface studies, from sketch to solid', level: 85 },
+    { key: 'keyshot', name: 'Keyshot', note: 'Product-grade rendering: materials, lighting, final polish', level: 82 },
+    { key: 'ps', name: 'Photoshop', note: 'Image work, visual assets and poster compositing', level: 88 },
+    { key: 'ai', name: 'Illustrator', note: 'Vector graphics, icons and brand visuals', level: 78 },
+    { key: 'sparkle', name: 'GPT', note: 'Research synthesis, copywriting and interface asset generation', level: 90 },
+    { key: 'moon', name: 'Jimeng AI', note: 'Concept visuals and fast design-intent renders', level: 85 },
+    { key: 'film', name: 'Kling AI', note: 'Product demo films that put the solution in motion', level: 78 },
+    { key: 'scissors', name: 'CapCut', note: 'Editing, subtitles and final video delivery', level: 85 },
+    { key: 'canva', name: 'Canva', note: 'Fast turnaround on posters, boards and event assets', level: 88 },
+    { key: 'grid', name: 'Excel / PPT', note: 'Data cleanup, charts and presentation decks', level: 85 },
+  ],
   toolset: ['Figma', 'Figma Make', 'Rhino', 'Keyshot', 'Photoshop', 'Illustrator', 'GPT', 'Jimeng AI', 'Kling AI', 'CapCut', 'Canva', 'Excel / PPT'],
   ui: {
     nav: { about: 'About', works: 'Work', strengths: 'Strengths', contact: 'Contact', cta: 'Get in touch ↗' },
@@ -203,6 +241,8 @@ const en = {
       title: 'About me',
       lead: 'Trained in product design, extending into interaction and AI design. Good experiences come from solid research and restrained expression.',
       backToWork: 'See selected work',
+      toolsTitle: 'Tools I work with',
+      toolsNote: 'Tools are the means, judgment is the core — these are the ones I reach for first.',
     },
     works: { no: '02 — Selected Works', title: 'Selected work', sub: 'Three representative projects — from a kids learning app to care hardware and hardware-software as one, covering research, interaction, UI and product storytelling.' },
     strengths: {
