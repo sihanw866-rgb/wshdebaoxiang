@@ -1,0 +1,103 @@
+.masonry-list {
+  position: relative;
+  width: 100%;
+}
+
+.masonry-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform, width, height, opacity;
+  cursor: zoom-in;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #141414;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 40px -12px rgba(0, 0, 0, 0.55);
+}
+
+.masonry-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ---------- Lightbox ---------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4vh 4vw;
+  cursor: zoom-out;
+  animation: lb-in 0.25s ease-out;
+}
+@keyframes lb-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.lightbox img {
+  max-width: 92vw;
+  max-height: 92vh;
+  border-radius: 12px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7);
+  cursor: default;
+  animation: lb-zoom 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes lb-zoom {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.lightbox-close {
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(225, 224, 204, 0.3);
+  background: rgba(0, 0, 0, 0.5);
+  color: rgba(225, 224, 204, 0.9);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.25s;
+}
+.lightbox-close:hover {
+  background: rgba(225, 224, 204, 0.16);
+  transform: rotate(90deg);
+}
+.lightbox-hint {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  color: rgba(225, 224, 204, 0.5);
+}
+
+/* ---------- 过程物：真实界面瀑布流模块 ---------- */
+.masonry-block { margin-top: 4px; }
+.shot-grid .masonry-block { grid-column: 1 / -1; }
+.masonry-cap {
+  display: inline-block;
+  margin: 0 0 18px 2px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(225, 224, 204, 0.72);
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 14px;
+}

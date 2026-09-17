@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import { useLang } from '../i18n'
 import { CharsPullUp, ScrollRevealText, FadeUp, CardIn } from '../anim'
 import { Cover } from './Works'
+import Masonry, { Lightbox } from './Masonry'
 
 /* ---------- 过程物：抽象的暗色 SVG（后续可替换为真实过程截图） ---------- */
 function Shot({ kind, accent }) {
@@ -99,6 +101,7 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
   const { t } = useLang()
   const { projects, profile, ui } = t
   const s = ui.projectPage || {}
+  const [zoom, setZoom] = useState(null)
 
   const found = projects.findIndex((p) => p.id === projectId)
   const idx = found < 0 ? 0 : found
@@ -192,16 +195,31 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
               { kind: 'wireframe', capIndex: 0 },
               { kind: 'flow', capIndex: 1 },
               { kind: 'ui', capIndex: 2 },
-            ]).map((sh, i) => (
-              <FadeUp delay={i * 0.08} key={sh.kind} className={`shot-cell${i === 0 ? ' wide' : ''}${sh.img ? ' has-img' : ''}`}>
-                <figure className="shot">
-                  {sh.img
-                    ? <img src={sh.img} alt={caps[sh.capIndex]} loading="lazy" />
-                    : <Shot kind={sh.kind} accent={p.accent} />}
-                  <figcaption>{caps[sh.capIndex]}</figcaption>
-                </figure>
-              </FadeUp>
-            ))}
+            ]).map((sh, i) =>
+              sh.masonry ? (
+                <FadeUp key={sh.kind} className="masonry-block">
+                  <span className="masonry-cap">{caps[sh.capIndex]} · {sh.items.length}</span>
+                  <Masonry items={sh.items} onOpen={(it) => setZoom(it.img)} />
+                </FadeUp>
+              ) : (
+                <FadeUp delay={i * 0.08} key={sh.kind} className={`shot-cell${i === 0 || sh.wide ? ' wide' : ''}`}>
+                  <figure className="shot">
+                    {sh.img ? (
+                      <img
+                        src={sh.img}
+                        alt={caps[sh.capIndex]}
+                        loading="lazy"
+                        style={{ cursor: 'zoom-in' }}
+                        onClick={() => setZoom(sh.img)}
+                      />
+                    ) : (
+                      <Shot kind={sh.kind} accent={p.accent} />
+                    )}
+                    <figcaption>{caps[sh.capIndex]}</figcaption>
+                  </figure>
+                </FadeUp>
+              )
+            )}
           </div>
         </div>
 
@@ -228,6 +246,8 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
           <span className="mono">{p.year}</span>
         </div>
       </div>
+
+      <Lightbox src={zoom} onClose={() => setZoom(null)} />
     </section>
   )
 }

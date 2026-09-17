@@ -1,5 +1,13 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 
+/* 寻古拾光：高保真界面截图（瀑布流），590×1278 */
+const XUNGU_UI_SHOTS = Array.from({ length: 18 }, (_, i) => ({
+  id: `ui-${String(i + 1).padStart(2, '0')}`,
+  img: `/xungu-shots/ui-${String(i + 1).padStart(2, '0')}.jpg`,
+  width: 590,
+  height: 1278,
+}))
+
 /* ================= 中文内容 ================= */
 const zh = {
   profile: {
@@ -46,7 +54,7 @@ const zh = {
   projects: [
     {
       id: 'xungu', index: '01', year: '2026.05 — 06', coverImg: '/xungu-cover.jpg',
-      shots: [{ kind: 'flow', img: '/xungu-flow.jpg', capIndex: 1 }, { kind: 'ui', capIndex: 2 }],
+      shots: [{ kind: 'flow', img: '/xungu-flow.jpg', capIndex: 1 }, { kind: 'ui', capIndex: 2, masonry: true, wide: true, items: XUNGU_UI_SHOTS }],
       title: '寻古拾光 · 传统文化学习小游戏',
       subtitle: '儿童寓教于乐 App · 交互原型',
       tags: ['移动端 App', '交互设计', '原型动效'],
@@ -234,7 +242,7 @@ const en = {
   projects: [
     {
       id: 'xungu', index: '01', year: '2026.05 — 06', coverImg: '/xungu-cover.jpg',
-      shots: [{ kind: 'flow', img: '/xungu-flow.jpg', capIndex: 1 }, { kind: 'ui', capIndex: 2 }],
+      shots: [{ kind: 'flow', img: '/xungu-flow.jpg', capIndex: 1 }, { kind: 'ui', capIndex: 2, masonry: true, wide: true, items: XUNGU_UI_SHOTS }],
       title: 'Xungu Shiguang · Traditional-culture Learning Game',
       subtitle: "Kids' edutainment App · Interaction prototype",
       tags: ['Mobile App', 'Interaction design', 'Prototype & motion'],
