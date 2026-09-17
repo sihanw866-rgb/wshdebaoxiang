@@ -11,9 +11,9 @@ export default function App() {
   const [view, setView] = useState('home')
   const [projectId, setProjectId] = useState(null)
 
-  // 「关于我」「项目详情」是独立的二级页面，走暗色（关于页保留浅色能力）
+  // 二级页统一走暗色（浅色主题变量仍保留在 index.css，需要时再启用）
   useEffect(() => {
-    document.body.classList.toggle('theme-light', view === 'about')
+    document.body.classList.remove('theme-light')
     if (view === 'about' || view === 'project') window.scrollTo(0, 0)
   }, [view, projectId])
 

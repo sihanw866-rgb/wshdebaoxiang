@@ -362,7 +362,7 @@ img { display: block; max-width: 100%; }
 .edu .honor { color: var(--muted); font-size: 13px; }
 
 /* ---------- 关于页：自述 + 工具能力 ---------- */
-.about-extra p { color: rgba(225, 224, 204, 0.82); font-size: 15px; line-height: 1.9; margin-bottom: 16px; }
+.about-extra p { color: var(--muted); font-size: 15px; line-height: 1.9; margin-bottom: 16px; }
 .about-extra .edu { margin-top: 26px; }
 
 .tools-block { margin-top: 64px; }
@@ -389,7 +389,7 @@ img { display: block; max-width: 100%; }
 }
 .tool-main { flex: 1; min-width: 0; }
 .tool-name { font-size: 15px; font-weight: 700; color: var(--primary); letter-spacing: -0.01em; }
-.tool-note { margin-top: 6px; font-size: 13.5px; line-height: 1.65; color: rgba(225, 224, 204, 0.72); }
+.tool-note { margin-top: 6px; font-size: 13.5px; line-height: 1.65; color: var(--muted); }
 .tool-bar { margin-top: 14px; height: 2px; background: rgba(225, 224, 204, 0.12); border-radius: 2px; overflow: hidden; }
 .tool-bar span { display: block; height: 100%; background: var(--primary); border-radius: 2px; }
 
@@ -437,7 +437,7 @@ img { display: block; max-width: 100%; }
 .feature-num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; color: var(--dim); }
 .feature-title { font-size: 19px; font-weight: 700; color: var(--primary); }
 .feature-list { list-style: none; display: flex; flex-direction: column; gap: 11px; }
-.feature-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; color: rgba(225, 224, 204, 0.74); line-height: 1.5; }
+.feature-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; color: var(--muted); line-height: 1.5; }
 .feature-list svg { flex: none; margin-top: 3px; color: var(--primary); }
 .feature-more { margin-top: auto; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--primary); transition: gap 0.3s var(--ease); }
 .feature-more:hover { gap: 14px; }
