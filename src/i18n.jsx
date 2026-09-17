@@ -77,7 +77,7 @@ const zh = {
       },
     },
     {
-      id: 'calm', index: '02', year: '2026.04 — 06',
+      id: 'calm', index: '02', year: '2026.04 — 06', coverImg: '/calm-cover.jpg',
       title: '自闭症儿童情绪安抚设备',
       subtitle: '关怀向智能硬件 · 产品设计',
       tags: ['智能硬件', '用户研究', 'AI 辅助设计'],
@@ -265,7 +265,7 @@ const en = {
       },
     },
     {
-      id: 'calm', index: '02', year: '2026.04 — 06',
+      id: 'calm', index: '02', year: '2026.04 — 06', coverImg: '/calm-cover.jpg',
       title: 'Emotion-soothing Device for Autistic Children',
       subtitle: 'Care-oriented smart hardware · Product design',
       tags: ['Smart hardware', 'User research', 'AI-assisted design'],

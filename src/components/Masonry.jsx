@@ -48,6 +48,7 @@ const preloadImages = async (urls) => {
 
 export function Lightbox({ src, onClose }) {
   useEffect(() => {
+    if (!src) return
     const onKey = (e) => e.key === 'Escape' && onClose()
     window.addEventListener('keydown', onKey)
     const prev = document.body.style.overflow
@@ -56,7 +57,7 @@ export function Lightbox({ src, onClose }) {
       window.removeEventListener('keydown', onKey)
       document.body.style.overflow = prev
     }
-  }, [onClose])
+  }, [src, onClose])
 
   if (!src) return null
   return (
