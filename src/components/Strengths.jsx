@@ -17,7 +17,8 @@ const FEATURE_VIDEO =
 
 export default function Strengths() {
   const { t } = useLang()
-  const { cards, toolset, ui } = t
+  const { toolset, ui } = t
+  const cards = ui.cards || []
   const s = ui.strengths
 
   return (

@@ -31,10 +31,14 @@ export default function Hero() {
             </div>
             <h1 className="hero-title">
               <span className="line">
-                <WordsPullUp text={profile.namePinyin.split(' ')[0]} />
+                <WordsPullUp text={(profile.namePinyin || profile.nameEn).split(' ')[0]} />
               </span>
               <span className="line">
-                <WordsPullUp text={profile.namePinyin.split(' ').slice(1).join(' ')} asterisk delay={0.1} />
+                <WordsPullUp
+                  text={(profile.namePinyin || profile.nameEn).split(' ').slice(1).join(' ')}
+                  asterisk
+                  delay={0.1}
+                />
               </span>
             </h1>
           </div>

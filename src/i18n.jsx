@@ -116,6 +116,7 @@ const zh = {
 const en = {
   profile: {
     name: 'Wang Sihan',
+    namePinyin: 'WANG SIHAN',
     nameEn: 'WANG SIHAN',
     roles: ['Interaction Designer', 'AI Designer', 'Product Designer'],
     rolesEn: 'INTERACTION / AI / PRODUCT DESIGNER',
