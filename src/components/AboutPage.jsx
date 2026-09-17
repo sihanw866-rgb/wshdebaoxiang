@@ -1,6 +1,7 @@
 import { useLang } from '../i18n'
 import { WordsPullUpMultiStyle, ScrollRevealText, FadeUp, CardIn } from '../anim'
 import ToolIcon from './ToolIcon'
+import BorderGlow from './BorderGlow'
 
 export default function AboutPage({ onBack, onToWork }) {
   const { t } = useLang()
@@ -12,7 +13,7 @@ export default function AboutPage({ onBack, onToWork }) {
       <div className="container">
         <button className="back-link" onClick={onBack}>{p.back}</button>
 
-        <div className="about-card">
+        <BorderGlow className="about-card" backgroundColor="#101010" borderRadius={32} glowRadius={36}>
           <p className="mono label">{p.no}</p>
           <h2 className="about-heading">
             <WordsPullUpMultiStyle segments={profile.aboutSegments} />
@@ -60,7 +61,7 @@ export default function AboutPage({ onBack, onToWork }) {
               </div>
             ))}
           </div>
-        </div>
+        </BorderGlow>
 
         {/* 工具能力：图标 + 说明 + 熟练度 */}
         <div className="tools-block">
@@ -69,7 +70,7 @@ export default function AboutPage({ onBack, onToWork }) {
           <div className="tool-grid">
             {(tools || []).map((tool, i) => (
               <CardIn index={i % 4} key={`${tool.name}-${i}`}>
-                <div className="tool-card">
+                <BorderGlow className="tool-card" backgroundColor="#101010" borderRadius={18} glowRadius={22}>
                   <span className="tool-icon">
                     <ToolIcon kind={tool.key} />
                   </span>
@@ -80,7 +81,7 @@ export default function AboutPage({ onBack, onToWork }) {
                       <span style={{ width: `${tool.level}%` }} />
                     </div>
                   </div>
-                </div>
+                </BorderGlow>
               </CardIn>
             ))}
           </div>

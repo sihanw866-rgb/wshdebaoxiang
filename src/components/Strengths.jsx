@@ -1,6 +1,7 @@
 import { useLang } from '../i18n'
 import { CardIn } from '../anim'
 import ToolIcon from './ToolIcon'
+import BorderGlow from './BorderGlow'
 
 const Check = () => (
   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
@@ -42,7 +43,7 @@ export default function Strengths() {
 
           {cards.map((c, i) => (
             <CardIn index={i + 1} key={c.num}>
-              <div className="feature-card">
+              <BorderGlow className="feature-card" backgroundColor="#212121" borderRadius={20} glowRadius={26}>
                 <span className="feature-icon">
                   <ToolIcon kind={c.icon} />
                 </span>
@@ -59,7 +60,7 @@ export default function Strengths() {
                 <a className="feature-more" href="#works">
                   {c.more} <ArrowRight />
                 </a>
-              </div>
+              </BorderGlow>
             </CardIn>
           ))}
         </div>

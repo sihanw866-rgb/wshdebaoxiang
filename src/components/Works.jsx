@@ -1,5 +1,6 @@
 import { useLang } from '../i18n'
 import { FadeUp, CardIn } from '../anim'
+import BorderGlow from './BorderGlow'
 
 /* ---------- 项目封面：暗色抽象 SVG（后续可直接替换为真实截图） ---------- */
 export function Cover({ variant, accent }) {
@@ -90,8 +91,10 @@ export default function Works({ onOpen }) {
         <div className="work-list">
           {projects.map((p, i) => (
             <CardIn index={i} key={p.id}>
-            <article
+            <BorderGlow
               className="work-card"
+              backgroundColor="#101010"
+              borderRadius={28}
               onClick={() => onOpen && onOpen(p.id)}
               role="link"
               tabIndex={0}
@@ -120,7 +123,7 @@ export default function Works({ onOpen }) {
                   ))}
                 </div>
               </div>
-            </article>
+            </BorderGlow>
             </CardIn>
           ))}
         </div>

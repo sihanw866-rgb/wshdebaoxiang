@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 
 const SENSITIVITY = 0.8
 const VIDEO_SRC =
-  'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260530_042513_df96a13b-6155-4f6e-8b93-c9dee66fba08.mp4'
+  'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4'
 
 /**
  * 鼠标横向移动 = 时间轴擦洗（scrub）的全屏视频背景。
