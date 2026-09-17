@@ -2,8 +2,11 @@ import { useLang } from '../i18n'
 import { FadeUp, CardIn } from '../anim'
 import BorderGlow from './BorderGlow'
 
-/* ---------- 项目封面：暗色抽象 SVG（后续可直接替换为真实截图） ---------- */
-export function Cover({ variant, accent }) {
+/* ---------- 项目封面：优先真实图片，否则用暗色抽象 SVG ---------- */
+export function Cover({ variant, accent, img }) {
+  if (img) {
+    return <img src={img} alt="" loading="lazy" />
+  }
   const c = accent
   const line = 'rgba(255,255,255,0.10)'
   const faint = 'rgba(255,255,255,0.05)'
@@ -100,8 +103,8 @@ export default function Works({ onOpen }) {
               tabIndex={0}
               onKeyDown={(e) => { if (e.key === 'Enter' && onOpen) onOpen(p.id) }}
             >
-              <div className="work-cover">
-                <Cover variant={p.cover} accent={p.accent} />
+              <div className={`work-cover${p.coverImg ? ' has-img' : ''}`}>
+                <Cover variant={p.cover} accent={p.accent} img={p.coverImg} />
               </div>
               <div className="work-info">
                 <div className="work-top">

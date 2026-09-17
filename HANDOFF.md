@@ -189,3 +189,18 @@
 | 逐字起始 0.2 | 0.35 | 0.2 在暗底上读不清 |
 
 **待确认**：是否需要迁移到 TypeScript + Tailwind（工作量较大，需单独一轮）。
+
+---
+
+## 十一、BorderGlow 边缘光效（React Bits 组件，已接入）
+
+来源：reactbits.dev 的 `BorderGlow`（JS + CSS 版）。位置：`src/components/BorderGlow.jsx` + `BorderGlow.css`。
+
+**接入范围**：项目卡 `.work-card`、能力清单卡 `.feature-card`、关于卡 `.about-card`、工具卡 `.tool-card`。
+**有意未接入**：能力区的视频卡（`#212121` 那张换成视频的那张）——它是 `padding:0` + 视频铺满，包一层会把视频挤掉，且光效在动态画面上看不出来。
+
+**关键改动（改动前必读）**
+1. 默认配色 `#c084fc/#f472b6/#38bdf8`（紫粉蓝）已改为暖奶油系 `['#dedbc8', '#e8d9a8', '#c9d6c4']`，`fillOpacity` 0.45，否则和全站奶油调撞色。
+2. 组件加了 `is-contents` 变体：`.border-glow-inner { display: contents }`，让原卡片的 flex/grid 布局直接生效，不用改卡片内部结构。
+3. **踩过的坑**：`.work-card` / `.feature-card` 原本的 `overflow: hidden` 会裁掉 `edge-light`（inset -40px），光晕完全不可见。已用 `.border-glow-card.is-contents { overflow: visible }` 覆盖，改由内层元素自己裁剪圆角（`.work-cover` 左上/左下、`.feature-card > video`、`.video-shade`）。**后续若给新卡片接 BorderGlow，必须同时处理圆角裁切，否则图片会变成直角。**
+4. Hero 视频已换为 Prisma 参照稿源（`hf_20260405_170732_...mp4`），该源支持 HTTP Range（206），鼠标擦洗可用。

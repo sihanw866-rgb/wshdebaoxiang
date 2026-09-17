@@ -621,6 +621,27 @@ img { display: block; max-width: 100%; }
 /* 首页项目卡可点击进入详情 */
 .work-card { cursor: pointer; }
 
+/* 封面真实图片（与 SVG 同款缩放行为 + 轻微压暗贴合卡片） */
+.work-cover img,
+.proj-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.88) brightness(0.92) contrast(1.04);
+  transition: transform 1s var(--ease), filter 0.8s var(--ease);
+}
+.work-card:hover .work-cover img { transform: scale(1.03); filter: saturate(1) brightness(0.98) contrast(1.02); }
+.work-cover.has-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.18), transparent 30%, rgba(0, 0, 0, 0.3) 100%);
+}
+.proj-cover img { filter: saturate(0.92) brightness(0.95) contrast(1.03); }
+
 /* ---------- 响应式 ---------- */
 @media (min-width: 2400px) { :root { --container: 100%; --gutter: 72px; } }
 @media (max-width: 1280px) {

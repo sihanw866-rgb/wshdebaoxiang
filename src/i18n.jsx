@@ -45,7 +45,7 @@ const zh = {
   ],
   projects: [
     {
-      id: 'xungu', index: '01', year: '2026.05 — 06',
+      id: 'xungu', index: '01', year: '2026.05 — 06', coverImg: '/xungu-cover.jpg',
       title: '寻古拾光 · 传统文化学习小游戏',
       subtitle: '儿童寓教于乐 App · 交互原型',
       tags: ['移动端 App', '交互设计', '原型动效'],
@@ -232,7 +232,7 @@ const en = {
   ],
   projects: [
     {
-      id: 'xungu', index: '01', year: '2026.05 — 06',
+      id: 'xungu', index: '01', year: '2026.05 — 06', coverImg: '/xungu-cover.jpg',
       title: 'Xungu Shiguang · Traditional-culture Learning Game',
       subtitle: "Kids' edutainment App · Interaction prototype",
       tags: ['Mobile App', 'Interaction design', 'Prototype & motion'],

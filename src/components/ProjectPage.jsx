@@ -135,7 +135,7 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
 
         <FadeUp delay={0.1}>
           <div className="proj-cover">
-            <Cover variant={p.cover} accent={p.accent} />
+            <Cover variant={p.cover} accent={p.accent} img={p.coverImg} />
             <div className="noise-overlay" />
           </div>
         </FadeUp>
