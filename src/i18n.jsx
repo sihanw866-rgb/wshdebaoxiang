@@ -175,9 +175,9 @@ const zh = {
       videoLabel: '创作的起点，是一块空白画布。',
     },
     cards: [
-      { num: '01', title: '研究与洞察', items: ['市场数据与用户画像', '竞品分析与痛点归纳', '概念定位与方案发散'], more: '了解更多' },
-      { num: '02', title: 'AI 工具链', items: ['GPT 生成界面素材', '即梦 / 可灵 生成视觉', '剪映产出演示视频'], more: '了解更多' },
-      { num: '03', title: '原型与三维', items: ['Figma 高保真与点击动效', 'Rhino 建模 · Keyshot 渲染', '展板海报与视觉物料'], more: '了解更多' },
+      { num: '01', icon: 'grid', title: '研究与洞察', items: ['市场数据与用户画像', '竞品分析与痛点归纳', '概念定位与方案发散'], more: '了解更多' },
+      { num: '02', icon: 'sparkle', title: 'AI 工具链', items: ['GPT 生成界面素材', '即梦 / 可灵 生成视觉', '剪映产出演示视频'], more: '了解更多' },
+      { num: '03', icon: 'rhino', title: '原型与三维', items: ['Figma 高保真与点击动效', 'Rhino 建模 · Keyshot 渲染', '展板海报与视觉物料'], more: '了解更多' },
     ],
     contact: {
       no: '04 — Contact', line1: '有想法？', line2pre: '让我们一起把它', line2em: '做出来。',
@@ -362,9 +362,9 @@ const en = {
       videoLabel: 'Every project starts with a blank canvas.',
     },
     cards: [
-      { num: '01', title: 'Research & insight', items: ['Market data & user personas', 'Competitor & pain-point analysis', 'Concept positioning'], more: 'Learn more' },
-      { num: '02', title: 'AI toolchain', items: ['GPT for interface assets', 'Jimeng / Kling for visuals', 'CapCut for demo films'], more: 'Learn more' },
-      { num: '03', title: 'Prototype & 3D', items: ['Figma hi-fi & micro-motion', 'Rhino modeling · Keyshot renders', 'Boards, posters & visual assets'], more: 'Learn more' },
+      { num: '01', icon: 'grid', title: 'Research & insight', items: ['Market data & user personas', 'Competitor & pain-point analysis', 'Concept positioning'], more: 'Learn more' },
+      { num: '02', icon: 'sparkle', title: 'AI toolchain', items: ['GPT for interface assets', 'Jimeng / Kling for visuals', 'CapCut for demo films'], more: 'Learn more' },
+      { num: '03', icon: 'rhino', title: 'Prototype & 3D', items: ['Figma hi-fi & micro-motion', 'Rhino modeling · Keyshot renders', 'Boards, posters & visual assets'], more: 'Learn more' },
     ],
     contact: {
       no: '04 — Contact', line1: 'Got an idea?', line2pre: "Let's make it ", line2em: 'real.',

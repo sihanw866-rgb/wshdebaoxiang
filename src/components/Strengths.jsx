@@ -1,5 +1,6 @@
 import { useLang } from '../i18n'
 import { CardIn } from '../anim'
+import ToolIcon from './ToolIcon'
 
 const Check = () => (
   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
@@ -42,6 +43,9 @@ export default function Strengths() {
           {cards.map((c, i) => (
             <CardIn index={i + 1} key={c.num}>
               <div className="feature-card">
+                <span className="feature-icon">
+                  <ToolIcon kind={c.icon} />
+                </span>
                 <span className="feature-num">{c.num}</span>
                 <h4 className="feature-title">{c.title}</h4>
                 <ul className="feature-list">
