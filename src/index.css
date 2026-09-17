@@ -572,6 +572,9 @@ img { display: block; max-width: 100%; }
   aspect-ratio: 8 / 5;
 }
 .shot-cell.wide .shot { aspect-ratio: 16 / 7; }
+.shot img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.shot-cell.has-img .shot { aspect-ratio: auto; }
+.shot-cell.has-img .shot img { height: auto; }
 .shot svg { width: 100%; height: 100%; display: block; }
 .shot figcaption {
   position: absolute;

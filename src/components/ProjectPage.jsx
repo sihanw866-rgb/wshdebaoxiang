@@ -188,11 +188,17 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
         <div className="proj-section">
           <p className="mono">{s.shots}</p>
           <div className="shot-grid">
-            {['wireframe', 'flow', 'ui'].map((kind, i) => (
-              <FadeUp delay={i * 0.08} key={kind} className={`shot-cell${i === 0 ? ' wide' : ''}`}>
+            {(p.shots || [
+              { kind: 'wireframe', capIndex: 0 },
+              { kind: 'flow', capIndex: 1 },
+              { kind: 'ui', capIndex: 2 },
+            ]).map((sh, i) => (
+              <FadeUp delay={i * 0.08} key={sh.kind} className={`shot-cell${i === 0 ? ' wide' : ''}${sh.img ? ' has-img' : ''}`}>
                 <figure className="shot">
-                  <Shot kind={kind} accent={p.accent} />
-                  <figcaption>{caps[i]}</figcaption>
+                  {sh.img
+                    ? <img src={sh.img} alt={caps[sh.capIndex]} loading="lazy" />
+                    : <Shot kind={sh.kind} accent={p.accent} />}
+                  <figcaption>{caps[sh.capIndex]}</figcaption>
                 </figure>
               </FadeUp>
             ))}
