@@ -72,7 +72,7 @@ export function CharsPullUp({ text, className = '', delay = 0, step = 0.045 }) {
             animate={inView ? { y: '0%' } : {}}
             transition={{ delay: delay + i * step, duration: 0.9, ease: EASE }}
           >
-            {c}
+            {c === ' ' ? '\u00A0' : c}
           </motion.span>
         </span>
       ))}
