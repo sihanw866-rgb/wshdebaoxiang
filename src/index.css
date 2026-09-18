@@ -63,6 +63,26 @@ body {
 
 /* --- 浅色主题下的关于页专属修正 --- */
 
+/* 右上角「联系我」按钮：原来背景取 --primary（浅色下变近黑）配 #000 文字，
+   会变成深底深字；浅色主题反转为深色底 + 浅色字 */
+.theme-light .cta-fixed {
+  background: #14161a;
+  color: #f3f3f1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+.theme-light .cta-fixed .circle {
+  background: #f3f3f1;
+  color: #14161a;
+}
+
+/* 大标题：整段入场（逐字由 VariableProximity 负责） */
+.about-heading { animation: heading-in 0.9s var(--ease) both; }
+@keyframes heading-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+.about-heading .variable-proximity { display: inline; }
+
 /* 照片遮罩：浅色版改用中性渐变，避免奶油色浮在照片上 */
 .theme-light .about-figure::after {
   background: linear-gradient(165deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.38) 88%);

@@ -1,12 +1,15 @@
+import { useRef } from 'react'
 import { useLang } from '../i18n'
 import { WordsPullUpMultiStyle, ScrollRevealText, FadeUp, CardIn } from '../anim'
 import ToolIcon from './ToolIcon'
 import BorderGlow from './BorderGlow'
+import VariableProximity from './VariableProximity'
 
 export default function AboutPage({ onBack, onToWork }) {
-  const { t } = useLang()
+  const { lang, t } = useLang()
   const { profile, stats, tools, ui } = t
   const p = ui.aboutPage
+  const headingRef = useRef(null)
 
   return (
     <section className="page-about">
@@ -15,8 +18,19 @@ export default function AboutPage({ onBack, onToWork }) {
 
         <BorderGlow className="about-card" backgroundColor="#101010" borderRadius={32} glowRadius={36}>
           <p className="mono label">{p.no}</p>
-          <h2 className="about-heading">
-            <WordsPullUpMultiStyle segments={profile.aboutSegments} />
+          <h2 className="about-heading" ref={headingRef} style={{ position: 'relative' }}>
+            {profile.aboutSegments.map((seg, i) => (
+              <VariableProximity
+                key={i}
+                label={seg.text}
+                className={`${seg.className || ''}${lang === 'en' ? ' is-latin' : ''}`}
+                containerRef={headingRef}
+                radius={140}
+                falloff="gaussian"
+                fromFontVariationSettings="'wght' 300"
+                toFontVariationSettings="'wght' 900"
+              />
+            ))}
           </h2>
           <div className="about-body-text">
             <ScrollRevealText text={profile.aboutScrollText} />

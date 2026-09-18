@@ -1,0 +1,27 @@
+/* 基于 React Bits VariableProximity（JS + CSS）适配：
+   - 字体改为站点字体栈（中文用 Noto Sans SC 可变字重，英文用 Roboto Flex）
+   - 字体在 index.html 统一加载，这里不再 @import */
+
+.variable-proximity {
+  font-family: 'Almarai', 'Noto Sans SC', sans-serif;
+  font-variation-settings: 'wght' 400;
+}
+
+/* 英文标题：Latin 也换成可变字体，保证 wght 轴动画生效 */
+.variable-proximity.is-latin {
+  font-family: 'Roboto Flex', 'Noto Sans SC', sans-serif;
+}
+
+.variable-proximity span { will-change: font-variation-settings; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
