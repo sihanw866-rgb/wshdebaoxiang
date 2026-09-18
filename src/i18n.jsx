@@ -176,7 +176,7 @@ const zh = {
       labels: { role: 'Role', period: 'Timeline', team: 'Team', deliverables: 'Deliverables' },
       shotCaps: ['信息架构与低保真线框', '关键流程与状态跳转', '高保真界面与组件规范'],
     },
-    works: { no: '02 — Selected Works', title: '精选项目', sub: '三个代表项目：从儿童教育 App 到关怀硬件再到软硬一体，覆盖研究、交互、UI 与产品表达全链路。' },
+    works: { no: '02 — Selected Works', title: '精选项目', sub: '三个代表项目：从儿童教育 App 到关怀硬件再到软硬一体，覆盖研究、交互、UI 与产品表达全链路。', view: '查看项目' },
     strengths: {
       no: '03 — Strengths', title: '个人优势', sub: '设计判断、AI 工具链与产品表达，三条线拧成一股推进方案落地的能力。', toolkit: 'Toolkit',
       line1: '给有想法的人，一套作品级的流程。',
@@ -364,7 +364,7 @@ const en = {
       labels: { role: 'Role', period: 'Timeline', team: 'Team', deliverables: 'Deliverables' },
       shotCaps: ['IA & low-fi wireframes', 'Key flows & state transitions', 'Hi-fi screens & component specs'],
     },
-    works: { no: '02 — Selected Works', title: 'Selected work', sub: 'Three representative projects — from a kids learning app to care hardware and hardware-software as one, covering research, interaction, UI and product storytelling.' },
+    works: { no: '02 — Selected Works', title: 'Selected work', sub: 'Three representative projects — from a kids learning app to care hardware and hardware-software as one, covering research, interaction, UI and product storytelling.', view: 'View project' },
     strengths: {
       no: '03 — Strengths', title: 'What I bring', sub: 'Design judgment, an AI toolchain and product storytelling — three threads braided into one ability to land solutions.', toolkit: 'Toolkit',
       line1: 'Studio-grade workflows for people with ideas.',

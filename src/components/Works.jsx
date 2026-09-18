@@ -1,6 +1,7 @@
 import { useLang } from '../i18n'
 import { FadeUp, CardIn } from '../anim'
 import BorderGlow from './BorderGlow'
+import AccordionGallery from './AccordionGallery'
 
 /* ---------- 项目封面：优先真实图片，否则用暗色抽象 SVG ---------- */
 export function Cover({ variant, accent, img, video }) {
@@ -100,44 +101,24 @@ export default function Works({ onOpen }) {
           <p className="sub" style={{ marginTop: 14 }}>{ui.works.sub}</p>
         </FadeUp>
 
-        <div className="work-list">
-          {projects.map((p, i) => (
-            <CardIn index={i} key={p.id}>
-            <BorderGlow
-              className="work-card"
-              backgroundColor="#101010"
-              borderRadius={28}
-              onClick={() => onOpen && onOpen(p.id)}
-              role="link"
-              tabIndex={0}
-              onKeyDown={(e) => { if (e.key === 'Enter' && onOpen) onOpen(p.id) }}
-            >
-              <div className={`work-cover${p.coverImg ? ' has-img' : ''}`}>
-                <Cover variant={p.cover} accent={p.accent} img={p.coverImg} />
-              </div>
-              <div className="work-info">
-                <div className="work-top">
-                  <span className="work-index">{p.index}</span>
-                  <span className="work-year">{p.year}</span>
-                </div>
-                <h3>{p.title}</h3>
-                <p className="subtitle">{p.subtitle}</p>
-                <p className="work-desc">{p.desc}</p>
-                <div className="work-tags">
-                  {p.tags.map((t) => <span key={t}>{t}</span>)}
-                </div>
-                <div className="work-metrics">
-                  {p.metrics.map((m) => (
-                    <div key={m.k}>
-                      <div className="k mono">{m.k}</div>
-                      <div className="v">{m.v}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </BorderGlow>
-            </CardIn>
-          ))}
+        <div className="work-accordion">
+          <AccordionGallery
+            items={projects.map((p) => ({
+              id: p.id,
+              image: p.coverImg,
+              label: p.title,
+              subtitle: p.subtitle,
+              tags: p.tags,
+              meta: `${p.index} · ${p.year}`,
+              cta: ui.works.view || 'VIEW PROJECT',
+            }))}
+            defaultIndex={1}
+            height={520}
+            gap={10}
+            radius={20}
+            expandRatio={0.5}
+            onSelect={(i) => onOpen && onOpen(projects[i].id)}
+          />
         </div>
       </div>
     </section>
