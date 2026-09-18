@@ -100,7 +100,7 @@ const zh = {
       },
     },
     {
-      id: 'aroma', index: '03', year: '2026.05 — 06',
+      id: 'aroma', index: '03', year: '2026.05 — 06', coverImg: '/aroma-cover.jpg',
       title: '智能香薰机与移动端 App',
       subtitle: '软硬一体 · UI / 交互设计',
       tags: ['智能硬件', '移动端 App', '高保真 UI'],
@@ -288,7 +288,7 @@ const en = {
       },
     },
     {
-      id: 'aroma', index: '03', year: '2026.05 — 06',
+      id: 'aroma', index: '03', year: '2026.05 — 06', coverImg: '/aroma-cover.jpg',
       title: 'Smart Aroma Diffuser & Companion App',
       subtitle: 'Hardware × software · UI / interaction design',
       tags: ['Smart hardware', 'Mobile App', 'High-fidelity UI'],

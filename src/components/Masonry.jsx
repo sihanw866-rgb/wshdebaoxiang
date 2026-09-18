@@ -95,19 +95,20 @@ export default function Masonry({
     return () => { alive = false }
   }, [srcs])
 
-  /* 每列错落的起始高度：即使图片等高，也呈上下交错的砖砌节奏 */
-  const COL_STAGGER = [0, 84, 32, 104, 56, 72]
+  /* 图块高度按节奏变化（高矮交替），等尺寸图片也能排出参差感；
+     裁切只在展示层，点开放大仍是完整图 */
+  const H_MULT = [1.14, 0.72, 1.22, 0.8, 0.96, 0.66, 1.1, 0.86]
 
   const grid = useMemo(() => {
     if (!width) return { placed: [], height: 0 }
     const gap = 10
     const colW = (width - gap * (columns - 1)) / columns
-    const colH = Array.from({ length: columns }, (_, c) => COL_STAGGER[c % COL_STAGGER.length])
+    const colH = new Array(columns).fill(0)
     const placed = items.map((it, idx) => {
       const c = colH.indexOf(Math.min(...colH))
       const x = c * (colW + gap)
       const y = colH[c]
-      const h = colW * (it.height / it.width)
+      const h = colW * (it.height / it.width) * (H_MULT[idx % H_MULT.length])
       colH[c] += h + gap
       return { ...it, idx, x, y, w: colW, h }
     })
