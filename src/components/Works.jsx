@@ -113,7 +113,7 @@ export default function Works({ onOpen }) {
               onKeyDown={(e) => { if (e.key === 'Enter' && onOpen) onOpen(p.id) }}
             >
               <div className={`work-cover${p.coverImg ? ' has-img' : ''}`}>
-                <Cover variant={p.cover} accent={p.accent} img={p.coverImg} video={p.coverVideo} />
+                <Cover variant={p.cover} accent={p.accent} img={p.coverImg} />
               </div>
               <div className="work-info">
                 <div className="work-top">
