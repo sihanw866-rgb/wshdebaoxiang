@@ -3,7 +3,16 @@ import { FadeUp, CardIn } from '../anim'
 import BorderGlow from './BorderGlow'
 
 /* ---------- 项目封面：优先真实图片，否则用暗色抽象 SVG ---------- */
-export function Cover({ variant, accent, img }) {
+export function Cover({ variant, accent, img, video }) {
+  if (video) {
+    return (
+      <div className="cover-video">
+        {/* 背景层：同一视频放大虚化填满横幅画框；前景层完整显示，不裁不拉伸 */}
+        <video className="cover-video-bg" src={video} muted autoPlay loop playsInline preload="auto" />
+        <video className="cover-video-main" src={video} muted autoPlay loop playsInline preload="auto" />
+      </div>
+    )
+  }
   if (img) {
     return <img src={img} alt="" loading="lazy" />
   }
@@ -104,7 +113,7 @@ export default function Works({ onOpen }) {
               onKeyDown={(e) => { if (e.key === 'Enter' && onOpen) onOpen(p.id) }}
             >
               <div className={`work-cover${p.coverImg ? ' has-img' : ''}`}>
-                <Cover variant={p.cover} accent={p.accent} img={p.coverImg} />
+                <Cover variant={p.cover} accent={p.accent} img={p.coverImg} video={p.coverVideo} />
               </div>
               <div className="work-info">
                 <div className="work-top">

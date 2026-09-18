@@ -53,7 +53,7 @@ const zh = {
   ],
   projects: [
     {
-      id: 'xungu', index: '01', year: '2026.05 — 06', coverImg: '/xungu-cover.jpg',
+      id: 'xungu', index: '01', year: '2026.05 — 06', coverImg: '/xungu-cover.jpg', coverVideo: '/xungu-demo.mp4',
       shots: [{ kind: 'flow', img: '/xungu-flow.jpg', capIndex: 1 }, { kind: 'ui', capIndex: 2, masonry: true, wide: true, items: XUNGU_UI_SHOTS }],
       title: '寻古拾光 · 传统文化学习小游戏',
       subtitle: '儿童寓教于乐 App · 交互原型',
@@ -241,7 +241,7 @@ const en = {
   ],
   projects: [
     {
-      id: 'xungu', index: '01', year: '2026.05 — 06', coverImg: '/xungu-cover.jpg',
+      id: 'xungu', index: '01', year: '2026.05 — 06', coverImg: '/xungu-cover.jpg', coverVideo: '/xungu-demo.mp4',
       shots: [{ kind: 'flow', img: '/xungu-flow.jpg', capIndex: 1 }, { kind: 'ui', capIndex: 2, masonry: true, wide: true, items: XUNGU_UI_SHOTS }],
       title: 'Xungu Shiguang · Traditional-culture Learning Game',
       subtitle: "Kids' edutainment App · Interaction prototype",
