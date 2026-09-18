@@ -43,7 +43,7 @@ body {
   transition: background-color 0.5s var(--ease), color 0.5s var(--ease);
 }
 
-/* 浅色主题能力保留（当前关于页已改为暗色，如需浅色加回 body.theme-light 即可） */
+/* 浅色主题：关于我页面使用 —— 补充所有在浅底上需要重新配色的元素 */
 .theme-light {
   --bg: #f3f3f1;
   --surface: #eaeae7;
@@ -60,6 +60,36 @@ body {
   --glass-bg: rgba(255, 255, 255, 0.72);
   --glass-line: rgba(18, 20, 24, 0.08);
 }
+
+/* --- 浅色主题下的关于页专属修正 --- */
+
+/* 照片遮罩：浅色版改用中性渐变，避免奶油色浮在照片上 */
+.theme-light .about-figure::after {
+  background: linear-gradient(165deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.38) 88%);
+}
+
+/* 照片左下角文字卡：深色半透明 → 浅色实心，边框改为可见的浅灰描边 */
+.theme-light .about-figure .tag {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(18, 20, 24, 0.14);
+  color: rgba(20, 22, 26, 0.66);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+}
+.theme-light .about-figure .tag b { color: #14161a; }
+
+/* 工具卡图标底与进度条轨道：原为奶油半透明，浅底上几乎不可见 */
+.theme-light .tool-icon {
+  background: rgba(18, 20, 24, 0.05);
+  border-color: rgba(18, 20, 24, 0.16);
+}
+.theme-light .tool-bar { background: rgba(18, 20, 24, 0.12); }
+
+/* 关于页卡片在浅色下加一层柔和投影，避免和白底糊在一起 */
+.theme-light .about-card { border: 1px solid rgba(18, 20, 24, 0.08); }
+.theme-light .tool-card:hover { border-color: rgba(18, 20, 24, 0.3); }
+
+/* 浅色下噪点过重会显脏，压低一档 */
+.theme-light .bg-noise { opacity: 0.05 !important; }
 
 ::selection { background: var(--primary); color: #000; }
 a { color: inherit; text-decoration: none; }
@@ -151,12 +181,12 @@ img { display: block; max-width: 100%; }
 .nav-links { display: flex; align-items: center; gap: clamp(18px, 3.4vw, 52px); }
 .nav-links a {
   font-size: 13.5px;
-  color: rgba(225, 224, 204, 0.8);
+  color: var(--muted);
   letter-spacing: 0.02em;
   white-space: nowrap;
   transition: color 0.3s;
 }
-.nav-links a:hover { color: #e1e0cc; }
+.nav-links a:hover { color: var(--primary); }
 .nav-right { display: flex; align-items: center; gap: 14px; }
 .lang-toggle {
   display: inline-flex;

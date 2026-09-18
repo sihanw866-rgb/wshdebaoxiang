@@ -13,7 +13,8 @@ export default function App() {
 
   // 二级页统一走暗色（浅色主题变量仍保留在 index.css，需要时再启用）
   useEffect(() => {
-    document.body.classList.remove('theme-light')
+    // 「关于我」是浅色二级页，其余页面（首页 / 项目详情）保持暗色
+    document.body.classList.toggle('theme-light', view === 'about')
     if (view === 'about' || view === 'project') window.scrollTo(0, 0)
   }, [view, projectId])
 
