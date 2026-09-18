@@ -80,8 +80,8 @@ export default function Masonry({
   blurToFocus = true,
 }) {
   const columns = useMedia(
-    ['(min-width:1500px)', '(min-width:1000px)', '(min-width:640px)'],
-    [4, 3, 2],
+    ['(min-width:1500px)', '(min-width:1200px)', '(min-width:900px)', '(min-width:600px)'],
+    [6, 5, 4, 3],
     2
   )
   const [containerRef, { width }] = useMeasure()
@@ -95,11 +95,14 @@ export default function Masonry({
     return () => { alive = false }
   }, [srcs])
 
+  /* 每列错落的起始高度：即使图片等高，也呈上下交错的砖砌节奏 */
+  const COL_STAGGER = [0, 84, 32, 104, 56, 72]
+
   const grid = useMemo(() => {
     if (!width) return { placed: [], height: 0 }
-    const gap = 12
+    const gap = 10
     const colW = (width - gap * (columns - 1)) / columns
-    const colH = new Array(columns).fill(0)
+    const colH = Array.from({ length: columns }, (_, c) => COL_STAGGER[c % COL_STAGGER.length])
     const placed = items.map((it, idx) => {
       const c = colH.indexOf(Math.min(...colH))
       const x = c * (colW + gap)
