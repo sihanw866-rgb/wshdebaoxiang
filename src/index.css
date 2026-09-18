@@ -108,6 +108,13 @@ body {
 .theme-light .about-card { border: 1px solid rgba(18, 20, 24, 0.08); }
 .theme-light .tool-card:hover { border-color: rgba(18, 20, 24, 0.3); }
 
+/* 浅色主题下整体关闭 BorderGlow 的悬浮光层：
+   ::before 会用 #101010 沿边框描出黑色段，::after 的奶油渐变
+   soft-light 叠在浅灰卡面上会糊成大片灰黑——即「悬浮出现黑色特效」的来源 */
+.theme-light .border-glow-card::before,
+.theme-light .border-glow-card::after,
+.theme-light .border-glow-card > .edge-light { display: none; }
+
 /* 浅色下噪点过重会显脏，压低一档 */
 .theme-light .bg-noise { opacity: 0.05 !important; }
 
