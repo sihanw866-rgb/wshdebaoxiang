@@ -202,12 +202,12 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
                   <Masonry items={sh.items} onOpen={(it) => setZoom(it.img)} />
                 </FadeUp>
               ) : (
-                <FadeUp delay={i * 0.08} key={sh.kind} className={`shot-cell${i === 0 || sh.wide ? ' wide' : ''}`}>
+                <FadeUp delay={i * 0.08} key={sh.kind} className={`shot-cell${i === 0 || sh.wide ? ' wide' : ''}${sh.img ? ' has-img' : ''}`}>
                   <figure className="shot">
                     {sh.img ? (
                       <img
                         src={sh.img}
-                        alt={caps[sh.capIndex]}
+                        alt={sh.cap || caps[sh.capIndex]}
                         loading="lazy"
                         style={{ cursor: 'zoom-in' }}
                         onClick={() => setZoom(sh.img)}
@@ -215,7 +215,7 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
                     ) : (
                       <Shot kind={sh.kind} accent={p.accent} />
                     )}
-                    <figcaption>{caps[sh.capIndex]}</figcaption>
+                    <figcaption>{sh.cap || caps[sh.capIndex]}</figcaption>
                   </figure>
                 </FadeUp>
               )
