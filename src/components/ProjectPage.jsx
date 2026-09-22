@@ -121,7 +121,10 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
   return (
     <section className="page-project">
       <div className="container">
-        <button className="back-link" onClick={onBack}>{s.back}</button>
+        <button className="back-link back-pill" onClick={onBack}>
+          <span className="arrow">←</span>
+          <span>{s.back}</span>
+        </button>
 
         <FadeUp className="proj-head">
           <p className="mono" style={{ marginBottom: 16, color: 'var(--primary)' }}>

@@ -59,8 +59,8 @@ export default function App() {
         ) : (
           <>
             <Hero />
-            <Works onOpen={openProject} />
             <Strengths />
+            <Works onOpen={openProject} />
             <Contact />
           </>
         )}

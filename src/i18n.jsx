@@ -207,7 +207,7 @@ const zh = {
       toolsNote: '工具是手段，判断力才是核心——这里是我最顺手的那一批。',
     },
     projectPage: {
-      back: '← 返回首页',
+      back: '返回首页',
       projLabel: 'Selected Work',
       overview: 'Overview',
       metrics: 'Key metrics',
@@ -438,7 +438,7 @@ const en = {
       toolsNote: 'Tools are the means, judgment is the core — these are the ones I reach for first.',
     },
     projectPage: {
-      back: '← Back to home',
+      back: 'Back to home',
       projLabel: 'Selected Work',
       overview: 'Overview',
       metrics: 'Key metrics',
