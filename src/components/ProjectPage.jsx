@@ -195,13 +195,55 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
               { kind: 'wireframe', capIndex: 0 },
               { kind: 'flow', capIndex: 1 },
               { kind: 'ui', capIndex: 2 },
-            ]).map((sh, i) =>
-              sh.masonry ? (
-                <FadeUp key={sh.kind} className="masonry-block">
-                  <span className="masonry-cap">{caps[sh.capIndex]} · {sh.items.length}</span>
-                  <Masonry items={sh.items} onOpen={(it) => setZoom(it.img)} />
-                </FadeUp>
-              ) : (
+            ]).map((sh, i) => {
+              if (sh.masonry) {
+                return (
+                  <FadeUp key={sh.kind} className="masonry-block">
+                    <span className="masonry-cap">{caps[sh.capIndex]} · {sh.items.length}</span>
+                    <Masonry items={sh.items} onOpen={(it) => setZoom(it.img)} />
+                  </FadeUp>
+                )
+              }
+
+              // 图文结合：图收窄到一侧，另一侧补上分步说明
+              if (sh.split) {
+                return (
+                  <FadeUp key={sh.kind} className="shot-cell split">
+                    <div className="flow-split">
+                      <figure className="shot flow-figure">
+                        <img
+                          src={sh.img}
+                          alt={sh.cap || caps[sh.capIndex]}
+                          loading="lazy"
+                          style={{ cursor: 'zoom-in' }}
+                          onClick={() => setZoom(sh.img)}
+                        />
+                        <figcaption>{sh.cap || caps[sh.capIndex]}</figcaption>
+                      </figure>
+
+                      <div className="flow-side">
+                        {sh.title && <h3 className="flow-title">{sh.title}</h3>}
+                        {sh.lead && <p className="flow-lead">{sh.lead}</p>}
+                        {(sh.points || []).length > 0 && (
+                          <ul className="flow-steps">
+                            {sh.points.map((pt) => (
+                              <li key={pt.no}>
+                                <span className="no mono">{pt.no}</span>
+                                <div className="flow-step-main">
+                                  <h4>{pt.t}</h4>
+                                  <p>{pt.d}</p>
+                                </div>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    </div>
+                  </FadeUp>
+                )
+              }
+
+              return (
                 <FadeUp delay={i * 0.08} key={sh.kind} className={`shot-cell${i === 0 || sh.wide ? ' wide' : ''}${sh.img ? ' has-img' : ''}`}>
                   <figure className="shot">
                     {sh.img ? (
@@ -219,7 +261,7 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
                   </figure>
                 </FadeUp>
               )
-            )}
+            })}
           </div>
         </div>
 

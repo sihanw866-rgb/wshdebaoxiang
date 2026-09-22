@@ -650,6 +650,61 @@ img { display: block; max-width: 100%; }
   padding: 7px 14px;
 }
 
+/* ---------- 关键流程：图文结合（图收窄 + 分步说明） ---------- */
+.shot-cell.split { grid-column: 1 / -1; }
+.flow-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(320px, 1fr);
+  gap: clamp(20px, 2.4vw, 44px);
+  align-items: start;
+}
+.flow-figure { aspect-ratio: 2560 / 1345; }
+.flow-title {
+  font-size: clamp(17px, 1.5vw, 23px);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--primary);
+}
+.flow-lead { margin-top: 14px; font-size: 13.5px; line-height: 1.85; color: rgba(225, 224, 204, 0.58); }
+.flow-steps { margin-top: 28px; display: flex; flex-direction: column; }
+.flow-steps li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: 14px;
+  padding-bottom: 18px;
+}
+.flow-steps li::before {
+  content: '';
+  position: absolute;
+  left: 13px;
+  top: 32px;
+  bottom: 4px;
+  width: 1px;
+  background: var(--line);
+}
+.flow-steps li:last-child { padding-bottom: 0; }
+.flow-steps li:last-child::before { display: none; }
+.flow-steps .no {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  display: grid;
+  place-items: center;
+  font-size: 9.5px;
+  letter-spacing: 0;
+  color: var(--primary);
+}
+.flow-step-main h4 { font-size: 14.5px; font-weight: 700; color: var(--primary); letter-spacing: -0.005em; }
+.flow-step-main p { margin-top: 5px; font-size: 12.8px; line-height: 1.7; color: rgba(225, 224, 204, 0.5); }
+
+@media (max-width: 1100px) {
+  .flow-split { grid-template-columns: 1fr; gap: 26px; }
+}
+
 .proj-quote {
   margin-top: 96px;
   background: var(--surface);

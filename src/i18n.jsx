@@ -54,7 +54,21 @@ const zh = {
   projects: [
     {
       id: 'xungu', index: '01', year: '2026.05 — 06', coverImg: '/xungu-cover.jpg', coverVideo: '/xungu-demo.mp4',
-      shots: [{ kind: 'flow', img: '/xungu-flow.jpg', capIndex: 1 }, { kind: 'ui', capIndex: 2, masonry: true, wide: true, items: XUNGU_UI_SHOTS }],
+      shots: [
+        {
+          kind: 'flow', img: '/xungu-flow.jpg', capIndex: 1, split: true,
+          title: '主干链路 · 5 个状态节点',
+          lead: '把「选关 → 讲解 → 交互学习 → 闯关结算 → 奖励回流」这条主干单独抽出来复核：每一步都要有明确的进入条件、可预期的返回路径，以及孩子卡住时的兜底。',
+          points: [
+            { no: '01', t: '选关 · 地图节点', d: '在地图上选定关卡节点，未解锁的节点保持灰态并给出提示，点击进入前置故事。' },
+            { no: '02', t: '讲解 · 故事铺垫', d: '一段短动画交代本关的器物与背景，可跳过，也能随时翻回文物卡片。' },
+            { no: '03', t: '交互 · 三种玩法', d: '拼图、问答与纹样连线轮换出现，答错即时退回对应讲解点，再试一次。' },
+            { no: '04', t: '结算 · 星级判定', d: '依据碎片数量与尝试次数给出本关评级，达标即解锁下一个节点。' },
+            { no: '05', t: '回流 · 奖励与地图', d: '发放「时光碎片」与徽章，一键回到地图并高亮新解锁（或未达标）的节点。' },
+          ],
+        },
+        { kind: 'ui', capIndex: 2, masonry: true, wide: true, items: XUNGU_UI_SHOTS },
+      ],
       title: '寻古拾光 · 传统文化学习小游戏',
       subtitle: '儿童寓教于乐 App · 交互原型',
       tags: ['移动端 App', '交互设计', '原型动效'],
@@ -271,7 +285,21 @@ const en = {
   projects: [
     {
       id: 'xungu', index: '01', year: '2026.05 — 06', coverImg: '/xungu-cover.jpg', coverVideo: '/xungu-demo.mp4',
-      shots: [{ kind: 'flow', img: '/xungu-flow.jpg', capIndex: 1 }, { kind: 'ui', capIndex: 2, masonry: true, wide: true, items: XUNGU_UI_SHOTS }],
+      shots: [
+        {
+          kind: 'flow', img: '/xungu-flow.jpg', capIndex: 1, split: true,
+          title: 'The main spine · 5 states',
+          lead: 'I pulled the spine out on its own — pick a level → story → interactive learning → scoring → reward and back to the map — so every step has a clear entry condition, a predictable way back, and a fallback for the moment a kid gets stuck.',
+          points: [
+            { no: '01', t: 'Pick a level · Map node', d: 'Choose a node on the map; locked ones stay greyed with a hint. A tap opens the pre-level story.' },
+            { no: '02', t: 'Story · Setting the scene', d: 'A short animation introduces the artifact and its context — skippable, and the artifact card can be reopened anytime.' },
+            { no: '03', t: 'Play · Three interaction types', d: 'Jigsaw, quiz and pattern-matching rotate; a wrong answer jumps straight back to the matching explanation.' },
+            { no: '04', t: 'Scoring · Star rating', d: 'The rating comes from fragments collected and attempts made; hitting the bar unlocks the next node.' },
+            { no: '05', t: 'Reward · Back to the map', d: '"Time fragments" and badges are granted, then one tap returns to the map with the new — or missed — node highlighted.' },
+          ],
+        },
+        { kind: 'ui', capIndex: 2, masonry: true, wide: true, items: XUNGU_UI_SHOTS },
+      ],
       title: 'Xungu Shiguang · Traditional-culture Learning Game',
       subtitle: "Kids' edutainment App · Interaction prototype",
       tags: ['Mobile App', 'Interaction design', 'Prototype & motion'],
