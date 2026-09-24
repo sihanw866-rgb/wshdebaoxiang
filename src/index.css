@@ -1238,6 +1238,49 @@ img { display: block; max-width: 100%; }
   text-align: center;
 }
 
+/* 定案双图：整机 + 爆炸图并排，统一限高，窄长的爆炸图按高对齐 */
+.pair-stage {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;
+  height: clamp(380px, 34vw, 520px);
+}
+.pair-cell {
+  flex: 1;
+  min-width: 0;
+  display: block;
+  padding: 18px 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--panel);
+  cursor: zoom-in;
+  transition: border-color 0.25s ease;
+}
+.pair-cell:hover { border-color: var(--accent-dim, rgba(205, 244, 99, 0.45)); }
+.pair-cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+.pair-cell.main { flex: 1.35; }
+.pair-cap {
+  display: block;
+  margin-top: 12px;
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dim);
+  text-align: center;
+}
+
+@media (max-width: 1100px) {
+  .pair-stage { height: auto; }
+  .pair-cell { padding: 12px 10px; }
+  .pair-cell img { height: auto; max-height: 340px; }
+}
+
 /* 偶数章媒体翻到右侧，形成左右交替的节奏 */
 .chapter-split.flip .chapter-media { order: 2; }
 .chapter-split.flip .chapter-split-body { order: 1; }

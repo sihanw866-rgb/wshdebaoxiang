@@ -311,7 +311,19 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
               {m && m.side ? (
                 <FadeUp delay={0.06} className={`chapter-split${flip ? ' flip' : ''}`}>
                   <div className={`chapter-media side ${m.type}`}>
-                    {m.type === 'masonry' ? (
+                    {m.type === 'pair' ? (
+                      <>
+                        <div className="pair-stage">
+                          <button type="button" className="pair-cell main" onClick={() => openZoom(m.items.map((x) => x.img), 0)}>
+                            <img src={m.items[0].img} alt={m.items[0].alt || ''} loading="lazy" />
+                          </button>
+                          <button type="button" className="pair-cell" onClick={() => openZoom(m.items.map((x) => x.img), 1)}>
+                            <img src={m.items[1].img} alt={m.items[1].alt || ''} loading="lazy" />
+                          </button>
+                        </div>
+                        {m.cap && <span className="pair-cap mono">{m.cap}</span>}
+                      </>
+                    ) : m.type === 'masonry' ? (
                       <Masonry items={m.items} natural={m.natural} onOpen={(it) => openZoom(m.items.map((x) => x.img), Math.max(0, m.items.findIndex((x) => x.id === it.id)))} />
                     ) : m.type === 'carousel' ? (
                       <div className="carousel-stage" style={{ '--dc-h': `${m.h || 620}px` }}>

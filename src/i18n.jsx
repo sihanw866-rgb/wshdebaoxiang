@@ -89,11 +89,10 @@ const AROMA_ME = [
   AR('me-1', '/aroma/ui-me.jpg'), AR('me-2', '/aroma/ui-fav-recipe.jpg'),
   AR('me-3', '/aroma/ui-settings.jpg'), AR('me-4', '/aroma/ui-feedback.jpg'),
 ]
-/* 产品与场景图（展板素材原图，非展板截图） */
+/* 产品与场景图（展板素材原图，非展板截图）；两张正面色调重复，只保留与整体氛围一致的暖调版 */
 const AROMA_PRODUCT = [
-  { id: 'pd-1', img: '/aroma/prod-front.jpg', width: 718, height: 1100 },
-  { id: 'pd-2', img: '/aroma/prod-exploded.jpg', width: 415, height: 1400 },
-  { id: 'pd-3', img: '/aroma/prod-front2.jpg', width: 718, height: 1100 },
+  { id: 'pd-1', img: '/aroma/prod-front.jpg', width: 718, height: 1100, alt: '「流光」整机定案' },
+  { id: 'pd-2', img: '/aroma/prod-exploded.jpg', width: 415, height: 1400, alt: '结构爆炸图' },
 ]
 const AROMA_SCENES = [
   { id: 'sn-1', img: '/aroma/scene-living.jpg', width: 1600, height: 759 },
@@ -541,7 +540,7 @@ const zh = {
               '极简几何科技感突出但情感温度不足，与"温暖陪伴"的核心诉求契合度偏弱；治愈系情感价值高，但不规则形态与特殊材质带来较高工艺复杂度与量产成本。鹅卵石在美学呈现与工程难度之间找到最佳平衡，用户接受门槛最低。',
               '最终方案命名为「流光」——光与水相遇，艺术与生活相遇。',
             ],
-            media: { type: 'masonry', natural: true, side: true, items: AROMA_PRODUCT, cap: '最终形态 · 整机与结构爆炸' },
+            media: { type: 'pair', side: true, items: AROMA_PRODUCT, cap: '最终形态 · 「流光」整机与结构爆炸' },
             items: [
               { no: '01', t: '一体化结构', d: '上下分体式机身，顶部隐藏式加水口无需拆卸水箱即可注水；磁吸式顶盖一吸即合，取放便捷、便于内部清洁。' },
               { no: '02', t: '材质与配色', d: '高品质哑光磨砂塑料，触感温润不易留痕；皓月白、深空灰、樱花粉三种柔和配色融入不同家居风格。' },
@@ -1194,7 +1193,7 @@ const en = {
               'Minimal Geometry reads strongly technical but lacks warmth, sitting awkwardly with the core promise of companionship; Healing carries high emotional value but its organic shape and special materials are complex and costly to produce. Pebble strikes the best balance between aesthetics and engineering, with the lowest barrier to acceptance.',
               'The final design is named Liuguang — where light meets water, and art meets life.',
             ],
-            media: { type: 'masonry', natural: true, side: true, items: AROMA_PRODUCT, cap: 'Final form · the body and its exploded structure' },
+            media: { type: 'pair', side: true, items: AROMA_PRODUCT, cap: 'Final form · Liuguang body & exploded structure' },
             items: [
               { no: '01', t: 'Integrated structure', d: 'A split upper-lower body with a hidden top water inlet — refill without removing the tank; a magnetic lid that seals with one touch and lifts off for cleaning.' },
               { no: '02', t: 'Materials & colours', d: 'Matte frosted plastic that feels warm and resists marks, in three soft colours — moon white, deep-space grey and cherry-blossom pink.' },
