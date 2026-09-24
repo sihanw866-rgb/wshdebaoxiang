@@ -310,7 +310,7 @@ const zh = {
   ],
   toolset: ['Figma', 'Figma Make', 'Rhino', 'Keyshot', 'Photoshop', 'Illustrator', 'GPT', '即梦 AI', '可灵 AI', '剪映', 'Canva', 'Excel / PPT'],
   ui: {
-    nav: { about: '关于我', works: '精选项目', strengths: '个人优势', contact: '联系', cta: '联系我 ↗', themeLight: '切换到浅色模式', themeDark: '切换到深色模式' },
+    nav: { about: '关于我', works: '精选项目', strengths: '个人优势', contact: '联系', cta: '联系我 ↗', themeLight: '切换到浅色模式', themeDark: '切换到深色模式', menu: '打开导航' },
     hero: { basedIn: 'Based in', status: 'Status', statusValue: '开放实习 / 校招机会', viewWork: '查看精选项目', scroll: 'SCROLL', scrubHint: '移动鼠标擦洗画面' },
     about: {
       no: '01 — About', title: '关于我',

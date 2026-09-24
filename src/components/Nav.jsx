@@ -99,6 +99,17 @@ export default function Nav({ onNav, onHome, theme, onToggleTheme }) {
           </div>
         </div>
       </header>
+
+      {/* 导航收起时的迷你指示按钮：两道横杠，点击唤回导航 */}
+      <button
+        className={`nav-collapsed ${hidden ? 'show' : ''}`}
+        aria-label={t.ui.nav.menu}
+        title={t.ui.nav.menu}
+        onClick={() => setHidden(false)}
+      >
+        <span />
+        <span />
+      </button>
     </>
   )
 }

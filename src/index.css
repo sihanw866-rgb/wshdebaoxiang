@@ -244,6 +244,48 @@ img { display: block; max-width: 100%; }
   box-shadow: var(--nav-shadow);
 }
 .nav.is-hidden { transform: translateY(-100%); opacity: 0; }
+
+/* 导航收起后：顶部居中的迷你指示按钮（两道横杠），点击唤回导航 */
+.nav-collapsed {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  z-index: 99;
+  width: 56px;
+  height: 36px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-10px);
+  transition: opacity 0.35s var(--ease) 0.15s, transform 0.45s var(--ease),
+    border-color 0.3s, background-color 0.3s;
+}
+.nav-collapsed.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.nav-collapsed span {
+  width: 18px;
+  height: 1.5px;
+  border-radius: 2px;
+  background: var(--primary);
+  transition: width 0.3s var(--ease);
+}
+.nav-collapsed span:last-child { width: 12px; }
+.nav-collapsed:hover { border-color: var(--line-strong); }
+.nav-collapsed:hover span { width: 22px; }
+.nav-collapsed:hover span:last-child { width: 14px; }
 .nav-bar {
   pointer-events: auto;
   width: 100%;
@@ -442,9 +484,22 @@ img { display: block; max-width: 100%; }
   color: #e1e0cc;
 }
 .hero-desc { color: var(--ink-1); font-size: clamp(12px, 1vw, 16px); line-height: 1.35; max-width: 420px; }
-.hero-meta { display: flex; gap: 28px; flex-wrap: wrap; }
-.hero-meta .item { display: flex; flex-direction: column; gap: 2px; }
+.hero-meta { display: flex; gap: 32px; flex-wrap: wrap; }
+.hero-meta .item { display: flex; flex-direction: column; gap: 3px; }
 .hero-meta .item b { font-size: 13px; font-weight: 400; color: var(--text); }
+/* 首页：叠在视频上的毛玻璃字条，留足内边距避免文字贴边 */
+.hero .hero-meta {
+  background: rgba(0, 0, 0, 0.32);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px 22px;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+.theme-light .hero .hero-meta {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: var(--glass-line);
+}
 
 .btn-pill {
   display: inline-flex;
@@ -959,7 +1014,8 @@ img { display: block; max-width: 100%; }
 
 .hero-media-frame .noise-overlay { opacity: 0.3; }
 
-.hero-meta {
+/* 项目详情页抬头信息格（圈定在二级页，避免覆盖首页 hero-meta） */
+.page-project .hero-meta {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1px;
@@ -971,8 +1027,8 @@ img { display: block; max-width: 100%; }
   max-width: 62ch;
 }
 
-.hero-meta .cell { background: var(--surface); padding: 16px 18px; }
-.hero-meta .cell .v { margin-top: 7px; font-size: 13.5px; line-height: 1.6; color: var(--primary); }
+.page-project .hero-meta .cell { background: var(--surface); padding: 16px 18px; }
+.page-project .hero-meta .cell .v { margin-top: 7px; font-size: 13.5px; line-height: 1.6; color: var(--primary); }
 
 .hero-media-cap {
   display: block;
