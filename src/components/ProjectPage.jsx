@@ -151,7 +151,19 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
               ) : (
                 <img className="top-bg-wash" src={p.coverImg} alt="" />
               )}
-              {p.splashCut && <img className="top-bg-subject" src={p.splashCut} alt="" />}
+              {p.splashCuts?.length > 0 && (
+                <div className="top-bg-subject" aria-hidden="true">
+                  {p.splashCuts.map((src, i) => (
+                    <img
+                      key={src}
+                      className="subject-cut"
+                      src={src}
+                      alt=""
+                      style={{ '--cut-i': i, '--cut-n': p.splashCuts.length }}
+                    />
+                  ))}
+                </div>
+              )}
               <span className="splash-ripple r1" />
               <span className="splash-ripple r2" />
               <span className="splash-ripple r3" />
