@@ -1062,6 +1062,16 @@ img { display: block; max-width: 100%; }
   background: var(--panel);
 }
 
+/* 竖版影片：按高度约束居中展示，不做裁切 */
+.hero-video-block.tall video {
+  width: auto;
+  height: clamp(420px, 58vh, 640px);
+  max-width: 100%;
+  margin: 0 auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
 .proj-chapter { margin-top: clamp(72px, 8vw, 120px); }
 
 .chapter-head {
@@ -1152,6 +1162,15 @@ img { display: block; max-width: 100%; }
 .chapter-figure { margin: 0; }
 .chapter-figure img { width: 100%; display: block; border-radius: 16px; border: 1px solid var(--line); }
 .chapter-figure video { width: 100%; display: block; border-radius: 16px; border: 1px solid var(--line); background: var(--panel); }
+
+/* 竖版演示影片（含解说）：按高度约束居中，保留播放控件 */
+.chapter-figure.tall { display: flex; flex-direction: column; align-items: center; }
+.chapter-figure.tall video {
+  width: auto;
+  max-width: 100%;
+  height: clamp(480px, 74vh, 880px);
+  object-fit: contain;
+}
 
 .chapter-figure figcaption {
   margin-top: 10px;

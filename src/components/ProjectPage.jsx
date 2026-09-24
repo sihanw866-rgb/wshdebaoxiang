@@ -190,7 +190,7 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
         {/* 抬头下方的大画幅影片块（参考 ck-design 的独立视频段落） */}
         {p.videoBlock && (
           <FadeUp className="hero-video-wrap">
-            <div className="hero-video-block">
+            <div className={`hero-video-block${p.videoTall ? ' tall' : ''}`}>
               <video src={p.videoBlock} autoPlay loop muted playsInline />
               <span className="hero-media-cap mono">{p.videoCap}</span>
             </div>
@@ -291,8 +291,8 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
                         {m.cap && <figcaption>{m.cap}</figcaption>}
                       </figure>
                     ) : (
-                      <figure className="chapter-figure">
-                        <video src={m.src} autoPlay loop muted playsInline />
+                      <figure className={`chapter-figure${m.tall ? ' tall' : ''}`}>
+                        <video src={m.src} autoPlay loop muted playsInline {...(m.controls ? { controls: true } : {})} />
                         {m.cap && <figcaption>{m.cap}</figcaption>}
                       </figure>
                     )}
@@ -322,8 +322,8 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
                   )}
                   {m && m.type === 'video' && (
                     <FadeUp className="chapter-media-wrap">
-                      <figure className="chapter-figure">
-                        <video src={m.src} autoPlay loop muted playsInline />
+                      <figure className={`chapter-figure${m.tall ? ' tall' : ''}`}>
+                        <video src={m.src} autoPlay loop muted playsInline {...(m.controls ? { controls: true } : {})} />
                         {m.cap && <figcaption>{m.cap}</figcaption>}
                       </figure>
                     </FadeUp>
