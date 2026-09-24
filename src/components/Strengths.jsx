@@ -17,7 +17,8 @@ const ArrowRight = () => (
 const FEATURE_VIDEO =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_133058_0504132a-0cf3-4450-a370-8ea3b05c95d4.mp4'
 
-export default function Strengths() {
+export default function Strengths({ theme = 'dark' }) {
+  const light = theme === 'light'
   const { t } = useLang()
   const { toolset, ui } = t
   const cards = ui.cards || []
@@ -43,7 +44,7 @@ export default function Strengths() {
 
           {cards.map((c, i) => (
             <CardIn index={i + 1} key={c.num}>
-              <BorderGlow className="feature-card" backgroundColor="#212121" borderRadius={20} glowRadius={26}>
+              <BorderGlow className="feature-card" backgroundColor={light ? '#f7f7f5' : '#212121'} borderRadius={20} glowRadius={26}>
                 <span className="feature-icon">
                   <ToolIcon kind={c.icon} />
                 </span>

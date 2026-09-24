@@ -310,7 +310,7 @@ const zh = {
   ],
   toolset: ['Figma', 'Figma Make', 'Rhino', 'Keyshot', 'Photoshop', 'Illustrator', 'GPT', '即梦 AI', '可灵 AI', '剪映', 'Canva', 'Excel / PPT'],
   ui: {
-    nav: { about: '关于我', works: '精选项目', strengths: '个人优势', contact: '联系', cta: '联系我 ↗' },
+    nav: { about: '关于我', works: '精选项目', strengths: '个人优势', contact: '联系', cta: '联系我 ↗', themeLight: '切换到浅色模式', themeDark: '切换到深色模式' },
     hero: { basedIn: 'Based in', status: 'Status', statusValue: '开放实习 / 校招机会', viewWork: '查看精选项目', scroll: 'SCROLL', scrubHint: '移动鼠标擦洗画面' },
     about: {
       no: '01 — About', title: '关于我',
@@ -664,7 +664,7 @@ const en = {
   ],
   toolset: ['Figma', 'Figma Make', 'Rhino', 'Keyshot', 'Photoshop', 'Illustrator', 'GPT', 'Jimeng AI', 'Kling AI', 'CapCut', 'Canva', 'Excel / PPT'],
   ui: {
-    nav: { about: 'About', works: 'Work', strengths: 'Strengths', contact: 'Contact', cta: 'Get in touch ↗' },
+    nav: { about: 'About', works: 'Work', strengths: 'Strengths', contact: 'Contact', cta: 'Get in touch ↗', themeLight: 'Switch to light mode', themeDark: 'Switch to dark mode' },
     hero: { basedIn: 'Based in', status: 'Status', statusValue: 'Open to internships & new-grad roles', viewWork: 'View selected work', scroll: 'SCROLL', scrubHint: 'Move mouse to scrub the film' },
     about: {
       no: '01 — About', title: 'About me',

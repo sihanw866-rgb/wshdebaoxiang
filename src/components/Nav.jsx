@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { useLang } from '../i18n'
+import ThemeToggle from './ThemeToggle'
 
-export default function Nav({ onNav, onHome }) {
+export default function Nav({ onNav, onHome, theme, onToggleTheme }) {
   const [scrolled, setScrolled] = useState(false)
   const [hidden, setHidden] = useState(false)
   const lastY = useRef(0)
@@ -41,6 +42,15 @@ export default function Nav({ onNav, onHome }) {
     if (onNav) onNav(id)
   }
 
+  const links = [
+    { id: 'about', label: t.ui.nav.about },
+    { id: 'strengths', label: t.ui.nav.strengths },
+    { id: 'works', label: t.ui.nav.works },
+  ]
+
+  const themeLabel =
+    theme === 'light' ? t.ui.nav.themeDark || 'Switch to dark' : t.ui.nav.themeLight || 'Switch to light'
+
   return (
     <>
       <header className={`nav ${scrolled ? 'scrolled' : ''} ${hidden ? 'is-hidden' : ''}`}>
@@ -54,11 +64,18 @@ export default function Nav({ onNav, onHome }) {
             WSH<span className="dim">.portfolio</span>
           </a>
 
+          {/* 顺序与首页模块一致：关于我 → 个人优势 → 精选项目 */}
           <nav className="nav-links">
-            {/* 顺序与首页模块一致：关于我（独立页）→ 个人优势 → 精选项目 → 顶部按钮「联系我」 */}
-            <a href="#about" onClick={(e) => jump(e, 'about')}>{t.ui.nav.about}</a>
-            <a href="#strengths" onClick={(e) => jump(e, 'strengths')}>{t.ui.nav.strengths}</a>
-            <a href="#works" onClick={(e) => jump(e, 'works')}>{t.ui.nav.works}</a>
+            {links.map((l) => (
+              <a
+                key={l.id}
+                href={`#${l.id}`}
+                data-label={l.label}
+                onClick={(e) => jump(e, l.id)}
+              >
+                <span>{l.label}</span>
+              </a>
+            ))}
           </nav>
 
           <div className="nav-right">
@@ -72,15 +89,16 @@ export default function Nav({ onNav, onHome }) {
               <i>/</i>
               <span className={lang === 'en' ? 'on' : ''}>EN</span>
             </button>
+
+            <ThemeToggle theme={theme} onToggle={onToggleTheme} label={themeLabel} />
+
+            <button className="nav-cta" onClick={(e) => jump(e, 'contact')}>
+              {t.ui.nav.cta}
+              <span className="circle">→</span>
+            </button>
           </div>
         </div>
       </header>
-
-      {/* 联系我：独立于导航，固定在页面右上角 */}
-          <button className="cta-fixed" onClick={(e) => jump(e, 'contact')}>
-            {t.ui.nav.cta}
-            <span className="circle">→</span>
-          </button>
     </>
   )
 }

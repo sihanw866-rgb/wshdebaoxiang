@@ -5,7 +5,8 @@ import ToolIcon from './ToolIcon'
 import BorderGlow from './BorderGlow'
 import VariableProximity from './VariableProximity'
 
-export default function AboutPage({ onBack, onToWork }) {
+export default function AboutPage({ onBack, onToWork, theme = 'dark' }) {
+  const light = theme === 'light'
   const { lang, t } = useLang()
   const { profile, stats, tools, ui } = t
   const p = ui.aboutPage
@@ -16,7 +17,7 @@ export default function AboutPage({ onBack, onToWork }) {
       <div className="container">
         <button className="back-link" onClick={onBack}>{p.back}</button>
 
-        <BorderGlow className="about-card" backgroundColor="#101010" borderRadius={32} glowRadius={36}>
+        <BorderGlow className="about-card" backgroundColor={light ? '#ffffff' : '#101010'} borderRadius={32} glowRadius={36}>
           <p className="mono label">{p.no}</p>
           <h2 className="about-heading" ref={headingRef} style={{ position: 'relative' }}>
             {profile.aboutSegments.map((seg, i) => (
@@ -84,7 +85,7 @@ export default function AboutPage({ onBack, onToWork }) {
           <div className="tool-grid">
             {(tools || []).map((tool, i) => (
               <CardIn index={i % 4} key={`${tool.name}-${i}`}>
-                <BorderGlow className="tool-card" backgroundColor="#101010" borderRadius={18} glowRadius={22}>
+                <BorderGlow className="tool-card" backgroundColor={light ? '#ffffff' : '#101010'} borderRadius={18} glowRadius={22}>
                   <span className="tool-icon">
                     <ToolIcon kind={tool.key} />
                   </span>

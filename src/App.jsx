@@ -10,16 +10,26 @@ import Contact from './components/Contact'
 export default function App() {
   const [view, setView] = useState('home')
   const [projectId, setProjectId] = useState(null)
+  /* 昼夜主题：默认暗色，选择记在本地，刷新后保持 */
+  const [theme, setTheme] = useState(() => {
+    try { return localStorage.getItem('wsh-theme') || 'dark' } catch { return 'dark' }
+  })
 
   // 记住「从首页进入二级页」那一刻的滚动位置，返回时原样恢复
   const homeScroll = useRef(0)
   const shouldRestore = useRef(false)
   const prevView = useRef('home')
 
-  // 二级页统一走暗色（浅色主题变量仍保留在 index.css，需要时再启用）
+  // 全站昼夜：body.theme-light 切换整套变量（首页 / 关于我 / 项目详情统一跟随）
   useEffect(() => {
-    // 「关于我」是浅色二级页，其余页面（首页 / 项目详情）保持暗色
-    document.body.classList.toggle('theme-light', view === 'about')
+    document.body.classList.toggle('theme-light', theme === 'light')
+    document.documentElement.dataset.theme = theme
+    try { localStorage.setItem('wsh-theme', theme) } catch {}
+  }, [theme])
+
+  const toggleTheme = () => setTheme((v) => (v === 'light' ? 'dark' : 'light'))
+
+  useEffect(() => {
 
     const from = prevView.current
     if (from === 'home' && view !== 'home') homeScroll.current = window.scrollY
@@ -76,10 +86,10 @@ export default function App() {
 
   return (
     <>
-      <Nav onNav={goTo} onHome={goHomeTop} />
+      <Nav onNav={goTo} onHome={goHomeTop} theme={theme} onToggleTheme={toggleTheme} />
       <main>
         {view === 'about' ? (
-          <AboutPage onBack={backHome} onToWork={() => goTo('works')} />
+          <AboutPage onBack={backHome} onToWork={() => goTo('works')} theme={theme} />
         ) : view === 'project' ? (
           <ProjectPage
             projectId={projectId}
@@ -90,7 +100,7 @@ export default function App() {
         ) : (
           <>
             <Hero />
-            <Strengths />
+            <Strengths theme={theme} />
             <Works onOpen={openProject} />
             <Contact />
           </>
