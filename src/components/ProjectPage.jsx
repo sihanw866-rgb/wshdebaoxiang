@@ -142,73 +142,101 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
           <span>{s.back}</span>
         </button>
 
-        <FadeUp className="proj-head">
-          <p className="mono" style={{ marginBottom: 16, color: 'var(--primary)' }}>
-            {p.index} — {s.projLabel}
-          </p>
-          <h1 className="proj-title">
-            <CharsPullUp text={p.title} />
-          </h1>
-          <p className="proj-subtitle">{p.subtitle}</p>
-          <ul className="proj-tags">
-            {p.tags.map((tag) => <li key={tag}>{tag}</li>)}
-          </ul>
-        </FadeUp>
-
-        {d.claim ? (
-          <div className={`proj-hero${p.heroSplash ? ' splash' : p.heroWide ? ' wide' : ''}`}>
-            <FadeUp className="proj-hero-text">
-              <p className="hero-claim">{d.claim}</p>
-              {d.claimLead && <p className="hero-claim-lead">{d.claimLead}</p>}
-              <div className="hero-meta">
-                {meta.map((m) => (
-                  <div className="cell" key={m.k}>
-                    <div className="mono">{m.k}</div>
-                    <div className="v">{m.v}</div>
+        {p.heroSplash && (p.coverImg || p.coverVideo) ? (
+          /* 主视觉版抬头：第一屏大画幅 —— 主图沉在暗底之后，产品主体脱背浮动 */
+          <div className="proj-top">
+            <div className="proj-top-bg" aria-hidden="true">
+              {p.coverVideo ? (
+                <video className="top-bg-wash" src={p.coverVideo} autoPlay loop muted playsInline />
+              ) : (
+                <img className="top-bg-wash" src={p.coverImg} alt="" />
+              )}
+              {p.splashCut && <img className="top-bg-subject" src={p.splashCut} alt="" />}
+              <span className="splash-ripple r1" />
+              <span className="splash-ripple r2" />
+              <span className="splash-ripple r3" />
+              <span className="top-bg-veil" />
+            </div>
+            <div className="proj-top-body">
+              <FadeUp className="proj-head">
+                <p className="mono" style={{ marginBottom: 16, color: 'var(--primary)' }}>
+                  {p.index} — {s.projLabel}
+                </p>
+                <h1 className="proj-title">
+                  <CharsPullUp text={p.title} />
+                </h1>
+                <p className="proj-subtitle">{p.subtitle}</p>
+                <ul className="proj-tags">
+                  {p.tags.map((tag) => <li key={tag}>{tag}</li>)}
+                </ul>
+              </FadeUp>
+              {d.claim && (
+                <FadeUp delay={0.06} className="proj-hero splash">
+                  <div className="proj-hero-text">
+                    <p className="hero-claim">{d.claim}</p>
+                    {d.claimLead && <p className="hero-claim-lead">{d.claimLead}</p>}
+                    <div className="hero-meta">
+                      {meta.map((m) => (
+                        <div className="cell" key={m.k}>
+                          <div className="mono">{m.k}</div>
+                          <div className="v">{m.v}</div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                ))}
-              </div>
+                </FadeUp>
+              )}
+              {p.coverCap && <span className="hero-media-cap mono">{p.coverCap}</span>}
+            </div>
+          </div>
+        ) : (
+          <>
+            <FadeUp className="proj-head">
+              <p className="mono" style={{ marginBottom: 16, color: 'var(--primary)' }}>
+                {p.index} — {s.projLabel}
+              </p>
+              <h1 className="proj-title">
+                <CharsPullUp text={p.title} />
+              </h1>
+              <p className="proj-subtitle">{p.subtitle}</p>
+              <ul className="proj-tags">
+                {p.tags.map((tag) => <li key={tag}>{tag}</li>)}
+              </ul>
             </FadeUp>
-            {!p.heroSplash && (
-              <FadeUp delay={0.08} className={`proj-hero-media${p.heroWide ? ' wide' : ''}`}>
-                <div className={`hero-media-frame${p.heroWide ? ' wide' : ''}`}>
+
+            {d.claim ? (
+              <div className={`proj-hero${p.heroWide ? ' wide' : ''}`}>
+                <FadeUp className="proj-hero-text">
+                  <p className="hero-claim">{d.claim}</p>
+                  {d.claimLead && <p className="hero-claim-lead">{d.claimLead}</p>}
+                  <div className="hero-meta">
+                    {meta.map((m) => (
+                      <div className="cell" key={m.k}>
+                        <div className="mono">{m.k}</div>
+                        <div className="v">{m.v}</div>
+                      </div>
+                    ))}
+                  </div>
+                </FadeUp>
+                <FadeUp delay={0.08} className={`proj-hero-media${p.heroWide ? ' wide' : ''}`}>
+                  <div className={`hero-media-frame${p.heroWide ? ' wide' : ''}`}>
+                    <Cover variant={p.cover} accent={p.accent} img={p.coverImg} video={p.coverVideo} />
+                    <div className="noise-overlay" />
+                  </div>
+                  <span className="hero-media-cap mono">
+                    {p.coverCap || (p.coverVideo ? (s.demoVideo || 'Prototype demo') : (s.coverLabel || 'Cover'))}
+                  </span>
+                </FadeUp>
+              </div>
+            ) : (
+              <FadeUp delay={0.1}>
+                <div className="proj-cover">
                   <Cover variant={p.cover} accent={p.accent} img={p.coverImg} video={p.coverVideo} />
                   <div className="noise-overlay" />
                 </div>
-                <span className="hero-media-cap mono">
-                  {p.coverCap || (p.coverVideo ? (s.demoVideo || 'Prototype demo') : (s.coverLabel || 'Cover'))}
-                </span>
               </FadeUp>
             )}
-          </div>
-        ) : (
-          <FadeUp delay={0.1}>
-            <div className="proj-cover">
-              <Cover variant={p.cover} accent={p.accent} img={p.coverImg} video={p.coverVideo} />
-              <div className="noise-overlay" />
-            </div>
-          </FadeUp>
-        )}
-
-        {/* 大画幅主视觉：主图沉在暗色背景之下，若隐若现并带缓慢漂移 + 水波涟漪 */}
-        {p.heroSplash && (p.coverImg || p.coverVideo) && (
-          <FadeUp delay={0.1} className="hero-splash">
-            <div className="hero-splash-stage">
-              {p.coverVideo ? (
-                <video className="hero-splash-media" src={p.coverVideo} autoPlay loop muted playsInline />
-              ) : (
-                <img className="hero-splash-media" src={p.coverImg} alt={p.coverCap || ''} />
-              )}
-              <span className="splash-ripple r1" aria-hidden="true" />
-              <span className="splash-ripple r2" aria-hidden="true" />
-              <span className="splash-ripple r3" aria-hidden="true" />
-              <span className="splash-glow" aria-hidden="true" />
-              <span className="splash-veil" aria-hidden="true" />
-            </div>
-            <span className="hero-media-cap mono">
-              {p.coverCap || (s.coverLabel || 'Cover')}
-            </span>
-          </FadeUp>
+          </>
         )}
 
         {/* 抬头下方的大画幅影片块：竖版影片与文字并排（图文结合），横版影片居中 */}
