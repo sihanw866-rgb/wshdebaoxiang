@@ -6,7 +6,6 @@ import ProjectPage from './components/ProjectPage'
 import Works from './components/Works'
 import Strengths from './components/Strengths'
 import Contact from './components/Contact'
-import CursorGlow from './components/CursorGlow'
 
 export default function App() {
   const [view, setView] = useState('home')
@@ -90,7 +89,6 @@ export default function App() {
           />
         ) : (
           <>
-            <CursorGlow />
             <Hero />
             <Strengths />
             <Works onOpen={openProject} />
