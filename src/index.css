@@ -1072,6 +1072,46 @@ img { display: block; max-width: 100%; }
   object-fit: contain;
 }
 
+/* 竖版影片图文结合：影片在一侧，文案与要点在另一侧 */
+.hero-video-wrap.side {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(28px, 4vw, 64px);
+  align-items: center;
+  max-width: 1020px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-video-wrap.side .hero-video-block { margin: 0; max-width: none; }
+
+.hero-video-side .side-label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.hero-video-side h3 {
+  margin-top: 14px;
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.hero-video-side .side-desc {
+  margin-top: 14px;
+  font-size: 13.8px;
+  line-height: 1.9;
+  color: var(--ink-2);
+  max-width: 46ch;
+}
+
+.hero-video-side .flow-steps { margin-top: 20px; }
+
+.hero-video-side .hero-media-cap { display: block; margin-top: 18px; }
+
 .proj-chapter { margin-top: clamp(72px, 8vw, 120px); }
 
 .chapter-head {
@@ -1184,6 +1224,24 @@ img { display: block; max-width: 100%; }
 .chapter-media-wrap { margin-top: 34px; }
 .chapter-media.video .chapter-figure video { max-width: 380px; }
 
+/* 深度轮播（App 界面展示）：固定舞台高度，图注在下方居中 */
+.carousel-stage { position: relative; }
+.carousel-stage .depth-carousel { height: var(--dc-h, 620px); }
+
+.carousel-cap {
+  display: block;
+  margin-top: 12px;
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dim);
+  text-align: center;
+}
+
+/* 偶数章媒体翻到右侧，形成左右交替的节奏 */
+.chapter-split.flip .chapter-media { order: 2; }
+.chapter-split.flip .chapter-split-body { order: 1; }
+
 @media (max-width: 1100px) {
   .proj-hero { grid-template-columns: 1fr; }
   .proj-hero.wide { grid-template-columns: 1fr; }
@@ -1191,6 +1249,10 @@ img { display: block; max-width: 100%; }
   .proj-hero-media { order: 2; justify-self: start; max-width: 300px; }
   .proj-hero-media.wide { order: 2; justify-self: stretch; max-width: 560px; }
   .chapter-split { grid-template-columns: 1fr; gap: 26px; }
+  .chapter-split.flip .chapter-media { order: 0; }
+  .carousel-stage .depth-carousel { height: calc(var(--dc-h, 620px) - 90px); }
+  .hero-video-wrap.side { grid-template-columns: 1fr; justify-items: center; }
+  .hero-video-wrap.side .hero-video-side { justify-self: start; }
   .chapter-items.cols-4 { grid-template-columns: repeat(2, 1fr); }
   .hero-meta { grid-template-columns: repeat(2, 1fr); }
 }

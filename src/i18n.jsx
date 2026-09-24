@@ -89,6 +89,17 @@ const AROMA_ME = [
   AR('me-1', '/aroma/ui-me.jpg'), AR('me-2', '/aroma/ui-fav-recipe.jpg'),
   AR('me-3', '/aroma/ui-settings.jpg'), AR('me-4', '/aroma/ui-feedback.jpg'),
 ]
+/* 产品与场景图（展板素材原图，非展板截图） */
+const AROMA_PRODUCT = [
+  { id: 'pd-1', img: '/aroma/prod-front.jpg', width: 718, height: 1100 },
+  { id: 'pd-2', img: '/aroma/prod-exploded.jpg', width: 415, height: 1400 },
+  { id: 'pd-3', img: '/aroma/prod-front2.jpg', width: 718, height: 1100 },
+]
+const AROMA_SCENES = [
+  { id: 'sn-1', img: '/aroma/scene-living.jpg', width: 1600, height: 759 },
+  { id: 'sn-2', img: '/aroma/scene-desk.jpg', width: 1335, height: 1178 },
+  { id: 'sn-3', img: '/aroma/scene-night.jpg', width: 1600, height: 800 },
+]
 
 /* ================= 中文内容 ================= */
 const zh = {
@@ -440,8 +451,12 @@ const zh = {
       },
     },
     {
-      id: 'aroma', index: '03', year: '2026.05 — 06', coverImg: '/aroma-cover.jpg',
-      videoBlock: '/aroma-intro.mp4', videoTall: true, videoCap: '产品影片 · 静音自动播放',
+      id: 'aroma', index: '03', year: '2026.05 — 06', coverImg: '/aroma-cover.jpg', shots: [],
+      videoBlock: '/aroma-intro.mp4', videoTall: true,
+      videoLabel: 'PRODUCT FILM · 22S',
+      videoTitle: '一段影片，先看懂「流光」的气质',
+      videoDesc: '雾气沿鹅卵石般的弧面升起，暖光从磨砂机身里透出来。这段 22 秒的产品影片用三个生活场景讲清硬件气质，静音自动循环；完整的 App 交互演示在第 13 章。',
+      videoCap: '产品影片 · 静音自动循环播放',
       heroWide: true, coverCap: '主视觉 · 流光机身与使用场景',
       title: '智能香薰机与移动端 App',
       subtitle: '软硬一体 · UI / 交互设计',
@@ -466,7 +481,7 @@ const zh = {
               '产品形态先于界面确定：机身上下分体、磁吸顶盖、顶部隐藏加水口，App 端的每一次操作都对应硬件的一次真实动作——这是整个项目的设计底线。',
               '我在项目中负责从调研、信息架构到高保真界面与演示输出的完整链路，最终交付 52 页界面、可交互原型与两支演示影片。',
             ],
-            media: { type: 'img', src: '/aroma/board-hero.jpg', cap: '产品场景 · 客厅与卧室的日常', side: true },
+            media: { type: 'carousel', side: true, cw: 430, chh: 268, h: 420, items: AROMA_SCENES, cap: '场景图集 · 客厅 / 书桌 / 夜间' },
             items: [
               { no: '01', t: '人群 · 25—42 岁品质向用户', d: '从独居白领到职场妈妈再到自由设计师，愿意为氛围与品质付费，把香氛当作生活方式的一部分。' },
               { no: '02', t: '硬件 · 一体化易清洁机身', d: '磁吸顶盖与隐藏加水口让换香、加水、清洁都不再需要大动干戈。' },
@@ -478,7 +493,6 @@ const zh = {
             claim: '市场不缺香薰机，缺一台真正"懂"人的。',
             lead: '从「功能满足」到「情感共鸣」的消费升级正在发生：用户不再满足于基础散香，而是希望产品能融入生活、提供情绪价值。拆开三个代表性竞品后，机会点变得非常具体。',
             paras: ['竞品覆盖三个价格带：米家代表生态与性价比，Moyson i7 代表高端技术流，Dr.Wong 代表专业芳疗。三者各有优势，也都在智能化、维护与情感连接上留着缺口——缺口就是我们的入口。'],
-            media: { type: 'img', src: '/aroma/board-research.jpg', cap: '调研分析 · 市场趋势与用户需求' },
             items: [
               { no: '01', t: '米家智能香薰机 · 极致性价比与生态联动', d: '依托小米生态，App 与语音助手无缝联动，价格亲民、品牌背书强。短板：外观基础平庸缺高端质感，功能创新不足，香薰液添加与机身清洁流程繁琐。' },
               { no: '02', t: 'Moyson i7 · 技术与美学的双重赋能', d: '微雾化高效扩香，外观契合高端家居审美，多档模式 + App 远程智控。短板：高端定价与专用耗材抬高门槛，App 连接不稳定、操作复杂，技术优势被不佳的交互体验抵消。' },
@@ -500,7 +514,7 @@ const zh = {
             no: '04', zh: '用户画像与场景', en: 'PERSONAS & SCENARIOS',
             claim: '三个人，三种"香"的用法。',
             lead: '画像不是贴标签，而是决定首页第一屏放什么。三类用户在年龄、城市与生活节奏上的差别，直接对应 App 的三条主路径与硬件的三个核心场景。',
-            media: { type: 'img', src: '/aroma/board-personas.jpg', cap: '用户画像 · 三类典型用户' },
+            media: { type: 'img', src: '/aroma/scene-warm.jpg', cap: '同一段雾气，三种生活节奏', side: true },
             items: [
               { no: '01', t: '都市白领 · 26 岁互联网运营，一线城市独居租房', d: '毕业两年、租房独居、经常加班，喜欢宅家追剧看书，注重氛围感但预算有限。痛点：回家情绪紧绷、空间小噪音灯光影响休息、新手不懂精油搭配、通风差有异味。需求：快速放松、操作简单、低噪、体积小巧。语录："下班回家打开香薰的那一刻，才觉得这是属于我自己的时间。"' },
               { no: '02', t: '细心守护者 · 33 岁国企行政，二线城市已婚两孩', d: '职场妈妈，时间被工作与家庭占满，家有老人与孩子，对安全性要求高。痛点：老人孩子对气味敏感、没时间打理、不同房间要不同氛围、不想为一堆耗材花钱。需求：温和无刺激配方、一键场景切换、易拆洗、低噪。语录："能让家里安安静静、清清爽爽的，比什么都重要。"' },
@@ -512,7 +526,6 @@ const zh = {
             claim: '先定「您的私人智能香氛管家」，再谈界面长什么样。',
             lead: '产品愿景不只是"一台香薰机"，而是懂你所需的智能伴侣：以科技赋能感官体验，以美学重塑生活场景。四大基石是智能无感、极致美学、体验至上、情感共鸣——让产品隐于家居，服务显于细节。',
             paras: ['功能架构分三层：核心功能层负责稳定，体验增强层负责个性化，安全保障层负责兜底；映射到 App 上，则是设备、调香、商城、社区四条主线，每条层级不超过两级。'],
-            media: { type: 'img', src: '/aroma/board-flow.jpg', cap: '界面流程与信息架构' },
             items: [
               { no: '01', t: '核心功能层', d: '超声波雾化技术 + 多档位调节、WiFi / 蓝牙双模智能控制、RGB 全彩氛围灯，把基础功能做稳做丰富。' },
               { no: '02', t: '体验增强层', d: '助眠 / 专注 / 瑜伽等预设场景，单次 / 循环 / 睡眠定时，可自定义香氛浓度、灯光色彩与运行时长。' },
@@ -528,7 +541,7 @@ const zh = {
               '极简几何科技感突出但情感温度不足，与"温暖陪伴"的核心诉求契合度偏弱；治愈系情感价值高，但不规则形态与特殊材质带来较高工艺复杂度与量产成本。鹅卵石在美学呈现与工程难度之间找到最佳平衡，用户接受门槛最低。',
               '最终方案命名为「流光」——光与水相遇，艺术与生活相遇。',
             ],
-            media: { type: 'img', src: '/aroma/board-exploded.jpg', cap: '产品结构 · 爆炸图与部件说明' },
+            media: { type: 'masonry', natural: true, side: true, items: AROMA_PRODUCT, cap: '最终形态 · 整机与结构爆炸' },
             items: [
               { no: '01', t: '一体化结构', d: '上下分体式机身，顶部隐藏式加水口无需拆卸水箱即可注水；磁吸式顶盖一吸即合，取放便捷、便于内部清洁。' },
               { no: '02', t: '材质与配色', d: '高品质哑光磨砂塑料，触感温润不易留痕；皓月白、深空灰、樱花粉三种柔和配色融入不同家居风格。' },
@@ -541,7 +554,7 @@ const zh = {
             no: '07', zh: '开屏 · 登录与配网', en: 'ONBOARDING & PAIRING',
             claim: '前 30 秒决定这个 App 会不会被删掉。',
             lead: '开屏用一段雾气扩散动画点题，登录后进入配网流程：蓝牙发现设备、连接、命名、完成。每一步都有明确的成功反馈，配网失败给出可执行的下一步——这是"智能无感"的第一道考题。',
-            media: { type: 'masonry', items: AROMA_ONBOARD, natural: true, cap: '开屏 · 登录 · 设备连接 · 连接成功反馈 · 设备管理' },
+            media: { type: 'carousel', side: true, items: AROMA_ONBOARD, cap: '开屏 · 登录 · 设备连接 · 连接成功反馈 · 设备管理' },
             steps: [
               { no: '01', t: '开屏', d: '雾气扩散动画带出品牌名，2 秒后可跳过，老用户直接进入首页。' },
               { no: '02', t: '登录', d: '手机号验证码为主路径，同时支持微信一键登录与游客浏览。' },
@@ -555,7 +568,7 @@ const zh = {
             claim: '首页只回答一个问题：设备现在在做什么。',
             lead: '主控制界面采用轻量化的卡片式布局，把核心功能模块化：中央聚焦一键开关，配线性雾量调节滑条与沉浸式灯光控制卡片，操作路径极简、视觉层级清晰。',
             paras: ['底部常驻「助眠」「专注」等快捷场景入口，一键切换氛围模式；灯光控制支持点击取色与模式选择，让功能与美学统一。'],
-            media: { type: 'masonry', items: AROMA_CONTROL, natural: true, cap: '首页 · 灯光 · 呼吸模式 · 浓度 · 定时 · 精油槽' },
+            media: { type: 'carousel', side: true, items: AROMA_CONTROL, cap: '首页 · 灯光 · 呼吸模式 · 浓度 · 定时 · 精油槽' },
             items: [
               { no: '01', t: '首页状态卡', d: '当前香型、浓度、剩余时长一屏读完，开关为第一优先级操作。' },
               { no: '02', t: '灯光与呼吸', d: 'RGB 全彩氛围灯支持点击取色，多种呼吸模式可调，夜间自动降低亮度避免光污染。' },
@@ -568,7 +581,7 @@ const zh = {
             no: '09', zh: 'DIY 调香与 AI 推荐', en: 'DIY & AI RECOMMENDATION',
             claim: '把调香权交给用户，AI 只负责给一个起点。',
             lead: '调香台把配方拆成「前调 + 中调 + 基底」三段，每段可拖动比例，实时显示出香曲线与预计消耗；保存后一键下发到设备，也可分享到社区。',
-            media: { type: 'masonry', items: AROMA_DIY, natural: true, cap: 'DIY 调香 · 自定义 · 配方库 · 配方详情 · AI 推荐 · 每日精选' },
+            media: { type: 'carousel', side: true, items: AROMA_DIY, cap: 'DIY 调香 · 自定义 · 配方库 · 配方详情 · AI 推荐 · 每日精选' },
             steps: [
               { no: '01', t: '选基底', d: '从已装精油中选择基底，系统给出可用比例区间。' },
               { no: '02', t: '调比例', d: '三段比例拖动，实时预览出香曲线与预计使用天数。' },
@@ -582,7 +595,7 @@ const zh = {
             no: '10', zh: '商城与购买链路', en: 'MALL & PURCHASE',
             claim: '从「快用完了」到「下单完成」不超过四次点击。',
             lead: '精油是消耗品，购买链路必须短。余量提醒、商城分类、购物车与支付一脉相承，支付成功后直接引导把新香型添加到设备。',
-            media: { type: 'masonry', items: AROMA_MALL, natural: true, cap: '商城 · 商品详情 · 购物车 · 支付 · 支付成功 · 我的订单' },
+            media: { type: 'carousel', side: true, items: AROMA_MALL, cap: '商城 · 商品详情 · 购物车 · 支付 · 支付成功 · 我的订单' },
             steps: [
               { no: '01', t: '浏览', d: '商城按香型、场景与套装分类，首页余量浮标直达补货。' },
               { no: '02', t: '详情', d: '成分、前中后调、适用面积与搭配推荐，可直接加入常用清单。' },
@@ -595,7 +608,7 @@ const zh = {
             no: '11', zh: '社区与问答', en: 'COMMUNITY & Q&A',
             claim: '会问问题的人，比会写笔记的人更需要被接住。',
             lead: '社区分「笔记」与「问答」两条内容线：顶部搜索栏按关键词找搭配与用法，右上角「+」一键发布自己的香氛心得；热门推荐区以卡片呈现精选内容，降低新手的使用门槛。',
-            media: { type: 'masonry', items: AROMA_COMMUNITY, natural: true, cap: '社区 · 帖子详情 · 评论 · 问答 · 问答详情 · 提问发帖' },
+            media: { type: 'carousel', side: true, items: AROMA_COMMUNITY, cap: '社区 · 帖子详情 · 评论 · 问答 · 问答详情 · 提问发帖' },
             items: [
               { no: '01', t: '搜索与发布', d: '顶部搜索栏按关键词检索香氛搭配与精油用法，右上角「+」一键发布心得。' },
               { no: '02', t: '热门推荐区', d: '卡牌形式展示「春日香薰搭配」「精油使用指南」等精选内容，给新手灵感与教程。' },
@@ -607,7 +620,7 @@ const zh = {
             no: '12', zh: '我的与设置', en: 'ACCOUNT & SETTINGS',
             claim: '收藏的三个分类，就是用户真正在意的三件事。',
             lead: '「我的」页把设备、配方与内容资产汇总成一张成长卡；收藏按帖子 / 商品 / 配方分开，避免混在一起找不到。',
-            media: { type: 'masonry', items: AROMA_ME, natural: true, cap: '我的 · 收藏 · 设置 · 帮助与反馈' },
+            media: { type: 'carousel', side: true, items: AROMA_ME, cap: '我的 · 收藏 · 设置 · 帮助与反馈' },
             items: [
               { no: '01', t: '我的主页', d: '设备数、配方数、笔记数与等级，成长体系一目了然。' },
               { no: '02', t: '分类收藏', d: '帖子 / 商品 / 配方分开收藏，各自独立成列表。' },
@@ -622,14 +635,14 @@ const zh = {
             media: { type: 'video', src: '/aroma-ui-demo.mp4', tall: true, controls: true, cap: '交互演示 · 4 分 26 秒 · Figma Make 可交互原型录屏（含解说）' },
           },
           {
-            no: '14', zh: '展板 · 总结与下一步', en: 'BOARD, REVIEW & NEXT',
+            no: '14', zh: '总结与下一步', en: 'REVIEW & NEXT',
             claim: '一页讲完从痛点到界面的整条链路。',
-            lead: '展板把调研、画像、结构、流程与界面收在一页：左侧是问题与方法，右侧是形态与结果，中间用界面流程串起来。',
+            lead: '调研、画像、结构、流程与界面收拢成一条完整链路：左侧是问题与方法，右侧是形态与结果，中间用界面流程串起来。',
             paras: [
-              '这也是项目的收尾动作——把八周的工作压成一张能被快速读懂的图。项目最终打造出「流光」方案：不仅解决了现有机型的使用痛点，更把美学设计、智能控制与情感价值拧在一起。',
+              '这也是项目的收尾动作——把八周的工作收拢成一条能被快速读懂的链路。项目最终打造出「流光」方案：不仅解决了现有机型的使用痛点，更把美学设计、智能控制与情感价值拧在一起。',
               '下一步分四条线推进：硬件端探索更先进的雾化技术；软件端打通主流智能家居平台实现生态互联；服务端推出香薰液订阅保障持续供给；技术端引入 AI 算法，基于用户习惯做个性化香氛推荐。',
             ],
-            media: { type: 'img', src: '/aroma/board-full.jpg', cap: '最终展板 · 智能香薰机产品设计' },
+            media: { type: 'img', src: '/aroma/scene-night.jpg', cap: '夜间场景 · 睡前一小时的氛围光', side: true },
           },
         ],
         reflection: '软硬一体的项目里，界面只是半个产品。把「设备此刻在做什么」讲清楚，比多加一个花哨的图表重要得多；而把换香这件小事做顺，比多十种灯光模式更能留住用户。',
@@ -1091,8 +1104,12 @@ const en = {
       },
     },
     {
-      id: 'aroma', index: '03', year: '2026.05 — 06', coverImg: '/aroma-cover.jpg',
-      videoBlock: '/aroma-intro.mp4', videoTall: true, videoCap: 'Product film · muted autoplay',
+      id: 'aroma', index: '03', year: '2026.05 — 06', coverImg: '/aroma-cover.jpg', shots: [],
+      videoBlock: '/aroma-intro.mp4', videoTall: true,
+      videoLabel: 'PRODUCT FILM · 22S',
+      videoTitle: 'One film to feel the character of Liuguang',
+      videoDesc: 'Mist rises along the pebble-smooth curve while warm light glows through the frosted body. This 22-second product film uses three everyday scenes to convey the hardware character, muted and looping; the full app interaction demo is in chapter 13.',
+      videoCap: 'Product film · muted autoplay loop',
       heroWide: true, coverCap: 'Key visual · Liuguang body in context',
       title: 'Smart Aroma Diffuser & Companion App',
       subtitle: 'Hardware × software · UI / interaction design',
@@ -1117,7 +1134,7 @@ const en = {
               'Form came before interface: split upper and lower body, magnetic top lid, hidden top water inlet. Every tap in the app maps to a real action of the hardware — that was the ground rule of the whole project.',
               'I owned the full chain from research and information architecture to hi-fi screens and demo output, delivering 52 interface pages, a clickable prototype and two demo films.',
             ],
-            media: { type: 'img', src: '/aroma/board-hero.jpg', cap: 'Product context · everyday living room and bedroom', side: true },
+            media: { type: 'carousel', side: true, cw: 430, chh: 268, h: 420, items: AROMA_SCENES, cap: 'Scene gallery · living room / desk / night' },
             items: [
               { no: '01', t: 'Audience · Quality-driven users aged 25–42', d: 'From solo white-collar renters to working mums and freelance designers — people who pay for atmosphere and treat scent as part of a lifestyle.' },
               { no: '02', t: 'Hardware · One integrated, cleanable body', d: 'Magnetic lid and hidden water inlet make changing scent, refilling and cleaning effortless.' },
@@ -1129,7 +1146,6 @@ const en = {
             claim: 'The market does not lack diffusers — it lacks one that actually understands people.',
             lead: 'An upgrade is underway from "functional satisfaction" to "emotional resonance": basic diffusion is no longer enough, people want something that fits into life and carries emotional value. Teardown of three representative competitors makes the opportunity concrete.',
             paras: ['They span three price bands: Mijia for ecosystem and value, Moyson i7 for high-end technology, Dr.Wong for professional aromatherapy. Each has strengths, and each leaves a gap in intelligence, maintenance or emotional connection — and those gaps are our entry point.'],
-            media: { type: 'img', src: '/aroma/board-research.jpg', cap: 'Research · market trends and user needs' },
             items: [
               { no: '01', t: 'Mijia smart diffuser · Value and ecosystem', d: 'Seamless app and voice-assistant integration inside the Xiaomi ecosystem, an accessible price and strong brand trust. Weak spots: plain styling without premium feel, little functional innovation, and a fiddly refill and cleaning routine.' },
               { no: '02', t: 'Moyson i7 · Technology and aesthetics combined', d: 'Advanced micro-mist diffusion, styling that suits high-end interiors, multiple modes and remote app control. Weak spots: premium pricing and proprietary consumables raise the barrier; unstable app connection and complex flows cancel out the technical edge.' },
@@ -1151,7 +1167,7 @@ const en = {
             no: '04', zh: 'Personas & scenarios', en: 'PERSONAS & SCENARIOS',
             claim: 'Three people, three ways of using scent.',
             lead: 'Personas are not stickers — they decide what goes on the first screen. Differences in age, city and daily rhythm map directly onto three main paths in the app and three core scenarios for the hardware.',
-            media: { type: 'img', src: '/aroma/board-personas.jpg', cap: 'Personas · three typical users' },
+            media: { type: 'img', src: '/aroma/scene-warm.jpg', cap: 'One mist, three daily rhythms', side: true },
             items: [
               { no: '01', t: 'Urban professional · 26, operations, renting alone in a tier-1 city', d: 'Two years into work, renting alone, often working late; loves staying in, cares about atmosphere on a limited budget. Pain: tension after overtime, small flat where noise and light hurt rest, no idea how to blend oils, poor ventilation. Needs: fast relaxation, simple operation, quiet running, small footprint. Quote: "The moment I switch the diffuser on after work, the time finally feels like mine."' },
               { no: '02', t: 'Careful guardian · 33, admin at a state firm, tier-2 city, two children', d: 'A working mother whose day is split between job and family, with elderly parents and kids at home and high safety expectations. Pain: sensitive airways, no time for upkeep, different moods per room, reluctance to buy piles of consumables. Needs: gentle formulas, one-tap scenes, easy disassembly and washing, low noise. Quote: "A quiet, clean home matters more than anything."' },
@@ -1163,7 +1179,6 @@ const en = {
             claim: 'Set "your private intelligent aroma butler" first, then decide what the interface looks like.',
             lead: 'The vision is more than a diffuser — it is a companion that understands what you need: technology empowering the senses, aesthetics reshaping the scene. Four cornerstones carry it: invisible intelligence, ultimate aesthetics, experience first, emotional resonance — the product hides in the home while the service shows in the details.',
             paras: ['The framework runs in three tiers: core functions for stability, enhanced experience for personalisation, safety for peace of mind. Mapped onto the app, that becomes four threads — device, mixing, store, community — none deeper than two levels.'],
-            media: { type: 'img', src: '/aroma/board-flow.jpg', cap: 'Interface flow & information architecture' },
             items: [
               { no: '01', t: 'Core function tier', d: 'Ultrasonic atomising with multi-level adjustment, dual-mode WiFi / Bluetooth control, and a full-colour RGB ambient light system.' },
               { no: '02', t: 'Experience tier', d: 'Preset scenes for sleep, focus and yoga; single, loop and sleep timers; customisable intensity, light colour and run duration.' },
@@ -1179,7 +1194,7 @@ const en = {
               'Minimal Geometry reads strongly technical but lacks warmth, sitting awkwardly with the core promise of companionship; Healing carries high emotional value but its organic shape and special materials are complex and costly to produce. Pebble strikes the best balance between aesthetics and engineering, with the lowest barrier to acceptance.',
               'The final design is named Liuguang — where light meets water, and art meets life.',
             ],
-            media: { type: 'img', src: '/aroma/board-exploded.jpg', cap: 'Product structure · exploded view and parts' },
+            media: { type: 'masonry', natural: true, side: true, items: AROMA_PRODUCT, cap: 'Final form · the body and its exploded structure' },
             items: [
               { no: '01', t: 'Integrated structure', d: 'A split upper-lower body with a hidden top water inlet — refill without removing the tank; a magnetic lid that seals with one touch and lifts off for cleaning.' },
               { no: '02', t: 'Materials & colours', d: 'Matte frosted plastic that feels warm and resists marks, in three soft colours — moon white, deep-space grey and cherry-blossom pink.' },
@@ -1192,7 +1207,7 @@ const en = {
             no: '07', zh: 'Onboarding & pairing', en: 'ONBOARDING & PAIRING',
             claim: 'The first thirty seconds decide whether this app survives on the phone.',
             lead: 'A mist-diffusion animation opens the app; after login, pairing runs — discover over Bluetooth, connect, name, done. Every step returns clear success feedback, and a failed pairing offers a concrete next action. This is the first test of "invisible intelligence".',
-            media: { type: 'masonry', items: AROMA_ONBOARD, natural: true, cap: 'Splash · login · pairing · connection success · device management' },
+            media: { type: 'carousel', side: true, items: AROMA_ONBOARD, cap: 'Splash · login · pairing · connection success · device management' },
             steps: [
               { no: '01', t: 'Splash', d: 'Mist spreads out to reveal the brand; skippable after two seconds, returning users land straight on home.' },
               { no: '02', t: 'Login', d: 'Phone number plus SMS code as the main path, with one-tap WeChat login and guest browsing.' },
@@ -1206,7 +1221,7 @@ const en = {
             claim: 'The home screen answers one question: what is the device doing right now.',
             lead: 'The main control screen uses a lightweight card layout with modular functions: a one-tap switch at the centre, a linear mist slider and an immersive lighting card — the shortest possible path with a clear visual hierarchy.',
             paras: ['Shortcut scenes such as Sleep and Focus stay pinned at the bottom for one-tap ambience switching; lighting supports colour picking and mode selection, keeping function and aesthetics aligned.'],
-            media: { type: 'masonry', items: AROMA_CONTROL, natural: true, cap: 'Home · light · breathing modes · intensity · scheduling · oil slots' },
+            media: { type: 'carousel', side: true, items: AROMA_CONTROL, cap: 'Home · light · breathing modes · intensity · scheduling · oil slots' },
             items: [
               { no: '01', t: 'Home status card', d: 'Current scent, intensity and remaining time in one glance; power is the top-priority action.' },
               { no: '02', t: 'Light & breathing', d: 'Full-colour ambient light with colour picking and multiple breathing modes, auto-dimming at night to avoid light pollution.' },
@@ -1219,7 +1234,7 @@ const en = {
             no: '09', zh: 'DIY blending & AI', en: 'DIY & AI RECOMMENDATION',
             claim: 'Give users the mixing controls; let AI offer a starting point.',
             lead: 'The blending bench splits a recipe into top, heart and base. Each segment drags, showing the scent curve and estimated consumption live; once saved it can be pushed to the device or shared to the community.',
-            media: { type: 'masonry', items: AROMA_DIY, natural: true, cap: 'DIY blending · custom · recipe library · recipe detail · AI picks · daily pick' },
+            media: { type: 'carousel', side: true, items: AROMA_DIY, cap: 'DIY blending · custom · recipe library · recipe detail · AI picks · daily pick' },
             steps: [
               { no: '01', t: 'Pick a base', d: 'Choose from the loaded oils; the system suggests a workable ratio range.' },
               { no: '02', t: 'Set ratios', d: 'Drag three segments and preview the scent curve and estimated days of use live.' },
@@ -1233,7 +1248,7 @@ const en = {
             no: '10', zh: 'Store & purchase', en: 'MALL & PURCHASE',
             claim: 'From "almost empty" to "order placed" in no more than four taps.',
             lead: 'Oils are consumables, so the purchase path has to be short. Level alerts, store categories, cart and payment follow one line, and a successful payment leads straight to adding the new scent to the device.',
-            media: { type: 'masonry', items: AROMA_MALL, natural: true, cap: 'Store · product detail · cart · payment · success · my orders' },
+            media: { type: 'carousel', side: true, items: AROMA_MALL, cap: 'Store · product detail · cart · payment · success · my orders' },
             steps: [
               { no: '01', t: 'Browse', d: 'Categorised by scent family, scenario and bundle; the home level alert links straight to restock.' },
               { no: '02', t: 'Product detail', d: 'Ingredients, top/heart/base notes, coverage area and pairing suggestions, savable to a frequent list.' },
@@ -1246,7 +1261,7 @@ const en = {
             no: '11', zh: 'Community & Q&A', en: 'COMMUNITY & Q&A',
             claim: 'Someone with a question needs catching more than someone writing a note.',
             lead: 'The community runs two content lines. A top search bar finds pairings and usage notes by keyword, and a plus button in the corner publishes a scent story in one tap; a featured area presents curated cards that lower the barrier for newcomers.',
-            media: { type: 'masonry', items: AROMA_COMMUNITY, natural: true, cap: 'Community · post detail · comments · Q&A · question detail · asking' },
+            media: { type: 'carousel', side: true, items: AROMA_COMMUNITY, cap: 'Community · post detail · comments · Q&A · question detail · asking' },
             items: [
               { no: '01', t: 'Search & publish', d: 'Keyword search across pairings and oil usage; one-tap publishing from the corner.' },
               { no: '02', t: 'Featured area', d: 'Curated cards such as spring scent pairings and oil guides — inspiration and tutorials for beginners.' },
@@ -1258,7 +1273,7 @@ const en = {
             no: '12', zh: 'Account & settings', en: 'ACCOUNT & SETTINGS',
             claim: 'The three saved-item categories are the three things users actually care about.',
             lead: 'The profile page folds devices, recipes and content into one growth card; saved items are split by post, product and recipe so nothing gets lost in one mixed list.',
-            media: { type: 'masonry', items: AROMA_ME, natural: true, cap: 'Profile · saved items · settings · help & feedback' },
+            media: { type: 'carousel', side: true, items: AROMA_ME, cap: 'Profile · saved items · settings · help & feedback' },
             items: [
               { no: '01', t: 'Profile home', d: 'Device count, recipes, notes and level — the growth system at a glance.' },
               { no: '02', t: 'Split saved items', d: 'Posts, products and recipes saved into separate lists.' },
@@ -1273,14 +1288,14 @@ const en = {
             media: { type: 'video', src: '/aroma-ui-demo.mp4', tall: true, controls: true, cap: 'Interaction demo · 4 min 26 s · recorded from the Figma Make prototype (with narration)' },
           },
           {
-            no: '14', zh: 'Board, review & next', en: 'BOARD, REVIEW & NEXT',
-            claim: 'From pain point to interface, told on a single page.',
-            lead: 'The board folds research, personas, structure, flow and interfaces onto one page: problems and methods on the left, form and results on the right, stitched together by the interface flow.',
+            no: '14', zh: 'Review & next', en: 'REVIEW & NEXT',
+            claim: 'From pain point to interface, told as one continuous chain.',
+            lead: 'Research, personas, structure, flow and interfaces fold into one continuous chain: problems and methods on one side, form and results on the other, stitched together by the interface flow.',
             paras: [
-              'It is also the closing move — eight weeks of work compressed into one page that can be read quickly. The outcome is the Liuguang design: it resolves the everyday pain points of existing diffusers while binding aesthetic design, intelligent control and emotional value into one.',
+              'It is also the closing move — eight weeks of work gathered into a chain that can be read quickly. The outcome is the Liuguang design: it resolves the everyday pain points of existing diffusers while binding aesthetic design, intelligent control and emotional value into one.',
               'Next steps run on four lines: better atomising technology in hardware, integration with mainstream smart-home platforms in software, a subscription service for oils, and AI algorithms that learn habits to recommend personalised scent.',
             ],
-            media: { type: 'img', src: '/aroma/board-full.jpg', cap: 'Final board · smart aroma diffuser product design' },
+            media: { type: 'img', src: '/aroma/scene-night.jpg', cap: 'Night scene · ambience light for the hour before sleep', side: true },
           },
         ],
         reflection: 'In a hardware-plus-software project the interface is only half the product. Making clear what the device is doing right now matters far more than one more fancy chart — and making refills effortless retains users better than ten more light modes.',

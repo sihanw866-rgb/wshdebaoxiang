@@ -3,6 +3,7 @@ import { useLang } from '../i18n'
 import { CharsPullUp, ScrollRevealText, FadeUp, CardIn } from '../anim'
 import { Cover } from './Works'
 import Masonry, { Lightbox } from './Masonry'
+import DepthCarousel from './DepthCarousel'
 import ScrollTop from './ScrollTop'
 
 /* ---------- 过程物：抽象的暗色 SVG（后续可替换为真实过程截图） ---------- */
@@ -187,12 +188,38 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
           </FadeUp>
         )}
 
-        {/* 抬头下方的大画幅影片块（参考 ck-design 的独立视频段落） */}
-        {p.videoBlock && (
+        {/* 抬头下方的大画幅影片块：竖版影片与文字并排（图文结合），横版影片居中 */}
+        {p.videoBlock && !p.videoTall && (
           <FadeUp className="hero-video-wrap">
-            <div className={`hero-video-block${p.videoTall ? ' tall' : ''}`}>
+            <div className="hero-video-block">
               <video src={p.videoBlock} autoPlay loop muted playsInline />
               <span className="hero-media-cap mono">{p.videoCap}</span>
+            </div>
+          </FadeUp>
+        )}
+        {p.videoBlock && p.videoTall && (
+          <FadeUp className="hero-video-wrap side">
+            <div className="hero-video-block tall">
+              <video src={p.videoBlock} autoPlay loop muted playsInline />
+            </div>
+            <div className="hero-video-side">
+              <p className="mono side-label">{p.videoLabel || 'PRODUCT FILM'}</p>
+              {p.videoTitle && <h3>{p.videoTitle}</h3>}
+              {p.videoDesc && <p className="side-desc">{p.videoDesc}</p>}
+              {(p.videoPoints || []).length > 0 && (
+                <ul className="flow-steps">
+                  {p.videoPoints.map((pt) => (
+                    <li key={pt.no}>
+                      <span className="no mono">{pt.no}</span>
+                      <div className="flow-step-main">
+                        <h4>{pt.t}</h4>
+                        <p>{pt.d}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {p.videoCap && <span className="hero-media-cap mono">{p.videoCap}</span>}
             </div>
           </FadeUp>
         )}
@@ -268,6 +295,7 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
             </>
           )
 
+          const flip = Number(ch.no) % 2 === 0
           return (
             <div className="proj-chapter" key={ch.no}>
               <FadeUp>
@@ -281,10 +309,27 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
               </FadeUp>
 
               {m && m.side ? (
-                <FadeUp delay={0.06} className="chapter-split">
+                <FadeUp delay={0.06} className={`chapter-split${flip ? ' flip' : ''}`}>
                   <div className={`chapter-media side ${m.type}`}>
                     {m.type === 'masonry' ? (
                       <Masonry items={m.items} natural={m.natural} onOpen={(it) => openZoom(m.items.map((x) => x.img), Math.max(0, m.items.findIndex((x) => x.id === it.id)))} />
+                    ) : m.type === 'carousel' ? (
+                      <div className="carousel-stage" style={{ '--dc-h': `${m.h || 620}px` }}>
+                        <DepthCarousel
+                          items={m.items.map((x) => ({ image: x.img, alt: x.alt || '' }))}
+                          cardWidth={m.cw || 264}
+                          cardHeight={m.chh || 560}
+                          visibleCards={3}
+                          depth={170}
+                          spread={64}
+                          tilt={18}
+                          blur={4}
+                          autoplay
+                          autoplayDelay={3400}
+                          onOpen={(_it, i) => openZoom(m.items.map((x) => x.img), i)}
+                        />
+                        {m.cap && <span className="carousel-cap mono">{m.cap}</span>}
+                      </div>
                     ) : m.type === 'img' ? (
                       <figure className="chapter-figure">
                         <img src={m.src} alt={m.cap} loading="lazy" style={{ cursor: 'zoom-in' }} onClick={() => openZoom([m.src], 0)} />
