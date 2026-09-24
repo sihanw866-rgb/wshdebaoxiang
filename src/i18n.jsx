@@ -113,7 +113,9 @@ const ST_RENDER = [
 ]
 const ST_PARTS = [
   { id: 'sp-1', img: '/stereo/s-exploded.jpg', width: 1600, height: 1058, alt: '爆炸图 · 斜视角' },
-  { id: 'sp-2', img: '/stereo/s-exploded2.jpg', width: 1600, height: 1058, alt: '爆炸图 · 分层' },
+  { id: 'sp-2', img: '/stereo/s-part-hood.jpg', width: 900, height: 600, alt: '玻璃罩与波纹板分离特写' },
+  { id: 'sp-3', img: '/stereo/s-part-keys.jpg', width: 550, height: 370, alt: '开关按键与切歌键特写' },
+  { id: 'sp-4', img: '/stereo/s-exploded2.jpg', width: 1600, height: 1058, alt: '爆炸图 · 分层' },
 ]
 const ST_DETAILS = [
   { id: 'sd-1', img: '/stereo/s-knob.jpg', width: 1600, height: 1058, alt: '旋钮与切歌键特写' },
@@ -693,7 +695,7 @@ const zh = {
     {
       id: 'stereo', index: '04', year: '2025', coverImg: '/stereo-cover.jpg',
       shots: [],
-      heroWide: true, coverCap: '主视觉 · 玻璃罩下的水波节奏器',
+      heroWide: true, heroSplash: true, coverCap: '主视觉 · 玻璃罩下的水波节奏器',
       title: '复古式可触摸音响',
       subtitle: 'STEREO · 可触摸的无障碍音响',
       tags: ['产品设计', '无障碍设计', 'Rhino / Keyshot'],
@@ -745,7 +747,7 @@ const zh = {
               { no: '05', t: '音响中板 / 底板', d: '灰绿面板与浅色中板上下相接，侧面开出散热格栅。' },
               { no: '06', t: '四角支撑', d: '底部四点支撑，留出声学腔体同时保持平稳。' },
             ],
-            media: { type: 'tile', cols: 2, items: ST_PARTS, side: true, cap: '结构爆炸 · 从玻璃罩到四角支撑' },
+            media: { type: 'tile', cols: 2, items: ST_PARTS, side: true, cap: '结构爆炸与部件特写 · 玻璃罩 / 波纹板 / 按键 / 分层' },
           },
           {
             no: '05', zh: '细节展示', en: 'DETAILS',
@@ -1419,7 +1421,7 @@ const en = {
     {
       id: 'stereo', index: '04', year: '2025', coverImg: '/stereo-cover.jpg',
       shots: [],
-      heroWide: true, coverCap: 'Key visual · ripple array under the glass hood',
+      heroWide: true, heroSplash: true, coverCap: 'Key visual · ripple array under the glass hood',
       title: 'Retro Touchable Stereo',
       subtitle: 'STEREO · Inclusive audio you can feel',
       tags: ['Product design', 'Inclusive design', 'Rhino / Keyshot'],
@@ -1471,7 +1473,7 @@ const en = {
               { no: '05', t: 'Mid & base plates', d: 'Sage panel over a light mid plate, with cooling grilles on the flank.' },
               { no: '06', t: 'Corner supports', d: 'Four-point support leaves room for the acoustic chamber and keeps it steady.' },
             ],
-            media: { type: 'tile', cols: 2, items: ST_PARTS, side: true, cap: 'Exploded views · from glass hood to corner supports' },
+            media: { type: 'tile', cols: 2, items: ST_PARTS, side: true, cap: 'Exploded views & part details · hood / ripple board / keys / layers' },
           },
           {
             no: '05', zh: 'Details', en: 'DETAILS',

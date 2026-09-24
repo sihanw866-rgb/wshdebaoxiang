@@ -156,7 +156,7 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
         </FadeUp>
 
         {d.claim ? (
-          <div className={`proj-hero${p.heroWide ? ' wide' : ''}`}>
+          <div className={`proj-hero${p.heroSplash ? ' splash' : p.heroWide ? ' wide' : ''}`}>
             <FadeUp className="proj-hero-text">
               <p className="hero-claim">{d.claim}</p>
               {d.claimLead && <p className="hero-claim-lead">{d.claimLead}</p>}
@@ -169,15 +169,17 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
                 ))}
               </div>
             </FadeUp>
-            <FadeUp delay={0.08} className={`proj-hero-media${p.heroWide ? ' wide' : ''}`}>
-              <div className={`hero-media-frame${p.heroWide ? ' wide' : ''}`}>
-                <Cover variant={p.cover} accent={p.accent} img={p.coverImg} video={p.coverVideo} />
-                <div className="noise-overlay" />
-              </div>
-              <span className="hero-media-cap mono">
-                {p.coverCap || (p.coverVideo ? (s.demoVideo || 'Prototype demo') : (s.coverLabel || 'Cover'))}
-              </span>
-            </FadeUp>
+            {!p.heroSplash && (
+              <FadeUp delay={0.08} className={`proj-hero-media${p.heroWide ? ' wide' : ''}`}>
+                <div className={`hero-media-frame${p.heroWide ? ' wide' : ''}`}>
+                  <Cover variant={p.cover} accent={p.accent} img={p.coverImg} video={p.coverVideo} />
+                  <div className="noise-overlay" />
+                </div>
+                <span className="hero-media-cap mono">
+                  {p.coverCap || (p.coverVideo ? (s.demoVideo || 'Prototype demo') : (s.coverLabel || 'Cover'))}
+                </span>
+              </FadeUp>
+            )}
           </div>
         ) : (
           <FadeUp delay={0.1}>
@@ -185,6 +187,27 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
               <Cover variant={p.cover} accent={p.accent} img={p.coverImg} video={p.coverVideo} />
               <div className="noise-overlay" />
             </div>
+          </FadeUp>
+        )}
+
+        {/* 大画幅主视觉：主图沉在暗色背景之下，若隐若现并带缓慢漂移 + 水波涟漪 */}
+        {p.heroSplash && (p.coverImg || p.coverVideo) && (
+          <FadeUp delay={0.1} className="hero-splash">
+            <div className="hero-splash-stage">
+              {p.coverVideo ? (
+                <video className="hero-splash-media" src={p.coverVideo} autoPlay loop muted playsInline />
+              ) : (
+                <img className="hero-splash-media" src={p.coverImg} alt={p.coverCap || ''} />
+              )}
+              <span className="splash-ripple r1" aria-hidden="true" />
+              <span className="splash-ripple r2" aria-hidden="true" />
+              <span className="splash-ripple r3" aria-hidden="true" />
+              <span className="splash-glow" aria-hidden="true" />
+              <span className="splash-veil" aria-hidden="true" />
+            </div>
+            <span className="hero-media-cap mono">
+              {p.coverCap || (s.coverLabel || 'Cover')}
+            </span>
           </FadeUp>
         )}
 
