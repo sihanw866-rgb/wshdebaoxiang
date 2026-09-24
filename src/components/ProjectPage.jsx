@@ -323,6 +323,17 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
                         </div>
                         {m.cap && <span className="pair-cap mono">{m.cap}</span>}
                       </>
+                    ) : m.type === 'tile' ? (
+                      <>
+                        <div className={`tile-grid${m.fit ? ' fit' : ''}`} style={{ '--cols': m.cols || m.items.length }}>
+                          {m.items.map((it, i) => (
+                            <button type="button" className="tile" key={it.id} onClick={() => openZoom(m.items.map((x) => x.img), i)}>
+                              <img src={it.img} alt={it.alt || ''} loading="lazy" />
+                            </button>
+                          ))}
+                        </div>
+                        {m.cap && <span className="pair-cap mono">{m.cap}</span>}
+                      </>
                     ) : m.type === 'masonry' ? (
                       <Masonry items={m.items} natural={m.natural} onOpen={(it) => openZoom(m.items.map((x) => x.img), Math.max(0, m.items.findIndex((x) => x.id === it.id)))} />
                     ) : m.type === 'carousel' ? (
@@ -367,6 +378,18 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
                         natural={m.natural}
                         onOpen={(it) => openZoom(m.items.map((x) => x.img), Math.max(0, m.items.findIndex((x) => x.id === it.id)))}
                       />
+                    </FadeUp>
+                  )}
+                  {m && m.type === 'tile' && (
+                    <FadeUp className="chapter-media-wrap">
+                      <div className={`tile-grid${m.fit ? ' fit' : ''}`} style={{ '--cols': m.cols || m.items.length }}>
+                        {m.items.map((it, i) => (
+                          <button type="button" className="tile" key={it.id} onClick={() => openZoom(m.items.map((x) => x.img), i)}>
+                            <img src={it.img} alt={it.alt || ''} loading="lazy" />
+                          </button>
+                        ))}
+                      </div>
+                      {m.cap && <span className="pair-cap mono">{m.cap}</span>}
                     </FadeUp>
                   )}
                   {m && m.type === 'img' && (

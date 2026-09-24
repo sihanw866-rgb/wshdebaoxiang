@@ -1275,10 +1275,46 @@ img { display: block; max-width: 100%; }
   text-align: center;
 }
 
+/* 平铺小图组：≤4 张的模块紧凑铺开，统一 3:2 比例，不占满整屏 */
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 2), 1fr);
+  gap: 14px;
+  max-width: 1080px;
+}
+.tile {
+  display: block;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--panel);
+  aspect-ratio: 3 / 2;
+  cursor: zoom-in;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+.tile:hover { border-color: var(--accent-dim, rgba(205, 244, 99, 0.45)); transform: translateY(-2px); }
+.tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+/* 展板模式：完整显示不裁切，contain 居中在面板底上 */
+.tile-grid.fit .tile {
+  aspect-ratio: auto;
+  height: clamp(400px, 42vw, 600px);
+  padding: 14px;
+}
+.tile-grid.fit .tile img { object-fit: contain; }
+
 @media (max-width: 1100px) {
   .pair-stage { height: auto; }
   .pair-cell { padding: 12px 10px; }
   .pair-cell img { height: auto; max-height: 340px; }
+  .tile-grid { grid-template-columns: repeat(2, 1fr); }
+  .tile { aspect-ratio: 16 / 10; }
 }
 
 /* 偶数章媒体翻到右侧，形成左右交替的节奏 */

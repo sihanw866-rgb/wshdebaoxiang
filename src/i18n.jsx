@@ -94,6 +94,49 @@ const AROMA_PRODUCT = [
   { id: 'pd-1', img: '/aroma/prod-front.jpg', width: 718, height: 1100, alt: '「流光」整机定案' },
   { id: 'pd-2', img: '/aroma/prod-exploded.jpg', width: 415, height: 1400, alt: '结构爆炸图' },
 ]
+
+/* 音响项目图集（综合设计1 · 复古式可触摸音响） */
+const ST_OVERVIEW = [
+  { id: 'so-1', img: '/stereo/s-front.jpg', width: 1600, height: 1118, alt: '整机正视 · 波纹起伏' },
+  { id: 'so-2', img: '/stereo/s-detail-warm.jpg', width: 1599, height: 819, alt: '面板特写 · 暖光' },
+]
+const ST_INSPIRE = [
+  { id: 'si-1', img: '/stereo/s-ripple-solo.jpg', width: 1600, height: 1058, alt: '水波节奏器单体' },
+  { id: 'si-2', img: '/stereo/s-detail-flat.jpg', width: 1600, height: 1058, alt: '波纹板平放俯拍' },
+]
+const ST_RENDER = [
+  { id: 'sr-1', img: '/stereo/s-tilt.jpg', width: 1600, height: 1118, alt: '斜俯视 · 绿面板' },
+  { id: 'sr-2', img: '/stereo/s-green.jpg', width: 1600, height: 1496, alt: '斜视角 · 播放中' },
+  { id: 'sr-3', img: '/stereo/s-grey.jpg', width: 1600, height: 1118, alt: '正视偏侧' },
+  { id: 'sr-4', img: '/stereo/s-white.jpg', width: 1600, height: 1118, alt: '白底正视特写' },
+  { id: 'sr-5', img: '/stereo/s-blue-top.jpg', width: 1600, height: 1118, alt: '俯视 · 蓝底待机' },
+]
+const ST_PARTS = [
+  { id: 'sp-1', img: '/stereo/s-exploded.jpg', width: 1600, height: 1058, alt: '爆炸图 · 斜视角' },
+  { id: 'sp-2', img: '/stereo/s-exploded2.jpg', width: 1600, height: 1058, alt: '爆炸图 · 分层' },
+]
+const ST_DETAILS = [
+  { id: 'sd-1', img: '/stereo/s-knob.jpg', width: 1600, height: 1058, alt: '旋钮与切歌键特写' },
+  { id: 'sd-2', img: '/stereo/s-panel.jpg', width: 1600, height: 1118, alt: '面板与波纹板' },
+  { id: 'sd-3', img: '/stereo/s-detail-side.jpg', width: 1600, height: 1058, alt: '侧视特写 · 播放中' },
+]
+const ST_VIEWS = [
+  { id: 'sv-1', img: '/stereo/v-front.jpg', width: 1600, height: 1058, alt: '正视图' },
+  { id: 'sv-2', img: '/stereo/v-side.jpg', width: 1600, height: 1058, alt: '侧视图' },
+  { id: 'sv-3', img: '/stereo/v-top.jpg', width: 1600, height: 1058, alt: '顶视图' },
+]
+const ST_RUN = [
+  { id: 'st-1', img: '/stereo/s-idle.jpg', width: 1600, height: 1058, alt: '使用前 · 波纹板平伏' },
+  { id: 'st-2', img: '/stereo/s-playing.jpg', width: 1600, height: 1058, alt: '使用中 · 波纹随节奏隆起' },
+]
+const ST_SCENES = [
+  { id: 'ss-1', img: '/stereo/sc-work.jpg', width: 1600, height: 962, alt: '办公桌面场景' },
+  { id: 'ss-2', img: '/stereo/sc-relax.jpg', width: 1600, height: 962, alt: '床边休闲场景' },
+]
+const ST_BOARDS = [
+  { id: 'sb-1', img: '/stereo/board-retro.jpg', width: 1202, height: 1700, alt: '复古风设计展板' },
+  { id: 'sb-2', img: '/stereo-board.jpg', width: 1357, height: 1920, alt: 'STEREO 设计展板' },
+]
 const AROMA_SCENES = [
   { id: 'sn-1', img: '/aroma/scene-living.jpg', width: 1600, height: 759 },
   { id: 'sn-2', img: '/aroma/scene-desk.jpg', width: 1335, height: 1178 },
@@ -649,12 +692,8 @@ const zh = {
     },
     {
       id: 'stereo', index: '04', year: '2025', coverImg: '/stereo-cover.jpg',
-      shots: [
-        { kind: 'render', img: '/stereo-render.jpg', cap: '产品渲染', wide: true },
-        { kind: 'detail', img: '/stereo-b-detail.jpg', cap: '部件与结构 · 爆炸图' },
-        { kind: 'run', img: '/stereo-b-run.jpg', cap: '尺寸与运行方式' },
-        { kind: 'board', img: '/stereo-board.jpg', cap: '完整设计展板' },
-      ],
+      shots: [],
+      heroWide: true, coverCap: '主视觉 · 玻璃罩下的水波节奏器',
       title: '复古式可触摸音响',
       subtitle: 'STEREO · 可触摸的无障碍音响',
       tags: ['产品设计', '无障碍设计', 'Rhino / Keyshot'],
@@ -665,13 +704,90 @@ const zh = {
         role: '产品定义 · 三维建模 · 渲染表达',
         period: '产品设计课程项目',
         team: '个人项目',
-        deliverables: '产品渲染 · 爆炸图 · 设计展板',
-        overview: '传统家庭音响已经无法满足人们的功能需求与审美要求，人们开始追求个性化、注重设计的简约与时尚，希望在听音乐时获得多元体验。这款复古式可触摸音响保留传统扬声功能，可随时随地播放声音，并让听觉与触觉相融合：玻璃罩下的水波节奏器随乐句起伏，灵感来自手纹按摩器的纹理、海上兴起的海浪与水滴入湖的涟漪。开关按键、切歌键、调节旋钮与节奏感应板集中在一块面板上，220mm 的体量单手可握，体积小便于携带，适用于办公、学习与休闲多种场景。',
+        deliverables: '产品渲染 · 爆炸图 · 两张设计展板',
+        overview: '传统家庭音响已经无法满足人们的功能需求与审美要求，人们开始追求个性化、注重设计的简约与时尚，希望在听音乐时获得多元体验。这款复古式可触摸音响保留传统扬声功能，可随时随地播放声音，并让听觉与触觉相融合：玻璃罩下的水波节奏器随乐句起伏，灵感来自手机振动特效、海上兴起的海浪与水滴入水的涟漪。开关按键、切歌键、调节旋钮与节奏音感板集中在一块面板上，220mm 的体量单手可握，体积小便于携带，适用于办公、学习与休闲多种场景。',
+        claim: '当声音可以被看见、被摸到，音乐才长出第二种感官通道。',
+        claimLead: '复古式可触摸音响「STEREO」：复古按键旋钮与现代化的立体波纹在同一块面板相遇——新与旧。玻璃罩下的水波节奏器随音乐起伏，把声音变成可握在手里的形态。',
+        chapters: [
+          {
+            no: '01', zh: '项目概况', en: 'PROJECT OVERVIEW',
+            claim: '音乐的声音不仅可以用耳朵听，还可以用眼睛看、用手去触碰。',
+            lead: '随着经济水平与生活需求的提高，人们对物质与精神文化的需求不断提升，传统家居音响已无法满足功能与审美上的双重期待：人们开始追求多样化设计，更注重使用音响时的情感附加值与多元体验。这款音响在保留传统扬声功能之外，以海浪、水波纹为灵感动态地模拟声音，让用户通过视觉与触觉去感受音乐。',
+            paras: [
+              '它也是一次无障碍设计的尝试：普通用户对音乐品质与可玩性的需求日益增长，许多盲人朋友也表现出对音乐的浓厚兴趣——让声音「摸得到」，是这个项目最初的出发点。',
+            ],
+            media: { type: 'tile', cols: 2, items: ST_OVERVIEW, cap: '整机正视 · 玻璃罩下的波纹与暖光面板' },
+          },
+          {
+            no: '02', zh: '灵感来源', en: 'INSPIRATION',
+            claim: '把「看不见的声音」，变成看得见、摸得到的波纹。',
+            lead: '音响与声音有关，而除了少数自带「画面感」的声音，大自然里同样有许多声音美妙却微妙。三个日常意象被转译进设计：手机振动的特效——触觉反馈的日常原型；海上兴起的波浪——大面积的律动与呼吸感；水滴入水的涟漪——一圈圈向外扩散的秩序。',
+            paras: [
+              '三者共同指向同一个动作：让声音立体、可握、可触。最终收敛为「水波节奏器」——玻璃罩下一块黑色波纹板，播放时随音乐节奏隆起、落下，人们因此「看见」了声音。',
+            ],
+            media: { type: 'tile', cols: 2, items: ST_INSPIRE, side: true, cap: '水波节奏器单体 · 未播放时平伏如镜' },
+          },
+          {
+            no: '03', zh: '形态与外观', en: 'FORM & APPEARANCE',
+            claim: '复古的按键旋钮，与现代化的立体波纹——新与旧在同一块面板上。',
+            lead: '整体形态是一块可以握在手里的扁平体量：复古式按键与橙色调节旋钮唤起老收音机的记忆，玻璃罩下的黑色波纹板则是完全当代的表达。皓月般的浅色中板与灰绿面板相接，自发光提示灯在暗处亮起，让「复古」不等于「陈旧」。',
+            media: { type: 'carousel', side: true, h: 560, cw: 420, chh: 292, items: ST_RENDER, cap: '多角度渲染 · 待机 / 播放 / 蓝底俯视' },
+          },
+          {
+            no: '04', zh: '部件与结构', en: 'PARTS & STRUCTURE',
+            claim: '一块面板收起所有控制，一层玻璃罩起所有律动。',
+            lead: '从上到下依次是玻璃罩与水波音符面板、开关按键与节奏音感板、切歌键、调节旋钮、音响中板、音响底板与四角支撑。分层结构让每一层只做一件事，也让爆炸图本身就成为表达的一部分。',
+            items: [
+              { no: '01', t: '玻璃罩', d: '透明罩体保护波纹板，同时把律动完整地展示出来。' },
+              { no: '02', t: '水波音符面板', d: '黑色方块矩阵构成的波纹板，播放时随节奏隆起、落下。' },
+              { no: '03', t: '开关按键 · 切歌键', d: '复古胶囊按键，段落感清晰，盲操作也容易定位。' },
+              { no: '04', t: '调节旋钮', d: '橙色防滑旋钮，0—100 刻度无级调节音量。' },
+              { no: '05', t: '音响中板 / 底板', d: '灰绿面板与浅色中板上下相接，侧面开出散热格栅。' },
+              { no: '06', t: '四角支撑', d: '底部四点支撑，留出声学腔体同时保持平稳。' },
+            ],
+            media: { type: 'tile', cols: 2, items: ST_PARTS, side: true, cap: '结构爆炸 · 从玻璃罩到四角支撑' },
+          },
+          {
+            no: '05', zh: '细节展示', en: 'DETAILS',
+            claim: '每一处手感，都有回应。',
+            lead: '旋钮的阻尼、按键的段落、波纹板的起伏——控制集中在一块面板上，视线不必离开音乐本身。自发光提示灯在暗处亮起，指示播放状态。',
+            media: { type: 'tile', cols: 3, items: ST_DETAILS, cap: '细节特写 · 旋钮 / 面板 / 播放中' },
+          },
+          {
+            no: '06', zh: '三视图与尺寸', en: 'THREE VIEWS & SIZE',
+            claim: '220 毫米的体量，单手可握。',
+            lead: '整机 220 × 131.86 × 30.77 mm，单位毫米，是可以握在手中的小音箱——放在桌上不占地方，装进包里随身带走。',
+            media: { type: 'tile', cols: 3, items: ST_VIEWS, cap: '三视图 · 正视 / 侧视 / 顶视（单位 mm）' },
+          },
+          {
+            no: '07', zh: '运行方式', en: 'RUN MODE',
+            claim: '播放前是一块安静的黑色板面，播放时波纹随节奏隆起。',
+            lead: '这是这台音响最核心的一组对比：同一块波纹板，待机时平伏如镜面，播放时随着乐句起伏成「看得见的声音」。视觉与触觉同时被调用，声音于是有了形状。',
+            media: { type: 'tile', cols: 2, items: ST_RUN, cap: '使用前 / 使用中 · 波纹板的两种状态' },
+          },
+          {
+            no: '08', zh: '使用场景', en: 'SCENARIOS',
+            claim: '体积小、便于携带，适用于多种场景。',
+            lead: '办公时放在显示器旁，波纹的起伏让工位多一层呼吸；休闲时放在床边或窗台，音乐连同它的形状一起留在身边。学习、办公、休闲，三种场景同一台设备。',
+            items: [
+              { no: '01', t: '办公 At work', d: '桌面一角，波纹随节奏起伏，看得见的背景音。' },
+              { no: '02', t: '学习 Learning', d: '安安静静的纯音乐场景，旋钮一转就能切走分心的来源。' },
+              { no: '03', t: '休闲 Take a break', d: '床边、窗台、随手携带——音乐跟着人走。' },
+            ],
+            media: { type: 'tile', cols: 2, items: ST_SCENES, cap: '办公 / 休闲 · 两种真实场景' },
+          },
+          {
+            no: '09', zh: '设计展板', en: 'BOARDS',
+            claim: '两张展板，一页讲完从灵感到场景。',
+            lead: '一张复古手绘风的课程展板，一张信息更完整的 STEREO 展板：设计说明、设计背景、灵感来源、细节展示、尺寸标注、运行方式与使用场景，全部收在两页里。',
+            media: { type: 'tile', cols: 2, fit: true, items: ST_BOARDS, cap: '课程展板（复古手绘风） / STEREO 展板' },
+          },
+        ],
         process: [
           { no: '01', title: '背景与人群', desc: '普通消费者对音响品质与可玩性的需求日益增长，许多盲人朋友也表现出对音乐的浓厚兴趣——让声音「摸得到」成为设计的原点。' },
-          { no: '02', title: '灵感转译', desc: '从手纹按摩器纹理、海上兴起的海浪、水滴入湖的水波中提取形态语言，收敛出「可触摸的波纹」这一核心概念。' },
-          { no: '03', title: '部件与结构', desc: '开关按键、切歌键、调节旋钮、节奏感应板、音响中板与底板、四角支撑逐一推敲，玻璃罩下是随音乐起伏的水波节奏器。' },
-          { no: '04', title: '渲染与表达', desc: '完成产品建模渲染与爆炸图、设计展板，用使用前后对比与多场景照片讲清使用方式。' },
+          { no: '02', title: '灵感转译', desc: '从手机振动特效、海上兴起的海浪、水滴入水的涟漪中提取形态语言，收敛出「可触摸的波纹」这一核心概念。' },
+          { no: '03', title: '部件与结构', desc: '开关按键、切歌键、调节旋钮、节奏音感板、音响中板与底板、四角支撑逐一推敲，玻璃罩下是随音乐起伏的水波节奏器。' },
+          { no: '04', title: '渲染与表达', desc: '完成产品建模渲染与爆炸图、两张设计展板，用使用前后对比与多场景照片讲清使用方式。' },
         ],
         reflection: '无障碍不是最后补一个盲文标签，而是让信息长出第二种感官通道——当声音可以被看见、被摸到，设计才真正覆盖所有人。',
       },
@@ -1302,12 +1418,8 @@ const en = {
     },
     {
       id: 'stereo', index: '04', year: '2025', coverImg: '/stereo-cover.jpg',
-      shots: [
-        { kind: 'render', img: '/stereo-render.jpg', cap: 'Product rendering', wide: true },
-        { kind: 'detail', img: '/stereo-b-detail.jpg', cap: 'Parts & structure · Exploded view' },
-        { kind: 'run', img: '/stereo-b-run.jpg', cap: 'Dimensions & run mode' },
-        { kind: 'board', img: '/stereo-board.jpg', cap: 'Presentation board' },
-      ],
+      shots: [],
+      heroWide: true, coverCap: 'Key visual · ripple array under the glass hood',
       title: 'Retro Touchable Stereo',
       subtitle: 'STEREO · Inclusive audio you can feel',
       tags: ['Product design', 'Inclusive design', 'Rhino / Keyshot'],
@@ -1318,13 +1430,90 @@ const en = {
         role: 'Product definition · 3D modeling · Rendering',
         period: 'Product design course project',
         team: 'Solo project',
-        deliverables: 'Renderings · Exploded view · Presentation board',
-        overview: "Traditional home stereos no longer meet people's functional and aesthetic expectations — listeners want personal, minimal and stylish devices, and a richer experience every time they play music. This retro touchable stereo keeps classic playback, plays anywhere you go, and fuses hearing with touch: under the glass hood a ripple-rhythm array rises and falls with the music, inspired by palm-massager textures, rising sea waves and raindrops on a lake. Switch, skip button, tuning knob and rhythm-sensing pad sit on one panel; the 220mm body is one-hand sized, small enough to carry, and fits work, study and break moments.",
+        deliverables: 'Renderings · Exploded views · Two presentation boards',
+        overview: "Traditional home stereos no longer meet people's functional and aesthetic expectations — listeners want personal, minimal and stylish devices, and a richer experience every time they play music. This retro touchable stereo keeps classic playback, plays anywhere you go, and fuses hearing with touch: under the glass hood a ripple-rhythm array rises and falls with the music, inspired by phone vibration feedback, rising sea waves and raindrops on water. Switch, skip button, tuning knob and rhythm-sensing pad sit on one panel; the 220mm body is one-hand sized, small enough to carry, and fits work, study and break moments.",
+        claim: 'When sound can be seen and touched, music grows a second sensory channel.',
+        claimLead: 'Retro buttons and a modern 3D ripple surface meet on one panel — old and new at once. Under the glass hood, the water-ripple rhythm array rises and falls with the music, giving sound a shape you can hold.',
+        chapters: [
+          {
+            no: '01', zh: 'Project overview', en: 'PROJECT OVERVIEW',
+            claim: 'Music is not only for the ears — it can be seen with the eyes and felt with the hands.',
+            lead: 'As living standards rise, so do material and cultural expectations: traditional home stereos no longer satisfy functional and aesthetic needs together. People look for varied design and value the emotional side of using an audio device. Beyond conventional playback, this stereo uses waves and water ripples as its inspiration to simulate sound dynamically, letting users feel music through sight and touch.',
+            paras: [
+              'It is also an attempt at inclusive design: demand for audio quality and playability keeps rising among mainstream listeners, and many blind friends show a deep love for music — making sound "touchable" was the starting point of this project.',
+            ],
+            media: { type: 'tile', cols: 2, items: ST_OVERVIEW, cap: 'Front view · ripples under glass and the warm-lit panel' },
+          },
+          {
+            no: '02', zh: 'Inspiration', en: 'INSPIRATION',
+            claim: 'Turning invisible sound into ripples you can see and touch.',
+            lead: 'Stereo is about sound, and beyond the few sounds that carry their own "imagery", nature is full of voices that are beautiful yet subtle. Three everyday images were translated into the design: the haptic pulse of a phone vibrating — the everyday prototype of touch feedback; waves rising on the sea — broad, breathing motion; and the ripple of a drop in water — order expanding outward, ring by ring.',
+            paras: [
+              'All three point to the same gesture: making sound dimensional, holdable, touchable. They converged into the "water-ripple rhythm array" — a black ripple board under glass that swells and settles with the music, so people can finally "see" sound.',
+            ],
+            media: { type: 'tile', cols: 2, items: ST_INSPIRE, side: true, cap: 'Rhythm array on its own · flat as a mirror when idle' },
+          },
+          {
+            no: '03', zh: 'Form & appearance', en: 'FORM & APPEARANCE',
+            claim: 'Retro buttons and a modern dimensional ripple — old and new on one panel.',
+            lead: 'The body is a flat volume that fits in one hand: retro keys and an orange tuning knob recall old radios, while the black ripple board under glass is thoroughly contemporary. A moonlight-toned mid plate meets the sage panel, and a self-glowing indicator lights up in the dark — retro without being dated.',
+            media: { type: 'carousel', side: true, h: 560, cw: 420, chh: 292, items: ST_RENDER, cap: 'Renders from multiple angles · idle / playing / top-down' },
+          },
+          {
+            no: '04', zh: 'Parts & structure', en: 'PARTS & STRUCTURE',
+            claim: 'One panel gathers every control; one glass hood frames every motion.',
+            lead: 'Top to bottom: glass hood and water-ripple note panel, switch and rhythm-sensing pad, skip button, tuning knob, mid plate, base plate and four corner supports. The layered structure lets each layer do one thing well — and makes the exploded view part of the story.',
+            items: [
+              { no: '01', t: 'Glass hood', d: 'A transparent shell protects the ripple board while showing its motion in full.' },
+              { no: '02', t: 'Water-ripple note panel', d: 'A matrix of black blocks that swells and settles with the beat while playing.' },
+              { no: '03', t: 'Switch & skip keys', d: 'Retro capsule keys with crisp travel, easy to locate without looking.' },
+              { no: '04', t: 'Tuning knob', d: 'Orange anti-slip knob, stepless volume across a 0–100 scale.' },
+              { no: '05', t: 'Mid & base plates', d: 'Sage panel over a light mid plate, with cooling grilles on the flank.' },
+              { no: '06', t: 'Corner supports', d: 'Four-point support leaves room for the acoustic chamber and keeps it steady.' },
+            ],
+            media: { type: 'tile', cols: 2, items: ST_PARTS, side: true, cap: 'Exploded views · from glass hood to corner supports' },
+          },
+          {
+            no: '05', zh: 'Details', en: 'DETAILS',
+            claim: 'Every touch answers back.',
+            lead: 'The damping of the knob, the travel of the keys, the rise of the ripple board — controls gather on one panel so your eyes never leave the music. A self-glowing indicator shows the playing state in the dark.',
+            media: { type: 'tile', cols: 3, items: ST_DETAILS, cap: 'Detail shots · knob / panel / while playing' },
+          },
+          {
+            no: '06', zh: 'Three views & size', en: 'THREE VIEWS & SIZE',
+            claim: 'A 220mm footprint that fits in one hand.',
+            lead: 'The body measures 220 × 131.86 × 30.77 mm — a small speaker that fits in the palm, takes little space on the desk and slips into a bag.',
+            media: { type: 'tile', cols: 3, items: ST_VIEWS, cap: 'Three views · front / side / top (mm)' },
+          },
+          {
+            no: '07', zh: 'Run mode', en: 'RUN MODE',
+            claim: 'A quiet black surface before playback; rising ripples while it plays.',
+            lead: 'This is the core contrast of the design: the same ripple board lies flat as a mirror when idle, then rises and falls with each phrase while playing. Sight and touch are engaged at once — sound takes on a shape.',
+            media: { type: 'tile', cols: 2, items: ST_RUN, cap: 'Before / while playing · two states of the ripple board' },
+          },
+          {
+            no: '08', zh: 'Scenarios', en: 'SCENARIOS',
+            claim: 'Small, portable, at home in many scenes.',
+            lead: 'Beside the monitor at work, the rising ripples give the desk a second breath; on the bedside or windowsill during a break, music stays with you along with its shape. Work, study, rest — one device for all three.',
+            items: [
+              { no: '01', t: 'At work', d: 'A corner of the desk, ripples rising with the beat — background music you can see.' },
+              { no: '02', t: 'Learning', d: 'Quiet instrumental sessions; one turn of the knob sweeps distraction away.' },
+              { no: '03', t: 'Take a break', d: 'Bedside, windowsill, on the go — music follows the person.' },
+            ],
+            media: { type: 'tile', cols: 2, items: ST_SCENES, cap: 'Work / break · two real scenes' },
+          },
+          {
+            no: '09', zh: 'Boards', en: 'BOARDS',
+            claim: 'Two boards, one page from inspiration to scenarios.',
+            lead: 'A hand-drawn retro course board, and a fuller STEREO board: design description, background, inspiration, details, dimensions, run mode and scenarios — the whole story on two pages.',
+            media: { type: 'tile', cols: 2, fit: true, items: ST_BOARDS, cap: 'Course board (hand-drawn retro) / STEREO board' },
+          },
+        ],
         process: [
           { no: '01', title: 'Context & audience', desc: 'Demand for audio quality and playability keeps rising among mainstream listeners, and many blind friends show a deep love for music — making sound "touchable" became the starting point.' },
-          { no: '02', title: 'Inspiration & translation', desc: 'Extracted a form language from palm-massager textures, rising waves and raindrop ripples, converging on "touchable ripples" as the core concept.' },
+          { no: '02', title: 'Inspiration & translation', desc: 'Extracted a form language from phone vibration feedback, rising waves and raindrop ripples, converging on "touchable ripples" as the core concept.' },
           { no: '03', title: 'Parts & structure', desc: 'Switch, skip button, tuning knob, rhythm-sensing pad, mid & base plates and corner supports refined one by one; the ripple array lives under the glass hood.' },
-          { no: '04', title: 'Rendering & story', desc: 'Modeling, rendering, exploded view and a presentation board; before/after run-mode shots and scenario photos explain the usage.' },
+          { no: '04', title: 'Rendering & story', desc: 'Modeling, rendering, exploded views and two presentation boards; before/after run-mode shots and scenario photos explain the usage.' },
         ],
         reflection: 'Accessibility is not a braille label bolted on at the end — it is giving information a second sensory channel. When sound can be seen and touched, design finally covers everyone.',
       },
