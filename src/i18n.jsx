@@ -8,6 +8,52 @@ const XUNGU_UI_SHOTS = Array.from({ length: 18 }, (_, i) => ({
   height: 1278,
 }))
 
+/* 头戴设备项目图集：草图 / 结构拆解 / 渲染 / 配色 / 场景 */
+const CALM_SKETCHES = [
+  { id: 'sk-1', img: '/autism/sketch-form.jpg', width: 1500, height: 1125 },
+  { id: 'sk-2', img: '/autism/sketch-module.jpg', width: 1500, height: 1125 },
+  { id: 'sk-3', img: '/autism/sketch-views.jpg', width: 1500, height: 1125 },
+  { id: 'sk-4', img: '/autism/sketch-final.jpg', width: 1500, height: 1059 },
+]
+
+const CALM_STRUCTURE = [
+  { id: 'st-1', img: '/autism/explode-1.jpg', width: 1500, height: 1045 },
+  { id: 'st-2', img: '/autism/explode-2.jpg', width: 1500, height: 1045 },
+  { id: 'st-3', img: '/autism/explode-3.jpg', width: 1500, height: 1045 },
+  { id: 'st-4', img: '/autism/explode-flat.jpg', width: 1500, height: 1025 },
+  { id: 'st-5', img: '/autism/dock-explode.jpg', width: 1500, height: 1045 },
+  { id: 'st-6', img: '/autism/mesh-shell.jpg', width: 1372, height: 1146 },
+  { id: 'st-7', img: '/autism/detail-1.jpg', width: 1500, height: 1045 },
+  { id: 'st-8', img: '/autism/detail-3.jpg', width: 1500, height: 1045 },
+  { id: 'st-9', img: '/autism/detail-5.jpg', width: 1500, height: 1045 },
+]
+
+const CALM_RENDERS = [
+  { id: 'rd-1', img: '/autism/render-front.jpg', width: 1500, height: 786 },
+  { id: 'rd-2', img: '/autism/render-side.jpg', width: 1500, height: 786 },
+  { id: 'rd-3', img: '/autism/render-back.jpg', width: 1500, height: 1025 },
+  { id: 'rd-4', img: '/autism/render-rear34.jpg', width: 1500, height: 1025 },
+  { id: 'rd-5', img: '/autism/render-brim.jpg', width: 1500, height: 1045 },
+  { id: 'rd-6', img: '/autism/render-front-close.jpg', width: 1500, height: 1118 },
+]
+
+const CALM_CMF = [
+  { id: 'cm-1', img: '/autism/color-1.jpg', width: 1498, height: 1050 },
+  { id: 'cm-2', img: '/autism/color-2.jpg', width: 1498, height: 1050 },
+  { id: 'cm-3', img: '/autism/color-3.jpg', width: 1498, height: 1050 },
+  { id: 'cm-4', img: '/autism/color-4.jpg', width: 1498, height: 1050 },
+  { id: 'cm-5', img: '/autism/color-5.jpg', width: 1216, height: 1293 },
+]
+
+const CALM_SCENES = [
+  { id: 'sc-1', img: '/autism/scene-home.jpg', width: 1405, height: 1119 },
+  { id: 'sc-2', img: '/autism/scene-car.jpg', width: 1296, height: 1213 },
+  { id: 'sc-3', img: '/autism/scene-park.jpg', width: 1277, height: 1231 },
+  { id: 'sc-4', img: '/autism/scene-dock.jpg', width: 1500, height: 675 },
+  { id: 'sc-5', img: '/autism/usage-car.jpg', width: 1448, height: 1086 },
+  { id: 'sc-6', img: '/autism/usage-indoor.jpg', width: 1319, height: 1192 },
+]
+
 /* ================= 中文内容 ================= */
 const zh = {
   profile: {
@@ -212,23 +258,147 @@ const zh = {
     },
     {
       id: 'calm', index: '02', year: '2026.04 — 06', coverImg: '/calm-cover.jpg',
-      title: '自闭症儿童情绪安抚设备',
-      subtitle: '关怀向智能硬件 · 产品设计',
-      tags: ['智能硬件', '用户研究', 'AI 辅助设计'],
-      desc: '从政策与市场调研切入，明确选题方向；构建用户画像与旅程图，完成竞品分析与痛点总结。借助 AI 工具生成设计意向与草图，推进至产品建模与渲染，并制作介绍展板，用可灵 AI 与剪映产出产品介绍视频。',
-      metrics: [{ k: '研究方法', v: '画像 / 旅程图 / 竞品' }, { k: '交付物', v: '建模渲染 + 介绍视频' }],
+      shots: [],
+      title: '静行 · 自闭症儿童外出安抚头戴设备',
+      subtitle: '关怀向智能硬件 · 产品设计与用户研究',
+      tags: ['智能硬件', '用户研究', '结构建模', 'AI 辅助设计'],
+      desc: '从政策、市场与竞品三线交叉验证选题价值；构建儿童、家长与特教老师三视角画像并绘制外出旅程图，把干预时机锁定在崩溃发生前的 30 秒；再用 AI 生成设计意向与形态草图，推进到 Rhino 建模、Keyshot 渲染与结构爆炸图，最终输出展板与产品介绍影片。',
+      metrics: [{ k: '被动降噪', v: '15—20 dB' }, { k: '整机重量', v: '< 200 g' }],
       cover: 'halo', accent: '#d9c9a3',
       detail: {
-        role: '用户研究 · 产品设计 · 三维呈现',
+        role: '用户研究 · 产品定义 · 结构建模 · 影片输出',
         period: '2026.04 — 06 · 10 周',
         team: '个人项目（课程课题）',
-        deliverables: '用户画像与旅程图 · 建模渲染 · 展板 · 介绍视频',
-        overview: '一个面向自闭症儿童的情绪安抚设备。从政策与市场调研切入确认选题价值，构建家长与儿童双视角画像、绘制情绪爆发前后的旅程图，定位真正可介入的关键时刻；再借助 AI 生成设计意向与草图，推进到 Rhino 建模与 Keyshot 渲染，并用可灵 AI 与剪映产出产品介绍视频。',
-        process: [
-          { no: '01', title: '政策与市场', desc: '从特殊教育与儿童心理健康相关政策切入，结合现有产品形态，确认选题的社会价值与可行性。' },
-          { no: '02', title: '用户与场景', desc: '构建家长与儿童双视角画像，绘制情绪爆发前、中、后的旅程图，定位可介入的关键时刻。' },
-          { no: '03', title: '概念与草图', desc: '用 AI 生成设计意向与形态草图，在安全、可清洁、可携带之间反复取舍，收敛到最终形态。' },
-          { no: '04', title: '建模与呈现', desc: 'Rhino 建模、Keyshot 渲染，配合介绍展板，用可灵 AI 与剪映制作产品介绍视频。' },
+        deliverables: '画像与旅程图 · 竞品分析 · 结构爆炸图 · 建模渲染 · 展板 · 介绍影片',
+        overview: '「静行」是一顶面向 3—10 岁自闭症儿童外出场景的头戴式安抚设备。我先用政策、市场与竞品三条线交叉验证选题价值；再构建儿童、家长与特教老师的三视角画像，绘制一次完整外出的情绪旅程图，把干预时机锁定在崩溃发生前的 30 秒；随后用 AI 生成设计意向与形态草图，推进到 Rhino 建模、Keyshot 渲染与结构爆炸图，最终输出展板与 60 秒产品介绍影片。',
+        claim: '让外出这件事，多出一个孩子自己能按下的按钮。',
+        claimLead: '「静行」用被动降噪挡住不可预测的噪音，用白噪音与节律振动补上可预测的安抚——它看起来像一顶棒球帽，而不是一台医疗设备。',
+        chapters: [
+          {
+            no: '01', zh: '项目概况与调研', en: 'BACKGROUND & RESEARCH',
+            claim: '孩子不是不听话，是外面的世界太吵了。',
+            lead: '自闭症（孤独症谱系障碍，ASD）的核心表现之一是感官处理的两极分化：高敏感的孩子怕噪音、强光与人群触碰，外出极易捂耳崩溃；低敏感的孩子则主动寻求深压、震动与白噪音来自我安抚。同一名儿童可能同时存在两种状态，而外出（商场 / 地铁 / 医院）正是感官过载的高发场景。',
+            paras: [
+              '中国自闭症人群超 1000 万，其中 0—14 岁儿童超 200 万，年均新增确诊约 15 万；90% 以上的自闭症儿童存在感官调节困难，67% 会因噪音或强光引发情绪崩溃。',
+              '而货架上只有基础降噪耳罩、普通耳机、加重背心与简单触觉玩具——没有一款同时做到「隔离外界刺激 + 内置可控的白噪音 / 振动 / 深压安抚」。它们多为医疗风外观，孩子抗拒佩戴，也缺少低龄友好、日常隐蔽、一键操作的穿戴方案。',
+            ],
+            media: { type: 'img', src: '/autism/scene-home.jpg', cap: '使用场景 · 出门前的居家时刻', side: true },
+            items: [
+              { no: '01', t: '政策窗口', d: '0—6 岁孤独症儿童已纳入免费康复救助，辅助器具适配是明确服务内容；《“十四五”残疾人保障和发展规划》与《关于推进科技助残的指导意见》点名支持智能康复辅具；山东对 0—6 岁儿童辅具适配补助 1500 元 / 人，多省市每年 2 万—2.4 万元康复补贴可用于购买辅具。' },
+              { no: '02', t: '市场规模', d: '中国自闭症康复市场 2024 年约 180 亿元，2030 年预计 420—900 亿元；全球感官调节市场 2025 年约 1.48 亿美元，其中感官玩具与穿戴类年增速 15%+。' },
+              { no: '03', t: '竞品格局', d: '降噪耳罩（99—159 元）只降噪不安抚；软质防护帽（500—700 元）与硬壳头盔（800—1200 元）偏被动防护；便携白噪音机（199—299 元）无法随身。放在坐标上看：便携的产品功能单一，功能多的产品又需要成人辅助操作。' },
+              { no: '04', t: '市场缺口', d: '73% 的自闭症儿童偏好被动降噪而非主动降噪；有效降噪 + 安抚可降低 67% 的外出崩溃率。家长需求排序中，「隔离刺激 + 白噪音安抚」与「外观日常、孩子愿意戴」始终靠前——这正是产品的切入点。' },
+            ],
+          },
+          {
+            no: '02', zh: '用户画像与旅程', en: 'PERSONAS & JOURNEY',
+            claim: '孩子要「不勒、不重、不吓人」，家长要「一键能用」。',
+            lead: '三位角色互相牵制：孩子不肯戴，家长侧的一切功能设计都归零；家长不会用，老师在课堂里也用不上。画像与旅程图就是用来把这三层诉求摆在同一个坐标里。',
+            items: [
+              { no: '01', t: '林安安 · 6 岁 · 学龄前自闭症儿童', d: '最终佩戴者。对车流声与商场广播极度敏感，外出易捂耳、烦躁哭闹，抗拒陌生人触碰；喜欢听舒缓儿歌、捏软积木。', list: ['头戴轻量化无压迫，材质亲肤透气', '柔和低刺激的舒缓模式', '造型可爱无棱角，佩戴易适配'] },
+              { no: '02', t: '苏晴 · 32 岁 · 全职陪护母亲', d: '购买决策者与日常协助者。每日全程照顾，常带孩子外出复诊与康复上课，做事细心，重视用品的安全性与易打理。', list: ['操作极简，一键即可启动安抚', '耐摔易清洁，穿戴步骤简单', '材质安全无隐患，方便收纳携带'] },
+              { no: '03', t: '陈冉 · 29 岁 · 特教机构康复老师', d: '专业推荐者。负责多名儿童的课堂康复训练，擅长安抚躁动的孩子，注重课堂秩序与学生佩戴的适配性。', list: ['外观低调不突兀，弱化医疗感', '佩戴稳固不易滑落', '舒缓模式温和不扰课堂，可长时间佩戴'] },
+              { no: '04', t: '用户旅程 · 七个触点', d: '从「在家准备」到「回家摘下」，情绪曲线在一次外出里起伏两轮，可介入的时刻集中在中段。', list: ['在家准备：陌生设备易被抗拒 → 用熟悉物品建立「要出门了」的正向预告', '出门佩戴：初次躲闪明显 → 弧形内衬贴合头型，单次佩戴可达 2 小时', '路上通勤：喇叭声惊跳 → 选择性降噪，隔离噪音、保留人声', '商场停留：感官涌入、焦虑累积 → 孩子自按物理按钮，一键自我安抚', '突发崩溃：视听过载同时发生 → 自动触发白噪音 + 节律振动，双通道干预', '回家摘下：仍有情绪余震 → 暖光与摘下提示，形成安全回家的闭环', '复盘：家长在 App 查看本次平稳时长 → 让照护有据可依'] },
+            ],
+          },
+          {
+            no: '03', zh: '设计定位与技术路径', en: 'POSITIONING & TECH',
+            claim: '先写死定位，再反推技术，避免造型先行。',
+            lead: '以产品开发任务书的形式，把人群、结构、功能、场景、色彩与风格六项定位逐条写死，再翻译成硬件参数与技术路线——每一个视觉决定背后，都有一个可验证的指标。',
+            paras: [
+              '技术路线分三层：主动降噪（ANC）由麦克风实时采集环境噪音并生成反相声波抵消；多感官干预基于感觉统合理论，用听觉、视觉柔光与触觉振动多通道协同；生物反馈则通过 PPG 传感器监测心率变异性，把情绪状态量化成可触发的阈值。',
+              '关键参数全部来自约束条件：整机 < 200 g、头梁压力 < 2 N、头围覆盖 48—56 cm、音量上限锁定 ≤ 85 dB、被动降噪 15—20 dB、续航 8—10 小时；白噪音频段刻意避让 250 Hz（空调嗡鸣）与 8 kHz（门铃声）这两个自闭症儿童最不适的频段。',
+            ],
+            media: { type: 'img', src: '/autism/explode-1.jpg', cap: '整机结构爆炸图 · 头梁 / 耳罩 / 控制模块', side: true },
+            items: [
+              { no: '01', t: '人群定位', d: '核心用户为 3—10 岁自闭症谱系儿童；次要用户为家长、特教老师与康复治疗师。' },
+              { no: '02', t: '结构定位', d: '头戴一体式，集成降噪单元、振动模块、扬声器、遮光板与物理按键，模块化可拆卸清洗。' },
+              { no: '03', t: '功能定位', d: '降噪保人声、振动安抚、白噪音安抚、遮光、情绪预警与预录语音。' },
+              { no: '04', t: '场景定位', d: '通勤、商场、医院等陌生嘈杂的外出环境，兼顾校园课堂与居家的突发时刻。' },
+              { no: '05', t: '色彩定位', d: '低饱和柔和色系：暖灰、浅蓝、淡绿，避免强刺激。' },
+              { no: '06', t: '风格定位', d: '圆润无尖角，接近普通儿童耳机或棒球帽；亲肤织物、医用硅胶、记忆海绵与轻量塑料。' },
+            ],
+          },
+          {
+            no: '04', zh: '关键洞察 · 爆发前 30 秒', en: 'THE 30-SECOND WINDOW',
+            claim: '焦虑发作前的 30 秒，是唯一还来得及的窗口。',
+            lead: '我拆解了两个跨领域案例——医疗领域的「术前焦虑预判系统」与医院采血流程的情绪安抚设计。它们共同指向一件事：安抚的时机，比安抚的方式更重要。',
+            items: [
+              { no: '01', t: '生理信号可以预判崩溃', d: '焦虑发作前，心率可在 30 秒内骤升；心率变异性（HRV）下降叠加心率升高，指向焦虑的准确率超过 85%。阈值设为「高于个人静息心率 40% 并持续 10 秒」时误报率最低。' },
+              { no: '02', t: '先轻介入，再升级', d: '自动干预先做低强度动作——微降环境音、渐入白噪音；孩子再按一下按钮才升级强度。同时保留一键取消，避免系统误判带来的反感。' },
+              { no: '03', t: '播放时机决定效果', d: '崩溃已发生时播放几乎无效（听觉通道已经关闭）；压力累积阶段有效；崩溃前 30 秒最有效，可能完全避免崩溃；出门前 5—10 分钟低音量预热，则能把设备从「陌生刺激」变成「安全信号」。' },
+              { no: '04', t: '熟悉的声音也要可替换', d: '部分儿童会把崩溃时正在播放的声音与负面体验绑定，因此提供心跳 / 雨声 / 风扇声等多条音轨，允许家长在 App 内切换与重置，也允许孩子随时暂停、重新拿回控制权。' },
+            ],
+          },
+          {
+            no: '05', zh: '设计意向与草图', en: 'CONCEPT & SKETCHES',
+            claim: '先推翻「医疗感」，再谈造型。',
+            lead: '用 AI 工具批量生成设计意向与形态草图，围绕三个约束反复取舍：安全（无小零件、圆润无尖角）、可清洁（模块化拆卸、覆面可换洗）、可携带（轻量化、可折叠收纳）。',
+            paras: [
+              '第一轮意向偏「防护头盔」，被推翻——孩子看到就躲；第二轮尝试「毛绒玩具化」，再次被推翻——不够日常，家长觉得幼稚。最终收敛到「一顶看起来像棒球帽的设备」：帽檐做镂空以减重散热，帽壳外层用可拆网纱，耳罩与头梁模块化连接。',
+              '草图阶段同时把三种模块关系画到同一张图上，确认振动马达、电池与主控的配重位置——重心一旦偏后，孩子跑动时设备就会下滑，这是后面所有造型细节的前提。',
+            ],
+            media: { type: 'masonry', items: CALM_SKETCHES, cap: '形态草图与结构推演 · 4 稿' },
+          },
+          {
+            no: '06', zh: '产品结构与细节', en: 'STRUCTURE & DETAILS',
+            claim: '三个模块，二十余处细节决策。',
+            lead: '整机拆成头带模块、耳罩模块与控制模块：头带内置柔性电路与振动马达，负责触觉反馈；耳罩集成被动降噪腔体、扬声器与 PPG 传感器；控制模块承载主控芯片、电池与蓝牙，并通过 App 与家长连接。',
+            media: { type: 'masonry', items: CALM_STRUCTURE, cap: '爆炸图 / 充电座 / 网纱帽壳 / 细节放大' },
+            items: [
+              { no: '01', t: '头带模块 · Headband', d: '轻量化亲肤材质，内置柔性电路与振动马达提供触觉反馈；伸缩机构无级阻尼调节，覆盖 48—56 cm 头围，内衬加宽以分散压力。' },
+              { no: '02', t: '耳罩模块 · Earcup', d: '多层复合腔体在 15—20 mm 厚度内实现 15—20 dB 被动降噪；记忆海绵 + 医用级硅胶覆面可拆洗，双轴转轴左右 ±15°、上下 ±10° 贴合不同脸型。' },
+              { no: '03', t: '控制模块 · Control', d: '低功耗蓝牙主控，按钮响应 < 50 ms；Type-C 接口置于头梁后侧并带防水防尘塞，续航目标 8—10 小时，低电量自动降音量并推送提醒。' },
+              { no: '04', t: '充电座 · Dock', d: '桌面充电座承担收纳与补电，整机放上去即归位；结构拆解后可单独更换耳罩海绵与帽壳网纱。' },
+            ],
+          },
+          {
+            no: '07', zh: '渲染与 CMF', en: 'RENDERS & CMF',
+            claim: '把「不像医疗器械」做成一套可验证的配色。',
+            lead: 'Rhino 完成曲面建模，Keyshot 输出正、侧、顶与四分之三视角的渲染图；配色全部压在低饱和区间，让孩子愿意戴、家长不尴尬、老师在课堂里不突兀。',
+            media: { type: 'masonry', items: [...CALM_RENDERS, ...CALM_CMF], cap: '产品渲染与配色方案 · 11 张' },
+            items: [
+              { no: '01', t: '三视图与四分之三视角', d: '正视确认帽檐比例，侧视确认耳罩厚度与头梁弧度，顶视确认镂空散热区的分布。' },
+              { no: '02', t: '低饱和三色系', d: '暖灰、浅蓝、淡绿三套主色，明度统一压在中高区间，避免强对比造成的视觉刺激。' },
+              { no: '03', t: '材质策略', d: '接触面统一为医用硅胶与亲肤织物，规避化纤触感；帽壳网纱与帽檐镂空负责散热减重。' },
+              { no: '04', t: '弱化医疗感', d: '取消所有指示灯阵列与金属质感，只在耳罩外侧保留一枚隐藏式状态灯，外观语言向普通儿童耳机靠拢。' },
+            ],
+          },
+          {
+            no: '08', zh: '场景与交互流程', en: 'SCENARIOS & FLOW',
+            claim: '三步之内能完成的事，才配叫「应急」。',
+            lead: '交互只保留三个动作：戴上、按一下、取下。所有复杂设置都收进家长侧 App，儿童侧永远只有一个大尺寸物理按钮。',
+            media: { type: 'masonry', items: CALM_SCENES, cap: '使用场景 · 居家 / 车内 / 户外 / 收纳充电' },
+            steps: [
+              { no: '01', t: '佩戴 · 一拉即合', d: '拉伸头梁适配头围，耳罩覆盖双耳，被动降噪腔体即刻生效；电容式佩戴检测自动开机，未佩戴时进入低功耗模式。' },
+              { no: '02', t: '安抚 · 按一下就够', d: '短按物理按钮播放白噪音，再次短按切换音轨，长按关机；检测到焦虑前兆时，设备自动渐入白噪音与节律振动。' },
+              { no: '03', t: '取下 · 放回充电座', d: '取下后自动暂停播放，放回充电座完成收纳与补电；家长可在 App 查看平稳时长、锁定儿童按钮或远程启停。' },
+            ],
+          },
+          {
+            no: '09', zh: '最终展板', en: 'FINAL BOARD',
+            claim: '一版展板，装下从调研到整机的全部链路。',
+            lead: '展板按「背景调研 → 画像与旅程 → 设计定位 → 结构爆炸 → 场景渲染 → 参数说明」编排，让评审在 10 秒内看懂选题价值，在 1 分钟内看完设计推导。',
+            paras: ['信息层级上做了取舍：数据只保留量级最大的三个（1000 万人群、67% 外出崩溃率、15—20 dB 降噪），其余下沉为小字注释；产品图占版面近一半，用渲染图而不是线稿来承担说服任务。'],
+            media: { type: 'img', src: '/autism/board.jpg', cap: '最终展板 · 头戴设备全链路' },
+            items: [
+              { no: '01', t: '左栏 · 调研与定位', d: '政策、市场规模、竞品坐标与四条痛点结论纵向排布，回答「为什么值得做」。' },
+              { no: '02', t: '中栏 · 产品本体', d: '正侧顶三视图、爆炸图与关键细节放大，回答「做成了什么样」。' },
+              { no: '03', t: '右栏 · 场景与参数', d: '居家、通勤、收纳三个使用场景，配合重量、降噪、续航与安全参数表，回答「用起来如何」。' },
+            ],
+          },
+          {
+            no: '10', zh: '产品影片', en: 'PRODUCT FILM',
+            claim: '把「一顶帽子如何接住一次崩溃」讲成 60 秒。',
+            lead: '影片按外出动线剪辑：从家门出发的场景切换，到商场里的感官过载，再到按下按钮后白噪音渐入、孩子恢复平静，最后回到充电座收尾。',
+            paras: ['用可灵 AI 生成场景与镜头素材，剪映完成后期、配音与字幕。节奏上刻意把崩溃片段剪得很短——重点不是展示问题有多严重，而是展示干预有多及时。'],
+            media: { type: 'video', src: '/calm-intro.mp4', cap: '产品介绍影片 · 可灵 AI + 剪映' },
+            items: [
+              { no: '01', t: '镜头结构', d: '出门预告 → 通勤噪音 → 商场过载 → 一键安抚 → 平静回家，五个镜头对应旅程图的五个触点。' },
+              { no: '02', t: '视听策略', d: '崩溃段落刻意提升环境音的高频，白噪音进入后整体压低——用声音本身演示「降噪」这件事。' },
+              { no: '03', t: '制作工具', d: '可灵 AI 生成场景与镜头素材，剪映完成剪辑、配音与字幕。' },
+            ],
+          },
         ],
         reflection: '关怀型设计最容易犯的错，是替用户做决定。真正有用的判断来自旅程图里那个「爆发前 30 秒」，而不是我坐在桌前想象出来的需求。',
       },
@@ -566,23 +736,147 @@ const en = {
     },
     {
       id: 'calm', index: '02', year: '2026.04 — 06', coverImg: '/calm-cover.jpg',
-      title: 'Emotion-soothing Device for Autistic Children',
-      subtitle: 'Care-oriented smart hardware · Product design',
-      tags: ['Smart hardware', 'User research', 'AI-assisted design'],
-      desc: 'Started from policy and market research to define the design direction; built user personas and journey maps, ran competitor analysis and pain-point synthesis. Used AI tools to generate design intents and sketches, then pushed through modeling and rendering, presentation boards, and a product film made with Kling AI and CapCut.',
-      metrics: [{ k: 'Research', v: 'Persona / Journey / Competitor' }, { k: 'Deliverables', v: 'Renderings + product film' }],
+      shots: [],
+      title: 'Jingxing · Soothing Headset for Autistic Children',
+      subtitle: 'Care-oriented smart hardware · Product design & research',
+      tags: ['Smart hardware', 'User research', 'Structural modeling', 'AI-assisted design'],
+      desc: 'Validated the topic across policy, market and competitors; built three personas — child, parent and special-education teacher — and mapped an outing journey to lock intervention into the 30 seconds before a meltdown. Then used AI to generate design intents and form sketches before moving into Rhino modeling, Keyshot rendering and exploded structural views, closing with a board and a product film.',
+      metrics: [{ k: 'Passive noise cut', v: '15—20 dB' }, { k: 'Device weight', v: '< 200 g' }],
       cover: 'halo', accent: '#d9c9a3',
       detail: {
-        role: 'User research · Product design · 3D presentation',
+        role: 'User research · Product definition · Structural modeling · Film production',
         period: '2026.04 — 06 · 10 weeks',
         team: 'Solo project (course work)',
-        deliverables: 'Personas & journey map · Modeling & renders · Boards · Product film',
-        overview: 'An emotion-soothing device for autistic children. I opened with policy and market research to validate the topic, built dual-perspective personas for parent and child, mapped the journey before and after a meltdown to find the moment where design can actually intervene, then used AI to generate design intents and sketches before pushing into Rhino modeling, Keyshot rendering and a product film made with Kling AI and CapCut.',
-        process: [
-          { no: '01', title: 'Policy & market', desc: 'Started from special-education and child mental-health policy, cross-checked against existing products, to confirm the topic was both valuable and feasible.' },
-          { no: '02', title: 'Users & scenarios', desc: 'Built parent and child personas and mapped the journey before, during and after a meltdown to locate the moment worth intervening in.' },
-          { no: '03', title: 'Concept & sketches', desc: 'Used AI to generate design intents and form sketches, trading off safety, cleanability and portability until the form converged.' },
-          { no: '04', title: 'Modeling & presentation', desc: 'Rhino modeling and Keyshot rendering, presentation boards, and a product film produced with Kling AI and CapCut.' },
+        deliverables: 'Personas & journey map · Competitor analysis · Exploded views · Renders · Board · Product film',
+        overview: 'Jingxing is a head-worn soothing device for autistic children aged 3–10, built for the moment they step outside. I validated the topic across three lines — policy, market and competitors — then built personas for the child, the parent and the special-education teacher, mapped the emotional journey of a single outing, and locked intervention into the 30 seconds before a meltdown. AI generated the design intents and form sketches; Rhino and Keyshot carried the modeling, rendering and exploded structural views; a board and a 60-second product film closed the project.',
+        claim: 'Give going out one button the child can press.',
+        claimLead: 'Jingxing blocks unpredictable noise with passive isolation and answers it with predictable white noise and rhythmic vibration — it looks like a baseball cap, not a medical device.',
+        chapters: [
+          {
+            no: '01', zh: 'Background & research', en: 'BACKGROUND & RESEARCH',
+            claim: 'The child isn’t misbehaving. The world outside is just too loud.',
+            lead: 'One core trait of autism (ASD) is polarised sensory processing: hypersensitive children fear noise, bright light and being touched, and melt down outdoors; hyposensitive children actively seek deep pressure, vibration and white noise to self-soothe. The same child can hold both states at once — and going out (mall, metro, hospital) is where sensory overload peaks.',
+            paras: [
+              'China counts over 10 million autistic people, more than 2 million of them under 14, with roughly 150,000 new diagnoses each year. Over 90% of autistic children struggle with sensory regulation, and 67% melt down outdoors because of noise or glare.',
+              'Yet the shelf only offers basic noise-cancelling earmuffs, ordinary headphones, weighted vests and simple tactile toys — nothing that combines blocking external stimulus with controllable white noise, vibration and deep pressure. Most look clinical, children refuse to wear them, and none are discreet, child-friendly or operable with a single press.',
+            ],
+            media: { type: 'img', src: '/autism/scene-home.jpg', cap: 'Scenario · the moment before leaving home', side: true },
+            items: [
+              { no: '01', t: 'Policy window', d: 'Autistic children aged 0–6 are covered by free rehabilitation aid, with assistive-device fitting as an explicit service; both the 14th Five-Year Plan for Disability Protection and the 2024 guidance on technology-assisted care name smart rehabilitation devices. Shandong subsidises device fitting at ¥1,500 per child, and many provinces allow ¥20,000–24,000 of annual rehabilitation subsidy to be spent on assistive products.' },
+              { no: '02', t: 'Market size', d: 'China’s autism rehabilitation market reached roughly ¥18bn in 2024 and is forecast at ¥42–90bn by 2030. The global sensory-regulation market sits at about US$148m in 2025, with sensory toys and wearables growing 15%+ a year.' },
+              { no: '03', t: 'Competitive landscape', d: 'Earmuffs (¥99–159) only block, never soothe; soft protective caps (¥500–700) and hard-shell helmets (¥800–1,200) are passive protection; portable white-noise machines (¥199–299) cannot be worn. Plotted on a map: portable products do one thing, capable products need an adult to operate them.' },
+              { no: '04', t: 'The gap', d: '73% of autistic children prefer passive over active noise cancellation; effective isolation plus soothing cuts outdoor meltdowns by 67%. In parent surveys, “block stimulus + white noise soothing” and “looks ordinary so the child will wear it” consistently rank at the top — which is exactly where this product starts.' },
+            ],
+          },
+          {
+            no: '02', zh: 'Personas & journey', en: 'PERSONAS & JOURNEY',
+            claim: 'The child wants “no squeezing, no weight, nothing scary”. The parent wants “one press and it works”.',
+            lead: 'Three roles hold each other back: if the child refuses to wear it, every feature on the parent side is worth zero; if the parent cannot work it, the teacher cannot use it in class. Personas and the journey map put all three demands on one coordinate system.',
+            items: [
+              { no: '01', t: 'Lin An’an · 6 · preschool autistic child', d: 'The wearer. Extremely sensitive to traffic and mall announcements; covers her ears, becomes agitated, resists touch from strangers. Loves gentle nursery rhymes and squishy blocks.', list: ['Light and pressure-free, skin-friendly and breathable', 'A soft, low-stimulation soothing mode', 'Cute, cornerless form that is easy to fit'] },
+              { no: '02', t: 'Su Qing · 32 · full-time caregiver mother', d: 'Buyer and daily operator. Manages the whole day, takes her child to clinics and therapy, cares deeply about safety and cleanability.', list: ['Minimal interaction — one press to start soothing', 'Drop-resistant, wipe-clean, simple to put on', 'Safe materials, easy to pack and carry'] },
+              { no: '03', t: 'Chen Ran · 29 · special-education therapist', d: 'Professional recommender. Runs therapy sessions for several children at once and cares about classroom order and fit.', list: ['Understated looks, no medical feel', 'Stays put, does not slide off', 'Gentle mode that will not disturb class, wearable for hours'] },
+              { no: '04', t: 'Journey · seven touchpoints', d: 'From “getting ready at home” to “taking it off back home”, the emotional curve rises and falls twice in a single outing; the moments worth intervening in sit in the middle.', list: ['Getting ready: unfamiliar gear is rejected → use familiar objects as a positive “we’re going out” cue', 'Putting it on: first reaction is to flinch → curved lining matches the head shape, wearable for 2 hours', 'Commute: a horn makes her jump → selective isolation that blocks noise but keeps voices', 'In the mall: senses flood in, anxiety builds → the child presses the physical button and self-soothes', 'Meltdown: sight and sound overload together → white noise plus rhythmic vibration, two channels at once', 'Back home: emotional aftershocks remain → warm light and an off cue close the loop safely', 'Review: the parent checks the calm duration in the app → care backed by evidence'] },
+            ],
+          },
+          {
+            no: '03', zh: 'Positioning & tech', en: 'POSITIONING & TECH',
+            claim: 'Lock the positioning first, derive the tech second.',
+            lead: 'Written up as a product development brief: six positions — user, structure, function, scenario, colour and style — are fixed first, then translated into hardware parameters and a technical route. Every visual decision carries a metric behind it.',
+            paras: [
+              'The technical route has three layers: active noise cancellation samples ambient noise through microphones and generates an inverted wave to cancel it; multi-sensory intervention follows sensory integration theory, coordinating sound, soft light and tactile vibration; biofeedback reads heart-rate variability through a PPG sensor and turns emotional state into a triggerable threshold.',
+              'Every key parameter came from a constraint: under 200 g total, headband pressure under 2 N, head circumference 48–56 cm, volume locked at or below 85 dB, 15–20 dB passive isolation, 8–10 hours of battery. The white-noise band deliberately avoids 250 Hz (air-conditioning hum) and 8 kHz (doorbells) — the two frequencies autistic children tolerate least.',
+            ],
+            media: { type: 'img', src: '/autism/explode-1.jpg', cap: 'Exploded view · headband / earcup / control module', side: true },
+            items: [
+              { no: '01', t: 'User position', d: 'Core users are autistic children aged 3–10; secondary users are parents, special-education teachers and therapists.' },
+              { no: '02', t: 'Structural position', d: 'Single head-worn unit integrating isolation, vibration module, speaker, light shield and physical button; modular and washable.' },
+              { no: '03', t: 'Functional position', d: 'Isolation that keeps voices, vibration soothing, white-noise soothing, light shielding, emotional early warning and pre-recorded voice.' },
+              { no: '04', t: 'Scenario position', d: 'Unfamiliar, noisy outings — commuting, malls, hospitals — plus classroom and sudden moments at home.' },
+              { no: '05', t: 'Colour position', d: 'Low-saturation, soft palette: warm grey, light blue, pale green. Nothing harsh.' },
+              { no: '06', t: 'Style position', d: 'Rounded, no sharp corners, closer to ordinary kids’ headphones or a baseball cap; skin-friendly fabric, medical silicone, memory foam and light plastics.' },
+            ],
+          },
+          {
+            no: '04', zh: 'The 30-second window', en: 'THE 30-SECOND WINDOW',
+            claim: 'The 30 seconds before a meltdown are the only window left.',
+            lead: 'I dissected two cross-domain cases — the “pre-operative anxiety prediction system” in healthcare and the emotional-soothing design of a hospital blood-draw procedure. Both point at the same thing: the timing of soothing matters more than its method.',
+            items: [
+              { no: '01', t: 'Physiology can predict a meltdown', d: 'Heart rate can spike within 30 seconds before an anxiety episode; falling HRV combined with rising heart rate predicts anxiety with over 85% accuracy. A threshold of “40% above personal resting heart rate, sustained for 10 seconds” produced the fewest false alarms.' },
+              { no: '02', t: 'Start light, then escalate', d: 'Automatic intervention begins gently — slightly lowering ambient sound, fading white noise in. A second press from the child escalates it. One-press cancel is always available, so a wrong call never becomes a grievance.' },
+              { no: '03', t: 'Timing decides the effect', d: 'Playing it during a meltdown barely works — the auditory channel has already closed; it works during the build-up; it works best 30 seconds before, and can prevent the meltdown entirely. Pre-warming at low volume 5–10 minutes before leaving turns the device from a strange stimulus into a safety signal.' },
+              { no: '04', t: 'Familiar sound must stay swappable', d: 'Some children bind whatever was playing during a meltdown to the negative experience. So multiple tracks — heartbeat, rain, fan — are provided, parents can switch or reset the playlist in the app, and the child can pause at any time to take control back.' },
+            ],
+          },
+          {
+            no: '05', zh: 'Concept & sketches', en: 'CONCEPT & SKETCHES',
+            claim: 'Kill the medical look before talking about form.',
+            lead: 'AI tools generated batches of design intents and form sketches, traded off against three constraints: safety (no small parts, no sharp corners), cleanability (modular, swappable covers) and portability (light, foldable to pack).',
+            paras: [
+              'The first round leaned towards a protective helmet and was rejected — children fled at the sight of it. The second tried a plush-toy direction and was rejected too — not everyday enough, parents found it childish. The form converged on “a device that looks like a baseball cap”: a perforated brim for weight and heat, a removable mesh outer shell, and modular joints between earcups and headband.',
+              'The sketch stage also drew all three module relationships into one drawing to fix the counterweight of vibration motor, battery and main controller — once the centre of mass sits too far back, the device slides when the child runs, and that decides every later detail.',
+            ],
+            media: { type: 'masonry', items: CALM_SKETCHES, cap: 'Form sketches & structural studies · 4' },
+          },
+          {
+            no: '06', zh: 'Structure & details', en: 'STRUCTURE & DETAILS',
+            claim: 'Three modules, two dozen detail decisions.',
+            lead: 'The device splits into a headband module, an earcup module and a control module. The headband carries flexible circuitry and a vibration motor for tactile feedback; the earcup integrates the passive isolation chamber, speaker and PPG sensor; the control module holds the main chip, battery and Bluetooth, and links to the parent app.',
+            media: { type: 'masonry', items: CALM_STRUCTURE, cap: 'Exploded views / dock / mesh shell / detail crops' },
+            items: [
+              { no: '01', t: 'Headband module', d: 'Lightweight skin-friendly material with flexible circuitry and a vibration motor for precise tactile feedback; stepless damped adjustment covers 48–56 cm, with a widened inner pad to spread pressure.' },
+              { no: '02', t: 'Earcup module', d: 'A multi-layer chamber delivers 15–20 dB of passive isolation within 15–20 mm; memory foam with a removable medical-silicone cover, and a dual-axis hinge (±15° lateral, ±10° vertical) to fit different faces.' },
+              { no: '03', t: 'Control module', d: 'Low-power Bluetooth main controller with button response under 50 ms; Type-C port sits behind the headband behind a dust-and-water plug; 8–10 hours of battery, with automatic volume drop and an app alert when low.' },
+              { no: '04', t: 'Charging dock', d: 'A desktop dock handles both storage and charging — the device simply drops into place. Once disassembled, the earcup foam and outer mesh can be replaced individually.' },
+            ],
+          },
+          {
+            no: '07', zh: 'Renders & CMF', en: 'RENDERS & CMF',
+            claim: 'Turn “not a medical device” into a palette you can check.',
+            lead: 'Rhino handled the surfacing, Keyshot produced front, side, top and three-quarter renders. Every colourway stays in a low-saturation band so the child will wear it, the parent is not embarrassed, and the teacher sees nothing out of place in class.',
+            media: { type: 'masonry', items: [...CALM_RENDERS, ...CALM_CMF], cap: 'Renders & colourways · 11' },
+            items: [
+              { no: '01', t: 'Orthographic & three-quarter views', d: 'Front checks brim proportion, side checks earcup thickness and headband curvature, top checks the spread of the ventilation cut-outs.' },
+              { no: '02', t: 'Three low-saturation colourways', d: 'Warm grey, light blue and pale green, all held in the upper-mid lightness range to avoid harsh contrast.' },
+              { no: '03', t: 'Material strategy', d: 'Every contact surface uses medical silicone or skin-friendly fabric to avoid the feel of synthetic fibre; the mesh shell and perforated brim handle heat and weight.' },
+              { no: '04', t: 'Defusing the medical look', d: 'No indicator arrays, no metallic finishes — a single hidden status light on the outer earcup, with a visual language borrowed from ordinary children’s headphones.' },
+            ],
+          },
+          {
+            no: '08', zh: 'Scenarios & flow', en: 'SCENARIOS & FLOW',
+            claim: 'If it takes more than three steps, it isn’t an emergency tool.',
+            lead: 'Interaction keeps three actions only: put it on, press once, take it off. Everything complex lives in the parent app; the child side is always one large physical button.',
+            media: { type: 'masonry', items: CALM_SCENES, cap: 'Scenarios · home / car / outdoors / docked' },
+            steps: [
+              { no: '01', t: 'Put on · one pull', d: 'Extend the headband to fit, earcups cover both ears and passive isolation works immediately; capacitive wear detection powers it on, and it sleeps when not worn.' },
+              { no: '02', t: 'Soothing · one press', d: 'A short press plays white noise, another switches tracks, a long press powers off. When an anxiety precursor is detected, the device fades in white noise and rhythmic vibration by itself.' },
+              { no: '03', t: 'Take off · back to the dock', d: 'Taking it off pauses playback; dropping it on the dock stores and charges it. Parents can review calm duration, lock the child button, or start and stop playback remotely.' },
+            ],
+          },
+          {
+            no: '09', zh: 'Final board', en: 'FINAL BOARD',
+            claim: 'One board, the whole chain from research to device.',
+            lead: 'The board is sequenced as background research → personas and journey → design positioning → exploded structure → scenario renders → parameters, so a reviewer grasps the value in ten seconds and the reasoning within a minute.',
+            paras: ['Information hierarchy was deliberately rationed: only the three largest figures survive at display size (10 million people, 67% outdoor meltdown rate, 15–20 dB isolation); everything else drops to small print. Product imagery takes nearly half the board, and renders — not line drawings — do the persuading.'],
+            media: { type: 'img', src: '/autism/board.jpg', cap: 'Final board · full project chain' },
+            items: [
+              { no: '01', t: 'Left column · research & positioning', d: 'Policy, market size, competitor map and the four pain-point conclusions run vertically — answering “why is this worth doing”.' },
+              { no: '02', t: 'Middle column · the product', d: 'Front, side and top views, the exploded diagram and key detail crops — answering “what did it become”.' },
+              { no: '03', t: 'Right column · scenarios & specs', d: 'Three usage scenarios — home, commute, storage — with a spec table for weight, isolation, battery and safety — answering “how does it work in use”.' },
+            ],
+          },
+          {
+            no: '10', zh: 'Product film', en: 'PRODUCT FILM',
+            claim: 'Tell “how a cap catches a meltdown” in 60 seconds.',
+            lead: 'The film is cut along the outing itself: leaving the house, sensory overload in the mall, white noise fading in after a single press, the child settling, and the dock closing the loop.',
+            paras: ['Kling AI generated the scenes and camera moves; CapCut handled editing, voice-over and subtitles. The meltdown is cut deliberately short — the point is not how severe the problem is, but how quickly the intervention lands.'],
+            media: { type: 'video', src: '/calm-intro.mp4', cap: 'Product film · Kling AI + CapCut' },
+            items: [
+              { no: '01', t: 'Shot structure', d: 'Leaving-home cue → commute noise → mall overload → one-press soothing → calm return: five shots mapped to five journey touchpoints.' },
+              { no: '02', t: 'Sound strategy', d: 'The meltdown section lifts the high end of ambient sound; once white noise enters, everything drops — the sound itself demonstrates what isolation does.' },
+              { no: '03', t: 'Tooling', d: 'Kling AI for scenes and camera material; CapCut for editing, voice-over and subtitles.' },
+            ],
+          },
         ],
         reflection: 'The easiest mistake in care-driven design is deciding on behalf of the user. The judgment that mattered came from the "30 seconds before the meltdown" in the journey map — not from needs I invented at my desk.',
       },
