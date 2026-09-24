@@ -10,139 +10,139 @@ const XUNGU_UI_SHOTS = Array.from({ length: 18 }, (_, i) => ({
 
 /* 头戴设备项目图集：草图 / 结构拆解 / 渲染 / 配色 / 场景 */
 const CALM_SKETCHES = [
-  { id: 'sk-1', img: '/autism/sketch-form.jpg', width: 1500, height: 1125 },
-  { id: 'sk-2', img: '/autism/sketch-module.jpg', width: 1500, height: 1125 },
-  { id: 'sk-3', img: '/autism/sketch-views.jpg', width: 1500, height: 1125 },
-  { id: 'sk-4', img: '/autism/sketch-final.jpg', width: 1500, height: 1059 },
+  { id: 'sk-1', img: 'autism/sketch-form.jpg', width: 1500, height: 1125 },
+  { id: 'sk-2', img: 'autism/sketch-module.jpg', width: 1500, height: 1125 },
+  { id: 'sk-3', img: 'autism/sketch-views.jpg', width: 1500, height: 1125 },
+  { id: 'sk-4', img: 'autism/sketch-final.jpg', width: 1500, height: 1059 },
 ]
 
 const CALM_STRUCTURE = [
-  { id: 'st-1', img: '/autism/explode-1.jpg', width: 1500, height: 1045 },
-  { id: 'st-2', img: '/autism/explode-2.jpg', width: 1500, height: 1045 },
-  { id: 'st-3', img: '/autism/explode-3.jpg', width: 1500, height: 1045 },
-  { id: 'st-4', img: '/autism/explode-flat.jpg', width: 1500, height: 1025 },
-  { id: 'st-5', img: '/autism/dock-explode.jpg', width: 1500, height: 1045 },
-  { id: 'st-6', img: '/autism/mesh-shell.jpg', width: 1372, height: 1146 },
-  { id: 'st-7', img: '/autism/detail-1.jpg', width: 1500, height: 1045 },
-  { id: 'st-8', img: '/autism/detail-3.jpg', width: 1500, height: 1045 },
-  { id: 'st-9', img: '/autism/detail-5.jpg', width: 1500, height: 1045 },
+  { id: 'st-1', img: 'autism/explode-1.jpg', width: 1500, height: 1045 },
+  { id: 'st-2', img: 'autism/explode-2.jpg', width: 1500, height: 1045 },
+  { id: 'st-3', img: 'autism/explode-3.jpg', width: 1500, height: 1045 },
+  { id: 'st-4', img: 'autism/explode-flat.jpg', width: 1500, height: 1025 },
+  { id: 'st-5', img: 'autism/dock-explode.jpg', width: 1500, height: 1045 },
+  { id: 'st-6', img: 'autism/mesh-shell.jpg', width: 1372, height: 1146 },
+  { id: 'st-7', img: 'autism/detail-1.jpg', width: 1500, height: 1045 },
+  { id: 'st-8', img: 'autism/detail-3.jpg', width: 1500, height: 1045 },
+  { id: 'st-9', img: 'autism/detail-5.jpg', width: 1500, height: 1045 },
 ]
 
 const CALM_RENDERS = [
-  { id: 'rd-1', img: '/autism/render-front.jpg', width: 1500, height: 786 },
-  { id: 'rd-2', img: '/autism/render-side.jpg', width: 1500, height: 786 },
-  { id: 'rd-3', img: '/autism/render-back.jpg', width: 1500, height: 1025 },
-  { id: 'rd-4', img: '/autism/render-rear34.jpg', width: 1500, height: 1025 },
-  { id: 'rd-5', img: '/autism/render-brim.jpg', width: 1500, height: 1045 },
-  { id: 'rd-6', img: '/autism/render-front-close.jpg', width: 1500, height: 1118 },
+  { id: 'rd-1', img: 'autism/render-front.jpg', width: 1500, height: 786 },
+  { id: 'rd-2', img: 'autism/render-side.jpg', width: 1500, height: 786 },
+  { id: 'rd-3', img: 'autism/render-back.jpg', width: 1500, height: 1025 },
+  { id: 'rd-4', img: 'autism/render-rear34.jpg', width: 1500, height: 1025 },
+  { id: 'rd-5', img: 'autism/render-brim.jpg', width: 1500, height: 1045 },
+  { id: 'rd-6', img: 'autism/render-front-close.jpg', width: 1500, height: 1118 },
 ]
 
 const CALM_CMF = [
-  { id: 'cm-1', img: '/autism/color-1.jpg', width: 1498, height: 1050 },
-  { id: 'cm-2', img: '/autism/color-2.jpg', width: 1498, height: 1050 },
-  { id: 'cm-3', img: '/autism/color-3.jpg', width: 1498, height: 1050 },
-  { id: 'cm-4', img: '/autism/color-4.jpg', width: 1498, height: 1050 },
-  { id: 'cm-5', img: '/autism/color-5.jpg', width: 1216, height: 1293 },
+  { id: 'cm-1', img: 'autism/color-1.jpg', width: 1498, height: 1050 },
+  { id: 'cm-2', img: 'autism/color-2.jpg', width: 1498, height: 1050 },
+  { id: 'cm-3', img: 'autism/color-3.jpg', width: 1498, height: 1050 },
+  { id: 'cm-4', img: 'autism/color-4.jpg', width: 1498, height: 1050 },
+  { id: 'cm-5', img: 'autism/color-5.jpg', width: 1216, height: 1293 },
 ]
 
 const CALM_SCENES = [
-  { id: 'sc-1', img: '/autism/scene-home.jpg', width: 1405, height: 1119 },
-  { id: 'sc-2', img: '/autism/scene-car.jpg', width: 1296, height: 1213 },
-  { id: 'sc-3', img: '/autism/scene-park.jpg', width: 1277, height: 1231 },
-  { id: 'sc-4', img: '/autism/scene-dock.jpg', width: 1500, height: 675 },
-  { id: 'sc-5', img: '/autism/usage-car.jpg', width: 1448, height: 1086 },
-  { id: 'sc-6', img: '/autism/usage-indoor.jpg', width: 1319, height: 1192 },
-  { id: 'sc-7', img: '/autism/flow-wear.jpg', width: 1500, height: 1045 },
-  { id: 'sc-8', img: '/autism/flow-charge.jpg', width: 1500, height: 1045 },
-  { id: 'sc-9', img: '/autism/flow-off.jpg', width: 1500, height: 1045 },
+  { id: 'sc-1', img: 'autism/scene-home.jpg', width: 1405, height: 1119 },
+  { id: 'sc-2', img: 'autism/scene-car.jpg', width: 1296, height: 1213 },
+  { id: 'sc-3', img: 'autism/scene-park.jpg', width: 1277, height: 1231 },
+  { id: 'sc-4', img: 'autism/scene-dock.jpg', width: 1500, height: 675 },
+  { id: 'sc-5', img: 'autism/usage-car.jpg', width: 1448, height: 1086 },
+  { id: 'sc-6', img: 'autism/usage-indoor.jpg', width: 1319, height: 1192 },
+  { id: 'sc-7', img: 'autism/flow-wear.jpg', width: 1500, height: 1045 },
+  { id: 'sc-8', img: 'autism/flow-charge.jpg', width: 1500, height: 1045 },
+  { id: 'sc-9', img: 'autism/flow-off.jpg', width: 1500, height: 1045 },
 ]
 
 /* 香薰机 UI 图集（全部裁切为 596×1280 屏幕比例） */
 const AR = (id, img) => ({ id, img, width: 596, height: 1280 })
 
 const AROMA_ONBOARD = [
-  AR('ob-1', '/aroma/ui-open.jpg'), AR('ob-2', '/aroma/ui-login.jpg'),
-  AR('ob-3', '/aroma/ui-connect.jpg'), AR('ob-4', '/aroma/ui-connected.jpg'),
-  AR('ob-5', '/aroma/ui-device-manage.jpg'),
+  AR('ob-1', 'aroma/ui-open.jpg'), AR('ob-2', 'aroma/ui-login.jpg'),
+  AR('ob-3', 'aroma/ui-connect.jpg'), AR('ob-4', 'aroma/ui-connected.jpg'),
+  AR('ob-5', 'aroma/ui-device-manage.jpg'),
 ]
 const AROMA_CONTROL = [
-  AR('ct-1', '/aroma/ui-home.jpg'), AR('ct-2', '/aroma/ui-light.jpg'),
-  AR('ct-3', '/aroma/ui-light2.jpg'), AR('ct-4', '/aroma/ui-density.jpg'),
-  AR('ct-5', '/aroma/ui-timer.jpg'), AR('ct-6', '/aroma/ui-oil-slot.jpg'),
+  AR('ct-1', 'aroma/ui-home.jpg'), AR('ct-2', 'aroma/ui-light.jpg'),
+  AR('ct-3', 'aroma/ui-light2.jpg'), AR('ct-4', 'aroma/ui-density.jpg'),
+  AR('ct-5', 'aroma/ui-timer.jpg'), AR('ct-6', 'aroma/ui-oil-slot.jpg'),
 ]
 const AROMA_DIY = [
-  AR('dy-1', '/aroma/ui-diy.jpg'), AR('dy-2', '/aroma/ui-custom.jpg'),
-  AR('dy-3', '/aroma/ui-recipe.jpg'), AR('dy-4', '/aroma/ui-recipe-detail.jpg'),
-  AR('dy-5', '/aroma/ui-ai.jpg'), AR('dy-6', '/aroma/ui-daily.jpg'),
+  AR('dy-1', 'aroma/ui-diy.jpg'), AR('dy-2', 'aroma/ui-custom.jpg'),
+  AR('dy-3', 'aroma/ui-recipe.jpg'), AR('dy-4', 'aroma/ui-recipe-detail.jpg'),
+  AR('dy-5', 'aroma/ui-ai.jpg'), AR('dy-6', 'aroma/ui-daily.jpg'),
 ]
 const AROMA_MALL = [
-  AR('ml-1', '/aroma/ui-mall.jpg'), AR('ml-2', '/aroma/ui-goods.jpg'),
-  AR('ml-3', '/aroma/ui-cart.jpg'), AR('ml-4', '/aroma/ui-pay.jpg'),
-  AR('ml-5', '/aroma/ui-paid.jpg'), AR('ml-6', '/aroma/ui-orders.jpg'),
+  AR('ml-1', 'aroma/ui-mall.jpg'), AR('ml-2', 'aroma/ui-goods.jpg'),
+  AR('ml-3', 'aroma/ui-cart.jpg'), AR('ml-4', 'aroma/ui-pay.jpg'),
+  AR('ml-5', 'aroma/ui-paid.jpg'), AR('ml-6', 'aroma/ui-orders.jpg'),
 ]
 const AROMA_COMMUNITY = [
-  AR('cm-1', '/aroma/ui-community.jpg'), AR('cm-2', '/aroma/ui-post-top.jpg'),
-  AR('cm-3', '/aroma/ui-comment.jpg'), AR('cm-4', '/aroma/ui-qa.jpg'),
-  AR('cm-5', '/aroma/ui-qa-detail.jpg'), AR('cm-6', '/aroma/ui-ask.jpg'),
+  AR('cm-1', 'aroma/ui-community.jpg'), AR('cm-2', 'aroma/ui-post-top.jpg'),
+  AR('cm-3', 'aroma/ui-comment.jpg'), AR('cm-4', 'aroma/ui-qa.jpg'),
+  AR('cm-5', 'aroma/ui-qa-detail.jpg'), AR('cm-6', 'aroma/ui-ask.jpg'),
 ]
 const AROMA_ME = [
-  AR('me-1', '/aroma/ui-me.jpg'), AR('me-2', '/aroma/ui-fav-recipe.jpg'),
-  AR('me-3', '/aroma/ui-settings.jpg'), AR('me-4', '/aroma/ui-feedback.jpg'),
+  AR('me-1', 'aroma/ui-me.jpg'), AR('me-2', 'aroma/ui-fav-recipe.jpg'),
+  AR('me-3', 'aroma/ui-settings.jpg'), AR('me-4', 'aroma/ui-feedback.jpg'),
 ]
 /* 产品与场景图（展板素材原图，非展板截图）；两张正面色调重复，只保留与整体氛围一致的暖调版 */
 const AROMA_PRODUCT = [
-  { id: 'pd-1', img: '/aroma/prod-front.jpg', width: 718, height: 1100, alt: '「流光」整机定案' },
-  { id: 'pd-2', img: '/aroma/prod-exploded.jpg', width: 415, height: 1400, alt: '结构爆炸图' },
+  { id: 'pd-1', img: 'aroma/prod-front.jpg', width: 718, height: 1100, alt: '「流光」整机定案' },
+  { id: 'pd-2', img: 'aroma/prod-exploded.jpg', width: 415, height: 1400, alt: '结构爆炸图' },
 ]
 
 /* 音响项目图集（综合设计1 · 复古式可触摸音响） */
 const ST_OVERVIEW = [
-  { id: 'so-1', img: '/stereo/s-front.jpg', width: 1600, height: 1118, alt: '整机正视 · 波纹起伏' },
-  { id: 'so-2', img: '/stereo/s-detail-warm.jpg', width: 1599, height: 819, alt: '面板特写 · 暖光' },
+  { id: 'so-1', img: 'stereo/s-front.jpg', width: 1600, height: 1118, alt: '整机正视 · 波纹起伏' },
+  { id: 'so-2', img: 'stereo/s-detail-warm.jpg', width: 1599, height: 819, alt: '面板特写 · 暖光' },
 ]
 const ST_INSPIRE = [
-  { id: 'si-1', img: '/stereo/s-ripple-solo.jpg', width: 1600, height: 1058, alt: '水波节奏器单体' },
-  { id: 'si-2', img: '/stereo/s-detail-flat.jpg', width: 1600, height: 1058, alt: '波纹板平放俯拍' },
+  { id: 'si-1', img: 'stereo/s-ripple-solo.jpg', width: 1600, height: 1058, alt: '水波节奏器单体' },
+  { id: 'si-2', img: 'stereo/s-detail-flat.jpg', width: 1600, height: 1058, alt: '波纹板平放俯拍' },
 ]
 const ST_RENDER = [
-  { id: 'sr-1', img: '/stereo/s-tilt.jpg', width: 1600, height: 1118, alt: '斜俯视 · 绿面板' },
-  { id: 'sr-2', img: '/stereo/s-green.jpg', width: 1600, height: 1496, alt: '斜视角 · 播放中' },
-  { id: 'sr-3', img: '/stereo/s-grey.jpg', width: 1600, height: 1118, alt: '正视偏侧' },
-  { id: 'sr-4', img: '/stereo/s-white.jpg', width: 1600, height: 1118, alt: '白底正视特写' },
-  { id: 'sr-5', img: '/stereo/s-blue-top.jpg', width: 1600, height: 1118, alt: '俯视 · 蓝底待机' },
+  { id: 'sr-1', img: 'stereo/s-tilt.jpg', width: 1600, height: 1118, alt: '斜俯视 · 绿面板' },
+  { id: 'sr-2', img: 'stereo/s-green.jpg', width: 1600, height: 1496, alt: '斜视角 · 播放中' },
+  { id: 'sr-3', img: 'stereo/s-grey.jpg', width: 1600, height: 1118, alt: '正视偏侧' },
+  { id: 'sr-4', img: 'stereo/s-white.jpg', width: 1600, height: 1118, alt: '白底正视特写' },
+  { id: 'sr-5', img: 'stereo/s-blue-top.jpg', width: 1600, height: 1118, alt: '俯视 · 蓝底待机' },
 ]
 const ST_PARTS = [
-  { id: 'sp-1', img: '/stereo/s-exploded.jpg', width: 1600, height: 1058, alt: '爆炸图 · 斜视角' },
-  { id: 'sp-2', img: '/stereo/s-part-hood.jpg', width: 900, height: 600, alt: '玻璃罩与波纹板分离特写' },
-  { id: 'sp-3', img: '/stereo/s-part-keys.jpg', width: 550, height: 370, alt: '开关按键与切歌键特写' },
-  { id: 'sp-4', img: '/stereo/s-exploded2.jpg', width: 1600, height: 1058, alt: '爆炸图 · 分层' },
+  { id: 'sp-1', img: 'stereo/s-exploded.jpg', width: 1600, height: 1058, alt: '爆炸图 · 斜视角' },
+  { id: 'sp-2', img: 'stereo/s-part-hood.jpg', width: 900, height: 600, alt: '玻璃罩与波纹板分离特写' },
+  { id: 'sp-3', img: 'stereo/s-part-keys.jpg', width: 550, height: 370, alt: '开关按键与切歌键特写' },
+  { id: 'sp-4', img: 'stereo/s-exploded2.jpg', width: 1600, height: 1058, alt: '爆炸图 · 分层' },
 ]
 const ST_DETAILS = [
-  { id: 'sd-1', img: '/stereo/s-knob.jpg', width: 1600, height: 1058, alt: '旋钮与切歌键特写' },
-  { id: 'sd-2', img: '/stereo/s-panel.jpg', width: 1600, height: 1118, alt: '面板与波纹板' },
-  { id: 'sd-3', img: '/stereo/s-detail-side.jpg', width: 1600, height: 1058, alt: '侧视特写 · 播放中' },
+  { id: 'sd-1', img: 'stereo/s-knob.jpg', width: 1600, height: 1058, alt: '旋钮与切歌键特写' },
+  { id: 'sd-2', img: 'stereo/s-panel.jpg', width: 1600, height: 1118, alt: '面板与波纹板' },
+  { id: 'sd-3', img: 'stereo/s-detail-side.jpg', width: 1600, height: 1058, alt: '侧视特写 · 播放中' },
 ]
 const ST_VIEWS = [
-  { id: 'sv-1', img: '/stereo/v-front.jpg', width: 1600, height: 1058, alt: '正视图' },
-  { id: 'sv-2', img: '/stereo/v-side.jpg', width: 1600, height: 1058, alt: '侧视图' },
-  { id: 'sv-3', img: '/stereo/v-top.jpg', width: 1600, height: 1058, alt: '顶视图' },
+  { id: 'sv-1', img: 'stereo/v-front.jpg', width: 1600, height: 1058, alt: '正视图' },
+  { id: 'sv-2', img: 'stereo/v-side.jpg', width: 1600, height: 1058, alt: '侧视图' },
+  { id: 'sv-3', img: 'stereo/v-top.jpg', width: 1600, height: 1058, alt: '顶视图' },
 ]
 const ST_RUN = [
-  { id: 'st-1', img: '/stereo/s-idle.jpg', width: 1600, height: 1058, alt: '使用前 · 波纹板平伏' },
-  { id: 'st-2', img: '/stereo/s-playing.jpg', width: 1600, height: 1058, alt: '使用中 · 波纹随节奏隆起' },
+  { id: 'st-1', img: 'stereo/s-idle.jpg', width: 1600, height: 1058, alt: '使用前 · 波纹板平伏' },
+  { id: 'st-2', img: 'stereo/s-playing.jpg', width: 1600, height: 1058, alt: '使用中 · 波纹随节奏隆起' },
 ]
 const ST_SCENES = [
-  { id: 'ss-1', img: '/stereo/sc-work.jpg', width: 1600, height: 962, alt: '办公桌面场景' },
-  { id: 'ss-2', img: '/stereo/sc-relax.jpg', width: 1600, height: 962, alt: '床边休闲场景' },
+  { id: 'ss-1', img: 'stereo/sc-work.jpg', width: 1600, height: 962, alt: '办公桌面场景' },
+  { id: 'ss-2', img: 'stereo/sc-relax.jpg', width: 1600, height: 962, alt: '床边休闲场景' },
 ]
 const ST_BOARDS = [
-  { id: 'sb-1', img: '/stereo/board-retro.jpg', width: 1202, height: 1700, alt: '复古风设计展板' },
-  { id: 'sb-2', img: '/stereo-board.jpg', width: 1357, height: 1920, alt: 'STEREO 设计展板' },
+  { id: 'sb-1', img: 'stereo/board-retro.jpg', width: 1202, height: 1700, alt: '复古风设计展板' },
+  { id: 'sb-2', img: 'stereo-board.jpg', width: 1357, height: 1920, alt: 'STEREO 设计展板' },
 ]
 const AROMA_SCENES = [
-  { id: 'sn-1', img: '/aroma/scene-living.jpg', width: 1600, height: 759 },
-  { id: 'sn-2', img: '/aroma/scene-desk.jpg', width: 1335, height: 1178 },
-  { id: 'sn-3', img: '/aroma/scene-night.jpg', width: 1600, height: 800 },
+  { id: 'sn-1', img: 'aroma/scene-living.jpg', width: 1600, height: 759 },
+  { id: 'sn-2', img: 'aroma/scene-desk.jpg', width: 1335, height: 1178 },
+  { id: 'sn-3', img: 'aroma/scene-night.jpg', width: 1600, height: 800 },
 ]
 
 /* ================= 中文内容 ================= */
@@ -190,7 +190,7 @@ const zh = {
   ],
   projects: [
     {
-      id: 'xungu', index: '01', year: '2026.05 — 06', coverImg: '/xungu-cover.jpg', coverVideo: '/xungu-demo.mp4',
+      id: 'xungu', index: '01', year: '2026.05 — 06', coverImg: 'xungu-cover.jpg', coverVideo: 'xungu-demo.mp4',
       shots: [],
       title: '寻古拾光 · 传统文化学习小游戏',
       subtitle: '儿童寓教于乐 App · 交互原型',
@@ -215,7 +215,7 @@ const zh = {
               '寻宝遇到困难时可答题换取物品线索，通关即解锁传统文化卷轴，把「游戏」与「传统文化学习」缝在一起，形成娱乐化的学习模式。',
               '产品定位是一款兼具娱乐性与教育意义的轻量级学习 App：聚焦国风实景寻宝与传统文化碎片化科普，让知识获取轻松自然。',
             ],
-            media: { type: 'img', src: '/xungu-cover.jpg', cap: '品牌主视觉 · 卷轴与器物', side: true },
+            media: { type: 'img', src: 'xungu-cover.jpg', cap: '品牌主视觉 · 卷轴与器物', side: true },
             items: [
               { no: '01', t: '目标用户 · 7—13 岁小学生', d: '正处于传统文化启蒙阶段，对生动有趣的休闲找物小游戏有天然的偏好与接受度。' },
               { no: '02', t: '设计背景 · 沉浸式国风', d: '依托古代市井与古风宅院的手绘场景，把枯燥的文化科普转化为游戏化学习。' },
@@ -248,7 +248,7 @@ const zh = {
             no: '04', zh: '使用流程', en: 'USER FLOW',
             claim: '六个节点，一条不中断的探索链路。',
             lead: '从首页触达到成果沉淀，每一步都有明确的进入条件与可预期的返回路径；孩子卡住的地方，设计了兜底而不是死路。',
-            media: { type: 'img', src: '/xungu-flow.jpg', cap: '关键流程与状态跳转 · 六个状态节点', side: true },
+            media: { type: 'img', src: 'xungu-flow.jpg', cap: '关键流程与状态跳转 · 六个状态节点', side: true },
             steps: [
               { no: '01', t: '关卡开启 · 从首页进入寻宝', d: '首页点击【关卡】跳转关卡选择页，按自身进度与兴趣选择关卡，开启沉浸式寻宝体验。' },
               { no: '02', t: '沉浸探索 · 场景中寻找目标物件', d: '在国风场景中寻找隐藏的历史物件；信息框遮挡视野时可一键收起，获得更开阔的画面。' },
@@ -327,7 +327,7 @@ const zh = {
               '使用 Figma 完成全链路可点击交互，串联从首页探索、关卡挑战到个人资产管理的核心流程；新增纠缪页错题回顾、信息框收起等细节交互，让操作逻辑更贴合少儿用户的认知习惯。',
               '配合 GPT 生成插画与文案初稿，在 Figma 中统一排版、配色与图标规范，保证 40 余个界面气质一致。',
             ],
-            media: { type: 'video', src: '/xungu-demo.mp4', cap: '交互原型演示 · Figma 可点击原型', side: true },
+            media: { type: 'video', src: 'xungu-demo.mp4', cap: '交互原型演示 · Figma 可点击原型', side: true },
             items: [
               { no: '01', t: '原型工具', d: 'Figma 全链路可点击，覆盖 8 个核心页面与关键跳转。' },
               { no: '02', t: '界面产出', d: '40+ 张高保真界面，含首页、寻宝、答题、卷轴等完整链路。' },
@@ -348,8 +348,8 @@ const zh = {
       },
     },
     {
-      id: 'calm', index: '02', year: '2026.04 — 06', coverImg: '/calm-cover.jpg',
-      videoBlock: '/calm-intro.mp4', videoCap: '产品影片 · 静音自动播放', heroWide: true, coverCap: '场景渲染 · 公园外出',
+      id: 'calm', index: '02', year: '2026.04 — 06', coverImg: 'calm-cover.jpg',
+      videoBlock: 'calm-intro.mp4', videoCap: '产品影片 · 静音自动播放', heroWide: true, coverCap: '场景渲染 · 公园外出',
       shots: [],
       title: '静行 · 自闭症儿童外出安抚头戴设备',
       subtitle: '关怀向智能硬件 · 产品设计与用户研究',
@@ -374,7 +374,7 @@ const zh = {
               '中国自闭症人群超 1000 万，其中 0—14 岁儿童超 200 万，年均新增确诊约 15 万；90% 以上的自闭症儿童存在感官调节困难，67% 会因噪音或强光引发情绪崩溃。',
               '而货架上只有基础降噪耳罩、普通耳机、加重背心与简单触觉玩具——没有一款同时做到「隔离外界刺激 + 内置可控的白噪音 / 振动 / 深压安抚」。它们多为医疗风外观，孩子抗拒佩戴，也缺少低龄友好、日常隐蔽、一键操作的穿戴方案。',
             ],
-            media: { type: 'img', src: '/autism/scene-home.jpg', cap: '使用场景 · 出门前的居家时刻', side: true },
+            media: { type: 'img', src: 'autism/scene-home.jpg', cap: '使用场景 · 出门前的居家时刻', side: true },
             items: [
               { no: '01', t: '政策窗口', d: '0—6 岁孤独症儿童已纳入免费康复救助，辅助器具适配是明确服务内容；《“十四五”残疾人保障和发展规划》与《关于推进科技助残的指导意见》点名支持智能康复辅具；山东对 0—6 岁儿童辅具适配补助 1500 元 / 人，多省市每年 2 万—2.4 万元康复补贴可用于购买辅具。' },
               { no: '02', t: '市场规模', d: '中国自闭症康复市场 2024 年约 180 亿元，2030 年预计 420—900 亿元；全球感官调节市场 2025 年约 1.48 亿美元，其中感官玩具与穿戴类年增速 15%+。' },
@@ -401,7 +401,7 @@ const zh = {
               '技术路线分三层：主动降噪（ANC）由麦克风实时采集环境噪音并生成反相声波抵消；多感官干预基于感觉统合理论，用听觉、视觉柔光与触觉振动多通道协同；生物反馈则通过 PPG 传感器监测心率变异性，把情绪状态量化成可触发的阈值。',
               '关键参数全部来自约束条件：整机 < 200 g、头梁压力 < 2 N、头围覆盖 48—56 cm、音量上限锁定 ≤ 85 dB、被动降噪 15—20 dB、续航 8—10 小时；白噪音频段刻意避让 250 Hz（空调嗡鸣）与 8 kHz（门铃声）这两个自闭症儿童最不适的频段。',
             ],
-            media: { type: 'img', src: '/autism/explode-1.jpg', cap: '整机结构爆炸图 · 头梁 / 耳罩 / 控制模块', side: true },
+            media: { type: 'img', src: 'autism/explode-1.jpg', cap: '整机结构爆炸图 · 头梁 / 耳罩 / 控制模块', side: true },
             items: [
               { no: '01', t: '人群定位', d: '核心用户为 3—10 岁自闭症谱系儿童；次要用户为家长、特教老师与康复治疗师。' },
               { no: '02', t: '结构定位', d: '头戴一体式，集成降噪单元、振动模块、扬声器、遮光板与物理按键，模块化可拆卸清洗。' },
@@ -472,7 +472,7 @@ const zh = {
             claim: '一版展板，装下从调研到整机的全部链路。',
             lead: '展板按「背景调研 → 画像与旅程 → 设计定位 → 结构爆炸 → 场景渲染 → 参数说明」编排，让评审在 10 秒内看懂选题价值，在 1 分钟内看完设计推导。',
             paras: ['信息层级上做了取舍：数据只保留量级最大的三个（1000 万人群、67% 外出崩溃率、15—20 dB 降噪），其余下沉为小字注释；产品图占版面近一半，用渲染图而不是线稿来承担说服任务。'],
-            media: { type: 'img', src: '/autism/board.jpg', cap: '最终展板 · 头戴设备全链路' },
+            media: { type: 'img', src: 'autism/board.jpg', cap: '最终展板 · 头戴设备全链路' },
             items: [
               { no: '01', t: '左栏 · 调研与定位', d: '政策、市场规模、竞品坐标与四条痛点结论纵向排布，回答「为什么值得做」。' },
               { no: '02', t: '中栏 · 产品本体', d: '正侧顶三视图、爆炸图与关键细节放大，回答「做成了什么样」。' },
@@ -495,8 +495,8 @@ const zh = {
       },
     },
     {
-      id: 'aroma', index: '03', year: '2026.05 — 06', coverImg: '/aroma-cover.jpg', shots: [],
-      videoBlock: '/aroma-intro.mp4', videoTall: true,
+      id: 'aroma', index: '03', year: '2026.05 — 06', coverImg: 'aroma-cover.jpg', shots: [],
+      videoBlock: 'aroma-intro.mp4', videoTall: true,
       videoLabel: 'PRODUCT FILM · 22S',
       videoTitle: '一段影片，先看懂「流光」的气质',
       videoDesc: '雾气沿鹅卵石般的弧面升起，暖光从磨砂机身里透出来。这段 22 秒的产品影片用三个生活场景讲清硬件气质，静音自动循环；完整的 App 交互演示在第 13 章。',
@@ -558,7 +558,7 @@ const zh = {
             no: '04', zh: '用户画像与场景', en: 'PERSONAS & SCENARIOS',
             claim: '三个人，三种"香"的用法。',
             lead: '画像不是贴标签，而是决定首页第一屏放什么。三类用户在年龄、城市与生活节奏上的差别，直接对应 App 的三条主路径与硬件的三个核心场景。',
-            media: { type: 'img', src: '/aroma/scene-warm.jpg', cap: '同一段雾气，三种生活节奏', side: true },
+            media: { type: 'img', src: 'aroma/scene-warm.jpg', cap: '同一段雾气，三种生活节奏', side: true },
             items: [
               { no: '01', t: '都市白领 · 26 岁互联网运营，一线城市独居租房', d: '毕业两年、租房独居、经常加班，喜欢宅家追剧看书，注重氛围感但预算有限。痛点：回家情绪紧绷、空间小噪音灯光影响休息、新手不懂精油搭配、通风差有异味。需求：快速放松、操作简单、低噪、体积小巧。语录："下班回家打开香薰的那一刻，才觉得这是属于我自己的时间。"' },
               { no: '02', t: '细心守护者 · 33 岁国企行政，二线城市已婚两孩', d: '职场妈妈，时间被工作与家庭占满，家有老人与孩子，对安全性要求高。痛点：老人孩子对气味敏感、没时间打理、不同房间要不同氛围、不想为一堆耗材花钱。需求：温和无刺激配方、一键场景切换、易拆洗、低噪。语录："能让家里安安静静、清清爽爽的，比什么都重要。"' },
@@ -676,7 +676,7 @@ const zh = {
             no: '13', zh: '交互演示影片', en: 'INTERACTION FILM',
             claim: '静态稿讲不清的，交给一段真实演示。',
             lead: '在 Figma Make 中完成可交互原型后，录屏产出这段 4 分 26 秒的演示影片：从配网、日常控制到调香与购买，完整走一遍主路径。',
-            media: { type: 'video', src: '/aroma-ui-demo.mp4', tall: true, controls: true, cap: '交互演示 · 4 分 26 秒 · Figma Make 可交互原型录屏（含解说）' },
+            media: { type: 'video', src: 'aroma-ui-demo.mp4', tall: true, controls: true, cap: '交互演示 · 4 分 26 秒 · Figma Make 可交互原型录屏（含解说）' },
           },
           {
             no: '14', zh: '总结与下一步', en: 'REVIEW & NEXT',
@@ -686,14 +686,14 @@ const zh = {
               '这也是项目的收尾动作——把八周的工作收拢成一条能被快速读懂的链路。项目最终打造出「流光」方案：不仅解决了现有机型的使用痛点，更把美学设计、智能控制与情感价值拧在一起。',
               '下一步分四条线推进：硬件端探索更先进的雾化技术；软件端打通主流智能家居平台实现生态互联；服务端推出香薰液订阅保障持续供给；技术端引入 AI 算法，基于用户习惯做个性化香氛推荐。',
             ],
-            media: { type: 'img', src: '/aroma/scene-night.jpg', cap: '夜间场景 · 睡前一小时的氛围光', side: true },
+            media: { type: 'img', src: 'aroma/scene-night.jpg', cap: '夜间场景 · 睡前一小时的氛围光', side: true },
           },
         ],
         reflection: '软硬一体的项目里，界面只是半个产品。把「设备此刻在做什么」讲清楚，比多加一个花哨的图表重要得多；而把换香这件小事做顺，比多十种灯光模式更能留住用户。',
       },
     },
     {
-      id: 'stereo', index: '04', year: '2025', coverImg: '/stereo-cover.jpg',
+      id: 'stereo', index: '04', year: '2025', coverImg: 'stereo-cover.jpg',
       shots: [],
       heroWide: true, heroSplash: true, coverCap: '主视觉 · 玻璃罩下的水波节奏器',
       title: '复古式可触摸音响',
@@ -916,7 +916,7 @@ const en = {
   ],
   projects: [
     {
-      id: 'xungu', index: '01', year: '2026.05 — 06', coverImg: '/xungu-cover.jpg', coverVideo: '/xungu-demo.mp4',
+      id: 'xungu', index: '01', year: '2026.05 — 06', coverImg: 'xungu-cover.jpg', coverVideo: 'xungu-demo.mp4',
       shots: [],
       title: 'Xungu Shiguang · Traditional-culture Learning Game',
       subtitle: "Kids' edutainment App · Interaction prototype",
@@ -941,7 +941,7 @@ const en = {
               'When a search stalls, answering a question trades for a hint; clearing a level unlocks a traditional-culture scroll. Play and learning are stitched together into one entertainment loop.',
               'The product sits as a lightweight learning app with both entertainment and educational value: real-scene treasure hunting in a national style, plus bite-sized culture lessons that make knowledge feel effortless.',
             ],
-            media: { type: 'img', src: '/xungu-cover.jpg', cap: 'Key visual · scroll and artifacts', side: true },
+            media: { type: 'img', src: 'xungu-cover.jpg', cap: 'Key visual · scroll and artifacts', side: true },
             items: [
               { no: '01', t: 'Audience · Ages 7–13', d: 'Primary schoolers at the very start of cultural discovery, with a natural appetite for lively hidden-object games.' },
               { no: '02', t: 'Context · Immersive national style', d: 'Hand-drawn ancient market streets and courtyard houses turn dry explainers into game-based learning.' },
@@ -974,7 +974,7 @@ const en = {
             no: '04', zh: 'User flow', en: 'USER FLOW',
             claim: 'Six nodes, one unbroken chain of exploration.',
             lead: 'From first touch to the results a child keeps — every step has a clear entry condition and a predictable way back, and wherever a child might get stuck there is a fallback instead of a dead end.',
-            media: { type: 'img', src: '/xungu-flow.jpg', cap: 'Key flows & state transitions · six states', side: true },
+            media: { type: 'img', src: 'xungu-flow.jpg', cap: 'Key flows & state transitions · six states', side: true },
             steps: [
               { no: '01', t: 'Open a level · From home', d: 'Tap Levels on the home screen to reach the level picker, then choose by progress or interest and start the hunt.' },
               { no: '02', t: 'Explore · Find the objects', d: 'Search the scene for hidden historical objects; collapse the info panel when it blocks the view for a wider frame.' },
@@ -1053,7 +1053,7 @@ const en = {
               'The whole chain is clickable in Figma — home exploration, level challenges and personal asset management — with added details such as error-book review and a collapsible info panel that fit how children actually operate.',
               'Illustrations and first-pass copy were generated with GPT, then layout, colour and icon rules were unified in Figma so all 40+ screens hold one tone.',
             ],
-            media: { type: 'video', src: '/xungu-demo.mp4', cap: 'Prototype demo · clickable in Figma', side: true },
+            media: { type: 'video', src: 'xungu-demo.mp4', cap: 'Prototype demo · clickable in Figma', side: true },
             items: [
               { no: '01', t: 'Tooling', d: 'Fully clickable in Figma across 8 core screens and key transitions.' },
               { no: '02', t: 'Screens', d: '40+ hi-fi screens covering home, hunt, quiz, scroll and the rest of the chain.' },
@@ -1074,8 +1074,8 @@ const en = {
       },
     },
     {
-      id: 'calm', index: '02', year: '2026.04 — 06', coverImg: '/calm-cover.jpg',
-      videoBlock: '/calm-intro.mp4', videoCap: 'Product film · muted autoplay', heroWide: true, coverCap: 'Scenario render · park outing',
+      id: 'calm', index: '02', year: '2026.04 — 06', coverImg: 'calm-cover.jpg',
+      videoBlock: 'calm-intro.mp4', videoCap: 'Product film · muted autoplay', heroWide: true, coverCap: 'Scenario render · park outing',
       shots: [],
       title: 'Jingxing · Soothing Headset for Autistic Children',
       subtitle: 'Care-oriented smart hardware · Product design & research',
@@ -1100,7 +1100,7 @@ const en = {
               'China counts over 10 million autistic people, more than 2 million of them under 14, with roughly 150,000 new diagnoses each year. Over 90% of autistic children struggle with sensory regulation, and 67% melt down outdoors because of noise or glare.',
               'Yet the shelf only offers basic noise-cancelling earmuffs, ordinary headphones, weighted vests and simple tactile toys — nothing that combines blocking external stimulus with controllable white noise, vibration and deep pressure. Most look clinical, children refuse to wear them, and none are discreet, child-friendly or operable with a single press.',
             ],
-            media: { type: 'img', src: '/autism/scene-home.jpg', cap: 'Scenario · the moment before leaving home', side: true },
+            media: { type: 'img', src: 'autism/scene-home.jpg', cap: 'Scenario · the moment before leaving home', side: true },
             items: [
               { no: '01', t: 'Policy window', d: 'Autistic children aged 0–6 are covered by free rehabilitation aid, with assistive-device fitting as an explicit service; both the 14th Five-Year Plan for Disability Protection and the 2024 guidance on technology-assisted care name smart rehabilitation devices. Shandong subsidises device fitting at ¥1,500 per child, and many provinces allow ¥20,000–24,000 of annual rehabilitation subsidy to be spent on assistive products.' },
               { no: '02', t: 'Market size', d: 'China’s autism rehabilitation market reached roughly ¥18bn in 2024 and is forecast at ¥42–90bn by 2030. The global sensory-regulation market sits at about US$148m in 2025, with sensory toys and wearables growing 15%+ a year.' },
@@ -1127,7 +1127,7 @@ const en = {
               'The technical route has three layers: active noise cancellation samples ambient noise through microphones and generates an inverted wave to cancel it; multi-sensory intervention follows sensory integration theory, coordinating sound, soft light and tactile vibration; biofeedback reads heart-rate variability through a PPG sensor and turns emotional state into a triggerable threshold.',
               'Every key parameter came from a constraint: under 200 g total, headband pressure under 2 N, head circumference 48–56 cm, volume locked at or below 85 dB, 15–20 dB passive isolation, 8–10 hours of battery. The white-noise band deliberately avoids 250 Hz (air-conditioning hum) and 8 kHz (doorbells) — the two frequencies autistic children tolerate least.',
             ],
-            media: { type: 'img', src: '/autism/explode-1.jpg', cap: 'Exploded view · headband / earcup / control module', side: true },
+            media: { type: 'img', src: 'autism/explode-1.jpg', cap: 'Exploded view · headband / earcup / control module', side: true },
             items: [
               { no: '01', t: 'User position', d: 'Core users are autistic children aged 3–10; secondary users are parents, special-education teachers and therapists.' },
               { no: '02', t: 'Structural position', d: 'Single head-worn unit integrating isolation, vibration module, speaker, light shield and physical button; modular and washable.' },
@@ -1198,7 +1198,7 @@ const en = {
             claim: 'One board, the whole chain from research to device.',
             lead: 'The board is sequenced as background research → personas and journey → design positioning → exploded structure → scenario renders → parameters, so a reviewer grasps the value in ten seconds and the reasoning within a minute.',
             paras: ['Information hierarchy was deliberately rationed: only the three largest figures survive at display size (10 million people, 67% outdoor meltdown rate, 15–20 dB isolation); everything else drops to small print. Product imagery takes nearly half the board, and renders — not line drawings — do the persuading.'],
-            media: { type: 'img', src: '/autism/board.jpg', cap: 'Final board · full project chain' },
+            media: { type: 'img', src: 'autism/board.jpg', cap: 'Final board · full project chain' },
             items: [
               { no: '01', t: 'Left column · research & positioning', d: 'Policy, market size, competitor map and the four pain-point conclusions run vertically — answering “why is this worth doing”.' },
               { no: '02', t: 'Middle column · the product', d: 'Front, side and top views, the exploded diagram and key detail crops — answering “what did it become”.' },
@@ -1221,8 +1221,8 @@ const en = {
       },
     },
     {
-      id: 'aroma', index: '03', year: '2026.05 — 06', coverImg: '/aroma-cover.jpg', shots: [],
-      videoBlock: '/aroma-intro.mp4', videoTall: true,
+      id: 'aroma', index: '03', year: '2026.05 — 06', coverImg: 'aroma-cover.jpg', shots: [],
+      videoBlock: 'aroma-intro.mp4', videoTall: true,
       videoLabel: 'PRODUCT FILM · 22S',
       videoTitle: 'One film to feel the character of Liuguang',
       videoDesc: 'Mist rises along the pebble-smooth curve while warm light glows through the frosted body. This 22-second product film uses three everyday scenes to convey the hardware character, muted and looping; the full app interaction demo is in chapter 13.',
@@ -1284,7 +1284,7 @@ const en = {
             no: '04', zh: 'Personas & scenarios', en: 'PERSONAS & SCENARIOS',
             claim: 'Three people, three ways of using scent.',
             lead: 'Personas are not stickers — they decide what goes on the first screen. Differences in age, city and daily rhythm map directly onto three main paths in the app and three core scenarios for the hardware.',
-            media: { type: 'img', src: '/aroma/scene-warm.jpg', cap: 'One mist, three daily rhythms', side: true },
+            media: { type: 'img', src: 'aroma/scene-warm.jpg', cap: 'One mist, three daily rhythms', side: true },
             items: [
               { no: '01', t: 'Urban professional · 26, operations, renting alone in a tier-1 city', d: 'Two years into work, renting alone, often working late; loves staying in, cares about atmosphere on a limited budget. Pain: tension after overtime, small flat where noise and light hurt rest, no idea how to blend oils, poor ventilation. Needs: fast relaxation, simple operation, quiet running, small footprint. Quote: "The moment I switch the diffuser on after work, the time finally feels like mine."' },
               { no: '02', t: 'Careful guardian · 33, admin at a state firm, tier-2 city, two children', d: 'A working mother whose day is split between job and family, with elderly parents and kids at home and high safety expectations. Pain: sensitive airways, no time for upkeep, different moods per room, reluctance to buy piles of consumables. Needs: gentle formulas, one-tap scenes, easy disassembly and washing, low noise. Quote: "A quiet, clean home matters more than anything."' },
@@ -1402,7 +1402,7 @@ const en = {
             no: '13', zh: 'Interaction film', en: 'INTERACTION FILM',
             claim: 'What static screens cannot explain, a real demo can.',
             lead: 'After finishing the clickable prototype in Figma Make, I screen-recorded this 4 min 26 s demo: pairing, daily control, blending and purchase — the main path end to end.',
-            media: { type: 'video', src: '/aroma-ui-demo.mp4', tall: true, controls: true, cap: 'Interaction demo · 4 min 26 s · recorded from the Figma Make prototype (with narration)' },
+            media: { type: 'video', src: 'aroma-ui-demo.mp4', tall: true, controls: true, cap: 'Interaction demo · 4 min 26 s · recorded from the Figma Make prototype (with narration)' },
           },
           {
             no: '14', zh: 'Review & next', en: 'REVIEW & NEXT',
@@ -1412,14 +1412,14 @@ const en = {
               'It is also the closing move — eight weeks of work gathered into a chain that can be read quickly. The outcome is the Liuguang design: it resolves the everyday pain points of existing diffusers while binding aesthetic design, intelligent control and emotional value into one.',
               'Next steps run on four lines: better atomising technology in hardware, integration with mainstream smart-home platforms in software, a subscription service for oils, and AI algorithms that learn habits to recommend personalised scent.',
             ],
-            media: { type: 'img', src: '/aroma/scene-night.jpg', cap: 'Night scene · ambience light for the hour before sleep', side: true },
+            media: { type: 'img', src: 'aroma/scene-night.jpg', cap: 'Night scene · ambience light for the hour before sleep', side: true },
           },
         ],
         reflection: 'In a hardware-plus-software project the interface is only half the product. Making clear what the device is doing right now matters far more than one more fancy chart — and making refills effortless retains users better than ten more light modes.',
       },
     },
     {
-      id: 'stereo', index: '04', year: '2025', coverImg: '/stereo-cover.jpg',
+      id: 'stereo', index: '04', year: '2025', coverImg: 'stereo-cover.jpg',
       shots: [],
       heroWide: true, heroSplash: true, coverCap: 'Key visual · ripple array under the glass hood',
       title: 'Retro Touchable Stereo',
