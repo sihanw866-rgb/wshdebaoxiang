@@ -54,21 +54,7 @@ const zh = {
   projects: [
     {
       id: 'xungu', index: '01', year: '2026.05 — 06', coverImg: '/xungu-cover.jpg', coverVideo: '/xungu-demo.mp4',
-      shots: [
-        {
-          kind: 'flow', img: '/xungu-flow.jpg', capIndex: 1, split: true,
-          title: '主干链路 · 5 个状态节点',
-          lead: '把「选关 → 讲解 → 交互学习 → 闯关结算 → 奖励回流」这条主干单独抽出来复核：每一步都要有明确的进入条件、可预期的返回路径，以及孩子卡住时的兜底。',
-          points: [
-            { no: '01', t: '选关 · 地图节点', d: '在地图上选定关卡节点，未解锁的节点保持灰态并给出提示，点击进入前置故事。' },
-            { no: '02', t: '讲解 · 故事铺垫', d: '一段短动画交代本关的器物与背景，可跳过，也能随时翻回文物卡片。' },
-            { no: '03', t: '交互 · 三种玩法', d: '拼图、问答与纹样连线轮换出现，答错即时退回对应讲解点，再试一次。' },
-            { no: '04', t: '结算 · 星级判定', d: '依据碎片数量与尝试次数给出本关评级，达标即解锁下一个节点。' },
-            { no: '05', t: '回流 · 奖励与地图', d: '发放「时光碎片」与徽章，一键回到地图并高亮新解锁（或未达标）的节点。' },
-          ],
-        },
-        { kind: 'ui', capIndex: 2, masonry: true, wide: true, items: XUNGU_UI_SHOTS },
-      ],
+      shots: [],
       title: '寻古拾光 · 传统文化学习小游戏',
       subtitle: '儿童寓教于乐 App · 交互原型',
       tags: ['移动端 App', '交互设计', '原型动效'],
@@ -80,12 +66,146 @@ const zh = {
         period: '2026.05 — 06 · 8 周',
         team: '个人项目',
         deliverables: '40+ 高保真界面 · 可点击原型 · 动效演示',
+        claim: '让传统文化，成为孩子愿意主动打开的那款游戏。',
+        claimLead: '「寻古拾光」取「探寻古韵、捡拾时光」之意——把民俗、文房与古代生活知识藏进手绘国风场景，用找物玩法承载科普。',
         overview: '面向 7—13 岁儿童的中国传统文化学习 App。我从市场调研与竞品拆解入手，确定「轻量化 + 关卡化」的产品定位；用 GPT 生成插画素材与文案初稿，在 Figma 中统一排版与视觉规范；最终建立关卡跳转逻辑与「闯关—奖励」闭环，交付 40 个高保真界面与关键路径的点击动效。',
-        process: [
-          { no: '01', title: '调研与定位', desc: '拆解 7—13 岁儿童的学习习惯与家长诉求，对比市面传统文化类 App 的内容组织方式，确定「短时长、强反馈、可收集」的切入点。' },
-          { no: '02', title: '信息架构', desc: '搭建「主线闯关 + 支线收集」双轨结构，把知识点拆散分布在关卡节点上，避免一次性灌输造成流失。' },
-          { no: '03', title: '素材与规范', desc: '用 GPT 生成插画与文案初稿，在 Figma 中统一排版、配色与图标规范，保证 40 个界面气质一致。' },
-          { no: '04', title: '原型与动效', desc: '实现关卡跳转逻辑与「闯关—奖励」闭环，产出可点击原型与关键路径的过渡动效演示。' },
+        chapters: [
+          {
+            no: '01', zh: '项目概况', en: 'PROJECT OVERVIEW',
+            claim: '传统文化的门槛不在深浅，而在孩子愿不愿意点开第二次。',
+            lead: '传统文化科普形式枯燥、文字量大，儿童学习积极性较差。我们把热门的休闲找物玩法与古代文人书斋的手绘场景结合，让民俗、文房、古代生活知识在闯关过程中自然出现。',
+            paras: [
+              '寻宝遇到困难时可答题换取物品线索，通关即解锁传统文化卷轴，把「游戏」与「传统文化学习」缝在一起，形成娱乐化的学习模式。',
+              '产品定位是一款兼具娱乐性与教育意义的轻量级学习 App：聚焦国风实景寻宝与传统文化碎片化科普，让知识获取轻松自然。',
+            ],
+            media: { type: 'img', src: '/xungu-cover.jpg', cap: '品牌主视觉 · 卷轴与器物', side: true },
+            items: [
+              { no: '01', t: '目标用户 · 7—13 岁小学生', d: '正处于传统文化启蒙阶段，对生动有趣的休闲找物小游戏有天然的偏好与接受度。' },
+              { no: '02', t: '设计背景 · 沉浸式国风', d: '依托古代市井与古风宅院的手绘场景，把枯燥的文化科普转化为游戏化学习。' },
+              { no: '03', t: '形式载体 · 轻量闭环', d: '单次一关、一关一知识点，通关即得卷轴，学习成果可收藏、可回看。' },
+            ],
+          },
+          {
+            no: '02', zh: '调研与定位', en: 'RESEARCH & POSITIONING',
+            claim: '孩子不是不爱传统文化，是不爱被「考」传统文化。',
+            lead: '拆解市面传统文化类 App 后，最常见的结构是「图文百科 + 章节测验」——内容一次性铺开，孩子读完就走，而家长真正的诉求「愿意反复打开」反而没人满足。',
+            paras: ['下面四条是本次的设计判断：先看同类产品怎么组织内容，再对照 7—13 岁儿童的注意力与记忆特点，反推出「短时长、强反馈、可收集」的产品基调。'],
+            items: [
+              { no: '01', t: '内容过载', d: '百科式铺开让孩子记不住 → 单关只承载一个知识点，单张卷轴只写一个精简知识点。' },
+              { no: '02', t: '缺少进度感', d: '没有一个「下一关」的钩子 → 关卡节点 + 卷轴收集，把学习拆成看得见台阶的旅程。' },
+              { no: '03', t: '卡住即流失', d: '找不到东西就退出 → 答对即给线索，答错也给正确答案并收进错题本，不让探索中断。' },
+              { no: '04', t: '学完即忘', d: '缺少回顾机制 → 收藏库永久保存，同类知识点跨关卡间隔复现。' },
+            ],
+          },
+          {
+            no: '03', zh: '四大核心功能', en: 'CORE FEATURES',
+            claim: '探索 → 学习 → 收藏，一条闭环串起全部玩法。',
+            items: [
+              { no: '01', t: '场景寻宝闯关', d: '精心绘制室外古集市、室内古宅院等国风场景，用户搜寻画面中隐藏的传统物件，集齐即可完成关卡挑战，趣味与探索并存。' },
+              { no: '02', t: '提示答题助学纠错', d: '遇阻点击提示触发知识判断题，答对获取关键线索；答错自动存入「纠缪」错题本，形成「探索—学习—反思」闭环。' },
+              { no: '03', t: '通关收藏知识卷轴', d: '通关后弹出仿古卷轴，承载本关专属的传统文化知识，解锁内容自动存入藏品库，方便随时查阅与回顾。' },
+              { no: '04', t: '个人中心与资产管理', d: '集成个人信息展示与游戏资产管理：收藏页看卷轴、关卡页续玩、纠缪页复盘，构建完整的用户成长体系。' },
+            ],
+          },
+          {
+            no: '04', zh: '使用流程', en: 'USER FLOW',
+            claim: '六个节点，一条不中断的探索链路。',
+            lead: '从首页触达到成果沉淀，每一步都有明确的进入条件与可预期的返回路径；孩子卡住的地方，设计了兜底而不是死路。',
+            media: { type: 'img', src: '/xungu-flow.jpg', cap: '关键流程与状态跳转 · 六个状态节点', side: true },
+            steps: [
+              { no: '01', t: '关卡开启 · 从首页进入寻宝', d: '首页点击【关卡】跳转关卡选择页，按自身进度与兴趣选择关卡，开启沉浸式寻宝体验。' },
+              { no: '02', t: '沉浸探索 · 场景中寻找目标物件', d: '在国风场景中寻找隐藏的历史物件；信息框遮挡视野时可一键收起，获得更开阔的画面。' },
+              { no: '03', t: '提示互动 · 判断答题推进流程', d: '点击【提示】触发知识判断题，答对即获取关键线索；答错则自动存入纠缪错题本，便于复盘。' },
+              { no: '04', t: '界面优化 · 灵活控制信息展示', d: '当场景物件密集、清单遮挡画面时，收起底部信息框还原完整场景视图，提升探索流畅度。' },
+              { no: '05', t: '通关收获 · 解锁知识卷轴奖励', d: '集齐当前关卡所有目标物件后触发通关弹窗，同步解锁对应主题的知识卷轴，以国风画卷呈现知识点。' },
+              { no: '06', t: '成果管理 · 多维回顾与沉淀', d: '返回首页后可在收藏查看已解锁卷轴、在纠缪中复盘错题，或在个人页管理信息与通关成就。' },
+            ],
+          },
+          {
+            no: '05', zh: '四项认知设计', en: 'COGNITIVE DESIGN',
+            claim: '让每一次点击，都符合孩子「看得懂、记得住」的认知规律。',
+            lead: '注意力引导、认知负荷控制、记忆强化与即时反馈四项认知原理，落到界面上就是位置、色彩、动效与反馈时机的一连串具体决定。',
+            items: [
+              {
+                no: '01', t: '注意力引导',
+                d: '确立页面关键信息的视觉锚点，用动态引导与视觉降噪构建清晰的信息层级。',
+                list: [
+                  '锚点布局：提示按钮固定左上、物品清单置底、通关卷轴居中弹出',
+                  '关键控件用仿古棕木色，与浅水墨场景形成色差；场景装饰低饱和弱化',
+                  '找到物品触发高亮闪烁，通关卷轴自上而下展开并做发光特效',
+                  '同一时间只弹一个弹窗，信息框可收起，避免遮挡与堆叠',
+                ],
+              },
+              {
+                no: '02', t: '认知负荷控制',
+                d: '把完整学习链路拆成六段，确保单次交互只需执行一项核心操作。',
+                list: [
+                  '流程拆分：进入场景 → 自主寻宝 → 遇困答题 → 获取线索 → 集齐通关 → 解锁知识',
+                  '单次仅展示 1 道判断题，单张卷轴只陈列 1 个民俗小知识点',
+                  '知识点自动归档入收藏库、错题自动归集，无需手动记录',
+                  '答对后直接标注物品位置，以可视化替代记忆线索',
+                ],
+              },
+              {
+                no: '03', t: '记忆强化',
+                d: '把知识点与关卡实景深度绑定，让记忆有迹可循。',
+                list: [
+                  '场景联想：集市关卡对应市井民俗，书斋关卡对应文房与古代家居文化',
+                  '解锁卷轴永久保存在收藏页，随时回看复习',
+                  '同类知识点拆分到不同关卡，跨关间隔复现，贴合遗忘曲线',
+                ],
+              },
+              {
+                no: '04', t: '即时反馈',
+                d: '每个动作都立刻给出结果，并明确告知下一步可以做什么。',
+                list: [
+                  '答对立刻标注物品位置，答错立刻给出正确解析与「学会了」确认',
+                  '集齐物品立刻弹出古风通关横幅与卷轴，强化成就感',
+                  '通关后给出「返回选关 / 查看收藏」的明确下一步入口',
+                  '点击空白区域无多余干扰，信息框收起与展开有清晰的图标反馈',
+                ],
+              },
+            ],
+          },
+          {
+            no: '06', zh: '界面拆解', en: 'INTERFACE BREAKDOWN',
+            claim: '八个核心界面，串联一条完整链路。',
+            lead: '以国风雅致的视觉语言串联 8 个核心页面：首页定调，关卡页与寻宝页承载探索，答题页与卷轴页完成学习闭环，收藏页与纠缪页沉淀成果。',
+            items: [
+              { no: '01', t: '开机页与首页', d: '古风山水为底，「寻古拾光」LOGO 构建视觉核心，Q 版人物「小寻」站在进度条上；左上个人头像入口，中轴排列关卡、藏品、纠缪三大功能入口。' },
+              { no: '02', t: '个人信息页', d: '展示账号、性别与地区信息，核心呈现已收集卷轴数量，以古籍册页版式融合数据可视化与国风美学。' },
+              { no: '03', t: '关卡选择页', d: '木质牌匾式关卡入口错落排布于卷轴背景之上，既符合国风主题，又直观呈现探索进度。' },
+              { no: '04', t: '寻宝场景页', d: '手绘古风场景为沉浸背景，左上仿古提示锦囊按钮，底部物品清单可展开收起，兼顾沉浸与空间效率。' },
+              { no: '05', t: '答题弹窗页', d: '仿古弹窗配水墨纹样，单次仅 1 道传统文化判断题，分答对、答错两种反馈，让作答充满仪式感。' },
+              { no: '06', t: '通关卷轴科普页', d: '以仿古竖版卷轴为主体缓缓展开，承载本关核心知识点，图文并茂，重现古籍阅读的韵味。' },
+              { no: '07', t: '收藏页', d: '陈列已解锁的卷轴藏品列表，支持再次点开查看详情，构建用户的专属文化宝库。' },
+              { no: '08', t: '纠缪页', d: '系统归纳所有答错的题目并标注正确解析，方便回顾反思，深化对文化知识的理解。' },
+            ],
+            media: { type: 'masonry', items: XUNGU_UI_SHOTS, cap: '高保真界面 · 18 屏' },
+          },
+          {
+            no: '07', zh: '原型与成果', en: 'PROTOTYPE & OUTCOME',
+            claim: '用 Figma 打通全链路可点击原型。',
+            paras: [
+              '使用 Figma 完成全链路可点击交互，串联从首页探索、关卡挑战到个人资产管理的核心流程；新增纠缪页错题回顾、信息框收起等细节交互，让操作逻辑更贴合少儿用户的认知习惯。',
+              '配合 GPT 生成插画与文案初稿，在 Figma 中统一排版、配色与图标规范，保证 40 余个界面气质一致。',
+            ],
+            media: { type: 'video', src: '/xungu-demo.mp4', cap: '交互原型演示 · Figma 可点击原型', side: true },
+            items: [
+              { no: '01', t: '原型工具', d: 'Figma 全链路可点击，覆盖 8 个核心页面与关键跳转。' },
+              { no: '02', t: '界面产出', d: '40+ 张高保真界面，含首页、寻宝、答题、卷轴等完整链路。' },
+              { no: '03', t: '关键动效', d: '关卡跳转、卷轴自上而下展开、物品高亮闪烁与通关横幅。' },
+            ],
+          },
+          {
+            no: '08', zh: '总结与展望', en: 'REFLECTION & NEXT',
+            claim: '以找物为壳，以文化为核。',
+            paras: ['产品落地 4 项核心功能、8 个主界面与 4 项认知设计规范，输出可交互的 Figma 高保真原型，交付完整度达 100%；以找物娱乐为轻量化载体，串联「学习—练习—回顾」链路，完善用户的知识内化闭环。'],
+            items: [
+              { no: '01', t: '拓展场景内容', d: '持续开发庙会、传统市集等特色关卡场景，扩充民俗题库与卷轴知识库，让文化厚度继续增长。' },
+              { no: '02', t: '完善激励体系', d: '新增闯关积分、每日打卡与好友排行榜，配合成就勋章与等级成长，提升活跃度与留存。' },
+            ],
+          },
         ],
         reflection: '儿童产品的难点不在视觉够不够精致，而在每一次反馈是否值得期待——把奖励节奏调对，比堆更多内容有效得多。',
       },
@@ -208,6 +328,8 @@ const zh = {
     },
     projectPage: {
       back: '返回首页',
+      demoVideo: '原型演示 · 静音自动播放',
+      coverLabel: '主视觉',
       projLabel: 'Selected Work',
       overview: 'Overview',
       metrics: 'Key metrics',
@@ -286,21 +408,7 @@ const en = {
   projects: [
     {
       id: 'xungu', index: '01', year: '2026.05 — 06', coverImg: '/xungu-cover.jpg', coverVideo: '/xungu-demo.mp4',
-      shots: [
-        {
-          kind: 'flow', img: '/xungu-flow.jpg', capIndex: 1, split: true,
-          title: 'The main spine · 5 states',
-          lead: 'I pulled the spine out on its own — pick a level → story → interactive learning → scoring → reward and back to the map — so every step has a clear entry condition, a predictable way back, and a fallback for the moment a kid gets stuck.',
-          points: [
-            { no: '01', t: 'Pick a level · Map node', d: 'Choose a node on the map; locked ones stay greyed with a hint. A tap opens the pre-level story.' },
-            { no: '02', t: 'Story · Setting the scene', d: 'A short animation introduces the artifact and its context — skippable, and the artifact card can be reopened anytime.' },
-            { no: '03', t: 'Play · Three interaction types', d: 'Jigsaw, quiz and pattern-matching rotate; a wrong answer jumps straight back to the matching explanation.' },
-            { no: '04', t: 'Scoring · Star rating', d: 'The rating comes from fragments collected and attempts made; hitting the bar unlocks the next node.' },
-            { no: '05', t: 'Reward · Back to the map', d: '"Time fragments" and badges are granted, then one tap returns to the map with the new — or missed — node highlighted.' },
-          ],
-        },
-        { kind: 'ui', capIndex: 2, masonry: true, wide: true, items: XUNGU_UI_SHOTS },
-      ],
+      shots: [],
       title: 'Xungu Shiguang · Traditional-culture Learning Game',
       subtitle: "Kids' edutainment App · Interaction prototype",
       tags: ['Mobile App', 'Interaction design', 'Prototype & motion'],
@@ -312,12 +420,146 @@ const en = {
         period: '2026.05 — 06 · 8 weeks',
         team: 'Solo project',
         deliverables: '40+ hi-fi screens · Clickable prototype · Motion demo',
+        claim: 'Making traditional culture the game a child opens on their own.',
+        claimLead: 'Xungu Shiguang means "seeking ancient charm, gathering up time" — folk customs, scholar\'s studio objects and daily life in old China are hidden inside hand-drawn scenes, carried by a hidden-object game.',
         overview: 'A lightweight app that teaches Chinese traditional culture to kids aged 7–13. I started from market research and competitor teardown to land on a "lightweight + level-based" position, generated illustration assets and first-pass copy with GPT, unified typography and visual rules in Figma, then built the level-jump logic and a challenge–reward loop, delivering 40 hi-fi screens with click-through motion on the key paths.',
-        process: [
-          { no: '01', title: 'Research & positioning', desc: 'Broke down the habits of 7–13 year olds and what parents actually want, compared how existing culture apps structure content, and settled on short sessions, strong feedback and collectibles.' },
-          { no: '02', title: 'Information architecture', desc: 'Built a dual track — a main level path plus a side collection track — spreading knowledge across level nodes instead of front-loading it.' },
-          { no: '03', title: 'Assets & system', desc: 'Generated illustrations and draft copy with GPT, then unified layout, colour and icon rules in Figma so all 40 screens hold one tone.' },
-          { no: '04', title: 'Prototype & motion', desc: 'Implemented the level-jump logic and the challenge–reward loop, plus a clickable prototype with transition motion on key paths.' },
+        chapters: [
+          {
+            no: '01', zh: 'Project overview', en: 'PROJECT OVERVIEW',
+            claim: 'The barrier is not how deep the culture goes — it is whether a child opens it a second time.',
+            lead: 'Culture lessons are text-heavy and dull, and children rarely stay motivated. So we paired the popular hidden-object mechanic with hand-drawn scenes of a scholar\'s studio, letting folk customs, stationery and old daily life surface naturally as levels are cleared.',
+            paras: [
+              'When a search stalls, answering a question trades for a hint; clearing a level unlocks a traditional-culture scroll. Play and learning are stitched together into one entertainment loop.',
+              'The product sits as a lightweight learning app with both entertainment and educational value: real-scene treasure hunting in a national style, plus bite-sized culture lessons that make knowledge feel effortless.',
+            ],
+            media: { type: 'img', src: '/xungu-cover.jpg', cap: 'Key visual · scroll and artifacts', side: true },
+            items: [
+              { no: '01', t: 'Audience · Ages 7–13', d: 'Primary schoolers at the very start of cultural discovery, with a natural appetite for lively hidden-object games.' },
+              { no: '02', t: 'Context · Immersive national style', d: 'Hand-drawn ancient market streets and courtyard houses turn dry explainers into game-based learning.' },
+              { no: '03', t: 'Format · Lightweight loop', d: 'One level at a time, one knowledge point per level, a scroll on completion — collectable and re-readable.' },
+            ],
+          },
+          {
+            no: '02', zh: 'Research & positioning', en: 'RESEARCH & POSITIONING',
+            claim: 'Children do not dislike traditional culture — they dislike being tested on it.',
+            lead: 'Tearing down existing culture apps, the dominant structure is "illustrated encyclopedia + chapter quiz": content dumped in one go, children read and leave. The thing parents actually want — that a child comes back on their own — goes unaddressed.',
+            paras: ['These four are the design judgments behind the project: first study how comparable apps structure content, then read it against the attention and memory traits of 7–13 year olds, and derive a tone of short sessions, strong feedback and collectibles.'],
+            items: [
+              { no: '01', t: 'Content overload', d: 'Encyclopedia dumps do not stick → one knowledge point per level, one concise point per scroll.' },
+              { no: '02', t: 'No sense of progress', d: 'Nothing pulls you to the next level → map nodes plus scroll collecting turn learning into visible steps.' },
+              { no: '03', t: 'Stuck means churn', d: 'Failing to find an object ends the session → a correct answer gives the hint, a wrong one still gives the right answer and files it away, so exploration never breaks.' },
+              { no: '04', t: 'Learned and forgotten', d: 'No review loop → a permanent collection library, with related points reappearing across levels.' },
+            ],
+          },
+          {
+            no: '03', zh: 'Core features', en: 'CORE FEATURES',
+            claim: 'Explore → learn → collect: one loop runs the whole product.',
+            items: [
+              { no: '01', t: 'Scene-based treasure hunt', d: 'Hand-drawn outdoor markets and indoor courtyards hide traditional objects to find; collecting them all clears the level — fun and discovery in one.' },
+              { no: '02', t: 'Hint quiz & error book', d: 'A hint opens a culture question; a correct answer reveals the object. Wrong answers land in the "Jiumiu" error book, closing an explore–learn–reflect loop.' },
+              { no: '03', t: 'Scroll rewards on clear', d: 'Clearing a level opens an antique scroll carrying that level\'s culture knowledge, auto-filed into the collection library for review anytime.' },
+              { no: '04', t: 'Profile & asset management', d: 'Profile info and in-game assets in one place: scrolls in Collection, progress in Levels, mistakes in Jiumiu — a complete growth system.' },
+            ],
+          },
+          {
+            no: '04', zh: 'User flow', en: 'USER FLOW',
+            claim: 'Six nodes, one unbroken chain of exploration.',
+            lead: 'From first touch to the results a child keeps — every step has a clear entry condition and a predictable way back, and wherever a child might get stuck there is a fallback instead of a dead end.',
+            media: { type: 'img', src: '/xungu-flow.jpg', cap: 'Key flows & state transitions · six states', side: true },
+            steps: [
+              { no: '01', t: 'Open a level · From home', d: 'Tap Levels on the home screen to reach the level picker, then choose by progress or interest and start the hunt.' },
+              { no: '02', t: 'Explore · Find the objects', d: 'Search the scene for hidden historical objects; collapse the info panel when it blocks the view for a wider frame.' },
+              { no: '03', t: 'Hint · Answer to advance', d: 'A hint raises a culture question; a correct answer yields the key clue, while a wrong one is filed into the error book for review.' },
+              { no: '04', t: 'Control · Flexible info display', d: 'When objects crowd the scene, collapse the checklist to restore the full view and keep exploration smooth.' },
+              { no: '05', t: 'Clear · Unlock the scroll', d: 'Collecting every target object triggers the clear popup and unlocks the matching scroll, presenting the knowledge point as a national-style painting.' },
+              { no: '06', t: 'Manage · Review and keep', d: 'Back on home, review unlocked scrolls in Collection, revisit mistakes in Jiumiu, or manage profile info and achievements.' },
+            ],
+          },
+          {
+            no: '05', zh: 'Cognitive design', en: 'COGNITIVE DESIGN',
+            claim: 'Every tap follows how a child actually sees and remembers.',
+            lead: 'Four cognitive principles — attention guidance, cognitive load control, memory reinforcement and instant feedback — land on screen as a series of concrete decisions about position, colour, motion and timing.',
+            items: [
+              {
+                no: '01', t: 'Attention guidance',
+                d: 'Visual anchors for key information, with motion cues and visual noise reduction building a clear hierarchy.',
+                list: [
+                  'Anchor layout: hint button pinned top-left, checklist at the bottom, clear-scroll centred',
+                  'Key controls in antique wood brown against pale ink-wash scenes; decorations desaturated',
+                  'Found objects flash; the clear-scroll unfolds downward with a glow',
+                  'Only one modal at a time, and the info panel can be collapsed to avoid stacking',
+                ],
+              },
+              {
+                no: '02', t: 'Cognitive load control',
+                d: 'The learning chain is split into six steps so a single interaction only asks for one core action.',
+                list: [
+                  'Enter scene → search → answer when stuck → get the clue → collect all → unlock knowledge',
+                  'Only one quiz question at a time; one scroll carries exactly one folk knowledge point',
+                  'Knowledge auto-files into the library and mistakes auto-collect — nothing to note by hand',
+                  'A correct answer marks the object position directly, replacing memory with a visual cue',
+                ],
+              },
+              {
+                no: '03', t: 'Memory reinforcement',
+                d: 'Knowledge is bound to the physical scene of each level so memory has something to hold on to.',
+                list: [
+                  'Scene association: the market level carries street folk culture, the studio level carries scholar\'s-desk culture',
+                  'Unlocked scrolls stay in the Collection permanently for review',
+                  'Related points are spread across levels and reappear at intervals, following the forgetting curve',
+                ],
+              },
+              {
+                no: '04', t: 'Instant feedback',
+                d: 'Every action returns a result immediately, and says clearly what to do next.',
+                list: [
+                  'Correct answers mark the position at once; wrong ones show the right explanation and a "Got it" confirm',
+                  'Collecting everything pops the clear banner and scroll immediately, reinforcing the win',
+                  'After clearing, explicit next steps: back to levels, or view the collection',
+                  'Tapping empty space creates no disturbance; collapsing and expanding the panel has clear icon feedback',
+                ],
+              },
+            ],
+          },
+          {
+            no: '06', zh: 'Interface breakdown', en: 'INTERFACE BREAKDOWN',
+            claim: 'Eight core screens, one complete chain.',
+            lead: 'Eight screens tied together in an elegant national-style language: the home screen sets the tone, level and hunt screens carry exploration, quiz and scroll screens close the learning loop, and collection and error screens hold the results.',
+            items: [
+              { no: '01', t: 'Splash & home', d: 'Landscape ink painting as the base with the Xungu Shiguang logo at the centre and the chibi character "Xiao Xun" on the progress bar; profile entry top-left, with levels, collection and error-book entries down the central axis.' },
+              { no: '02', t: 'Profile', d: 'Account, gender and region, with the collected scroll count as the hero — an ancient book-layout that merges data with the aesthetic.' },
+              { no: '03', t: 'Level select', d: 'Wooden plaque entries scattered across a scroll background — true to the theme while showing progress at a glance.' },
+              { no: '04', t: 'Hunt scene', d: 'A hand-drawn scene as the immersive backdrop, an antique hint pouch top-left, and a collapsible checklist at the bottom balancing immersion with space.' },
+              { no: '05', t: 'Quiz modal', d: 'An antique popup with ink patterns holding exactly one culture question, with distinct right and wrong feedback for a sense of ceremony.' },
+              { no: '06', t: 'Clear-scroll lesson', d: 'A vertical antique scroll unfolds slowly with the level\'s core knowledge point, text and image together, echoing the feel of reading an old book.' },
+              { no: '07', t: 'Collection', d: 'A gallery of unlocked scrolls, each reopenable — the child\'s own cultural treasure house.' },
+              { no: '08', t: 'Jiumiu (error book)', d: 'Every wrong answer collected with the correct explanation attached, ready for review and reflection.' },
+            ],
+            media: { type: 'masonry', items: XUNGU_UI_SHOTS, cap: 'Hi-fi screens · 18' },
+          },
+          {
+            no: '07', zh: 'Prototype & outcome', en: 'PROTOTYPE & OUTCOME',
+            claim: 'A fully clickable prototype, built in Figma.',
+            paras: [
+              'The whole chain is clickable in Figma — home exploration, level challenges and personal asset management — with added details such as error-book review and a collapsible info panel that fit how children actually operate.',
+              'Illustrations and first-pass copy were generated with GPT, then layout, colour and icon rules were unified in Figma so all 40+ screens hold one tone.',
+            ],
+            media: { type: 'video', src: '/xungu-demo.mp4', cap: 'Prototype demo · clickable in Figma', side: true },
+            items: [
+              { no: '01', t: 'Tooling', d: 'Fully clickable in Figma across 8 core screens and key transitions.' },
+              { no: '02', t: 'Screens', d: '40+ hi-fi screens covering home, hunt, quiz, scroll and the rest of the chain.' },
+              { no: '03', t: 'Key motion', d: 'Level transitions, the scroll unfolding downward, object highlight flashes and the clear banner.' },
+            ],
+          },
+          {
+            no: '08', zh: 'Reflection & next', en: 'REFLECTION & NEXT',
+            claim: 'A hunt as the shell, culture as the core.',
+            paras: ['The project lands 4 core features, 8 main screens and 4 cognitive design principles, shipping a clickable hi-fi Figma prototype at 100% completeness; the hidden-object game is a lightweight carrier that links learning, practice and review into a closed knowledge loop.'],
+            items: [
+              { no: '01', t: 'Grow the scenes', d: 'Keep building temple fairs and traditional markets, expanding the question and scroll libraries so the cultural depth keeps growing.' },
+              { no: '02', t: 'Build the motivation loop', d: 'Add level points, daily check-ins and a friends leaderboard, with achievement badges and level growth to lift activity and retention.' },
+            ],
+          },
         ],
         reflection: "The hard part of a kids' product isn't polish — it's whether every single feedback moment is worth waiting for. Getting the reward rhythm right beats adding more content.",
       },
@@ -440,6 +682,8 @@ const en = {
     },
     projectPage: {
       back: 'Back to home',
+      demoVideo: 'Prototype demo · muted autoplay',
+      coverLabel: 'Key visual',
       projLabel: 'Selected Work',
       overview: 'Overview',
       metrics: 'Key metrics',

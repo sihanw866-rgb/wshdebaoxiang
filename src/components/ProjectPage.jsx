@@ -117,6 +117,13 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
   const d = p.detail || {}
   const steps = d.process || []
   const caps = s.shotCaps || []
+  /* 未配置 shots 的项目沿用抽象占位图；显式给空数组则表示这一节不展示 */
+  const shotList =
+    p.shots || [
+      { kind: 'wireframe', capIndex: 0 },
+      { kind: 'flow', capIndex: 1 },
+      { kind: 'ui', capIndex: 2 },
+    ]
 
   const meta = [
     { k: (s.labels || {}).role, v: d.role },
@@ -146,21 +153,49 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
           </ul>
         </FadeUp>
 
-        <FadeUp delay={0.1}>
-          <div className="proj-cover">
-            <Cover variant={p.cover} accent={p.accent} img={p.coverImg} video={p.coverVideo} />
-            <div className="noise-overlay" />
+        {d.claim ? (
+          <div className="proj-hero">
+            <FadeUp className="proj-hero-text">
+              <p className="hero-claim">{d.claim}</p>
+              {d.claimLead && <p className="hero-claim-lead">{d.claimLead}</p>}
+              <div className="hero-meta">
+                {meta.map((m) => (
+                  <div className="cell" key={m.k}>
+                    <div className="mono">{m.k}</div>
+                    <div className="v">{m.v}</div>
+                  </div>
+                ))}
+              </div>
+            </FadeUp>
+            <FadeUp delay={0.08} className="proj-hero-media">
+              <div className="hero-media-frame">
+                <Cover variant={p.cover} accent={p.accent} img={p.coverImg} video={p.coverVideo} />
+                <div className="noise-overlay" />
+              </div>
+              <span className="hero-media-cap mono">
+                {p.coverVideo ? (s.demoVideo || 'Prototype demo') : (s.coverLabel || 'Cover')}
+              </span>
+            </FadeUp>
           </div>
-        </FadeUp>
-
-        <div className="proj-meta">
-          {meta.map((m) => (
-            <div className="cell" key={m.k}>
-              <div className="mono">{m.k}</div>
-              <div className="v">{m.v}</div>
+        ) : (
+          <FadeUp delay={0.1}>
+            <div className="proj-cover">
+              <Cover variant={p.cover} accent={p.accent} img={p.coverImg} video={p.coverVideo} />
+              <div className="noise-overlay" />
             </div>
-          ))}
-        </div>
+          </FadeUp>
+        )}
+
+        {!d.claim && (
+          <div className="proj-meta">
+            {meta.map((m) => (
+              <div className="cell" key={m.k}>
+                <div className="mono">{m.k}</div>
+                <div className="v">{m.v}</div>
+              </div>
+            ))}
+          </div>
+        )}
 
         <div className="proj-body">
           <div className="proj-body-main">
@@ -181,7 +216,113 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
           </aside>
         </div>
 
-        {steps.length > 0 && (
+        {(d.chapters || []).map((ch) => {
+          const m = ch.media
+          const body = (
+            <>
+              {ch.claim && <h3 className="chapter-claim">{ch.claim}</h3>}
+              {ch.lead && <p className="chapter-lead">{ch.lead}</p>}
+              {(ch.paras || []).map((tx, i) => (
+                <p className="chapter-para" key={i}>{tx}</p>
+              ))}
+              {(ch.steps || []).length > 0 && (
+                <ul className="flow-steps">
+                  {ch.steps.map((pt) => (
+                    <li key={pt.no}>
+                      <span className="no mono">{pt.no}</span>
+                      <div className="flow-step-main">
+                        <h4>{pt.t}</h4>
+                        <p>{pt.d}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {(ch.items || []).length > 0 && (
+                <div className={`chapter-items cols-${ch.items.length >= 4 ? 4 : 3}`}>
+                  {ch.items.map((it) => (
+                    <div className="chapter-card" key={it.no + it.t}>
+                      <span className="no mono">{it.no}</span>
+                      <h4>{it.t}</h4>
+                      <p>{it.d}</p>
+                      {it.list && (
+                        <ul className="chapter-card-list">
+                          {it.list.map((li, i) => <li key={i}>{li}</li>)}
+                        </ul>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </>
+          )
+
+          return (
+            <div className="proj-chapter" key={ch.no}>
+              <FadeUp>
+                <div className="chapter-head">
+                  <span className="chapter-no mono">{ch.no}</span>
+                  <div className="chapter-names">
+                    <h2 className="chapter-zh">{ch.zh}</h2>
+                    <span className="chapter-en mono">{ch.en}</span>
+                  </div>
+                </div>
+              </FadeUp>
+
+              {m && m.side ? (
+                <FadeUp delay={0.06} className="chapter-split">
+                  <div className={`chapter-media side ${m.type}`}>
+                    {m.type === 'masonry' ? (
+                      <Masonry items={m.items} onOpen={(it) => openZoom(m.items.map((x) => x.img), Math.max(0, m.items.findIndex((x) => x.id === it.id)))} />
+                    ) : m.type === 'img' ? (
+                      <figure className="chapter-figure">
+                        <img src={m.src} alt={m.cap} loading="lazy" style={{ cursor: 'zoom-in' }} onClick={() => openZoom([m.src], 0)} />
+                        {m.cap && <figcaption>{m.cap}</figcaption>}
+                      </figure>
+                    ) : (
+                      <figure className="chapter-figure">
+                        <video src={m.src} autoPlay loop muted playsInline />
+                        {m.cap && <figcaption>{m.cap}</figcaption>}
+                      </figure>
+                    )}
+                  </div>
+                  <div className="chapter-split-body">{body}</div>
+                </FadeUp>
+              ) : (
+                <>
+                  <FadeUp delay={0.06}>{body}</FadeUp>
+                  {m && m.type === 'masonry' && (
+                    <FadeUp className="masonry-block">
+                      <span className="masonry-cap">{m.cap}</span>
+                      <Masonry
+                        items={m.items}
+                        onOpen={(it) => openZoom(m.items.map((x) => x.img), Math.max(0, m.items.findIndex((x) => x.id === it.id)))}
+                      />
+                    </FadeUp>
+                  )}
+                  {m && m.type === 'img' && (
+                    <FadeUp className="chapter-media-wrap">
+                      <figure className="chapter-figure">
+                        <img src={m.src} alt={m.cap} loading="lazy" style={{ cursor: 'zoom-in' }} onClick={() => openZoom([m.src], 0)} />
+                        {m.cap && <figcaption>{m.cap}</figcaption>}
+                      </figure>
+                    </FadeUp>
+                  )}
+                  {m && m.type === 'video' && (
+                    <FadeUp className="chapter-media-wrap">
+                      <figure className="chapter-figure">
+                        <video src={m.src} autoPlay loop muted playsInline />
+                        {m.cap && <figcaption>{m.cap}</figcaption>}
+                      </figure>
+                    </FadeUp>
+                  )}
+                </>
+              )}
+            </div>
+          )
+        })}
+
+        {!d.chapters && steps.length > 0 && (
           <div className="proj-section">
             <p className="mono">{s.process}</p>
             <div className="process-grid">
@@ -198,14 +339,11 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
           </div>
         )}
 
+        {shotList.length > 0 && (
         <div className="proj-section">
           <p className="mono">{s.shots}</p>
           <div className="shot-grid">
-            {(p.shots || [
-              { kind: 'wireframe', capIndex: 0 },
-              { kind: 'flow', capIndex: 1 },
-              { kind: 'ui', capIndex: 2 },
-            ]).map((sh, i) => {
+            {shotList.map((sh, i) => {
               if (sh.masonry) {
                 return (
                   <FadeUp key={sh.kind} className="masonry-block">
@@ -282,6 +420,7 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
             })}
           </div>
         </div>
+        )}
 
         {d.reflection && (
           <FadeUp>
