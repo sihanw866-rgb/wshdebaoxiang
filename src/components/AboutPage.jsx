@@ -40,7 +40,7 @@ export default function AboutPage({ onBack, onToWork, theme = 'dark' }) {
           <div className="about-grid-2">
             <FadeUp>
               <figure className="about-figure">
-                <img src="/about.jpg" alt={profile.name} />
+                <img src="about.jpg" alt={profile.name} />
                 <figcaption className="tag">
                   <b>{profile.name}</b>
                   {profile.roles.join(' · ')}

@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useState } from 'react'
 /* 寻古拾光：高保真界面截图（瀑布流），590×1278 */
 const XUNGU_UI_SHOTS = Array.from({ length: 18 }, (_, i) => ({
   id: `ui-${String(i + 1).padStart(2, '0')}`,
-  img: `/xungu-shots/ui-${String(i + 1).padStart(2, '0')}.jpg`,
+  img: `xungu-shots/ui-${String(i + 1).padStart(2, '0')}.jpg`,
   width: 590,
   height: 1278,
 }))
