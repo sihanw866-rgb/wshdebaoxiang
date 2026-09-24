@@ -1044,6 +1044,24 @@ img { display: block; max-width: 100%; }
   color: var(--dim);
 }
 
+/* 抬头下方的大画幅产品影片（参考 ck-design 的独立视频段落：居中、大圆角、占版心大部分宽度） */
+.hero-video-wrap { margin-top: clamp(40px, 5vw, 72px); }
+
+.hero-video-block {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+.hero-video-block video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
 .proj-chapter { margin-top: clamp(72px, 8vw, 120px); }
 
 .chapter-head {

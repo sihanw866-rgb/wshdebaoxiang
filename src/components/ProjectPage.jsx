@@ -187,6 +187,16 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
           </FadeUp>
         )}
 
+        {/* 抬头下方的大画幅影片块（参考 ck-design 的独立视频段落） */}
+        {p.videoBlock && (
+          <FadeUp className="hero-video-wrap">
+            <div className="hero-video-block">
+              <video src={p.videoBlock} autoPlay loop muted playsInline />
+              <span className="hero-media-cap mono">{p.videoCap}</span>
+            </div>
+          </FadeUp>
+        )}
+
         {!d.claim && (
           <div className="proj-meta">
             {meta.map((m) => (
@@ -274,7 +284,7 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
                 <FadeUp delay={0.06} className="chapter-split">
                   <div className={`chapter-media side ${m.type}`}>
                     {m.type === 'masonry' ? (
-                      <Masonry items={m.items} onOpen={(it) => openZoom(m.items.map((x) => x.img), Math.max(0, m.items.findIndex((x) => x.id === it.id)))} />
+                      <Masonry items={m.items} natural={m.natural} onOpen={(it) => openZoom(m.items.map((x) => x.img), Math.max(0, m.items.findIndex((x) => x.id === it.id)))} />
                     ) : m.type === 'img' ? (
                       <figure className="chapter-figure">
                         <img src={m.src} alt={m.cap} loading="lazy" style={{ cursor: 'zoom-in' }} onClick={() => openZoom([m.src], 0)} />
@@ -297,6 +307,7 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
                       <span className="masonry-cap">{m.cap}</span>
                       <Masonry
                         items={m.items}
+                        natural={m.natural}
                         onOpen={(it) => openZoom(m.items.map((x) => x.img), Math.max(0, m.items.findIndex((x) => x.id === it.id)))}
                       />
                     </FadeUp>

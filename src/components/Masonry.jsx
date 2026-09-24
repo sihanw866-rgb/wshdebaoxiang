@@ -139,6 +139,7 @@ export function Lightbox({ src, srcs, index = 0, onNavigate, onClose }) {
 export default function Masonry({
   items,
   onOpen,
+  natural = false,
   duration = 1,
   animateFrom = 'bottom',
   scaleOnHover = true,
@@ -180,26 +181,32 @@ export default function Masonry({
     return () => io.disconnect()
   }, [])
 
-  /* 裁剪式交错：每格高度取自比例池（确定性乱序），原图 cover 填充、只裁不拉 */
+  /* 交错布局：
+     - 裁剪式（默认）：每格高度取自比例池（确定性乱序），原图 cover 填充、只裁不拉
+     - 完整式（natural）：每格按图片原始宽高比排布，整张图完整可见，不裁剪；
+       列数压缩到最多 2 列，让每张图都有足够的展示宽度 */
   const grid = useMemo(() => {
     if (!width) return { placed: [], height: 0 }
-    const gap = 10
-    const colW = (width - gap * (columns - 1)) / columns
-    const colH = new Array(columns).fill(0)
+    const gap = natural ? 14 : 10
+    const cols = natural ? Math.min(columns, 2) : columns
+    const colW = (width - gap * (cols - 1)) / cols
+    const colH = new Array(cols).fill(0)
     const placed = items.map((it, idx) => {
       const c = colH.indexOf(Math.min(...colH))
       const x = c * (colW + gap)
       const y = colH[c]
-      const aspect = CROP_POOL[(idx * 7 + 3) % CROP_POOL.length]
-      const h = colW * aspect * (0.92 + rnd(idx, 8) * 0.16)
+      const aspect = natural
+        ? (it.width && it.height ? it.height / it.width : 0.75)
+        : CROP_POOL[(idx * 7 + 3) % CROP_POOL.length]
+      const h = natural ? colW * aspect : colW * aspect * (0.92 + rnd(idx, 8) * 0.16)
       colH[c] += h + gap
       return {
         ...it, idx, x, y, w: colW, h,
-        pos: POS_POOL[(idx * 5 + 2) % POS_POOL.length],
+        pos: natural ? '50% 50%' : POS_POOL[(idx * 5 + 2) % POS_POOL.length],
       }
     })
     return { placed, height: Math.max(0, Math.max(...colH) - gap) }
-  }, [columns, items, width])
+  }, [columns, items, width, natural])
 
   /* 不规律依次浮现：出场顺序打乱 + 每张的位移/时长/延迟各不相同 */
   const choreo = useMemo(() => {

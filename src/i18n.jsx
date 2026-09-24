@@ -52,6 +52,9 @@ const CALM_SCENES = [
   { id: 'sc-4', img: '/autism/scene-dock.jpg', width: 1500, height: 675 },
   { id: 'sc-5', img: '/autism/usage-car.jpg', width: 1448, height: 1086 },
   { id: 'sc-6', img: '/autism/usage-indoor.jpg', width: 1319, height: 1192 },
+  { id: 'sc-7', img: '/autism/flow-wear.jpg', width: 1500, height: 1045 },
+  { id: 'sc-8', img: '/autism/flow-charge.jpg', width: 1500, height: 1045 },
+  { id: 'sc-9', img: '/autism/flow-off.jpg', width: 1500, height: 1045 },
 ]
 
 /* ================= 中文内容 ================= */
@@ -258,7 +261,7 @@ const zh = {
     },
     {
       id: 'calm', index: '02', year: '2026.04 — 06', coverImg: '/calm-cover.jpg',
-      coverVideo: '/calm-intro.mp4', heroWide: true, coverCap: '产品影片 · 静音自动播放',
+      videoBlock: '/calm-intro.mp4', videoCap: '产品影片 · 静音自动播放', heroWide: true, coverCap: '场景渲染 · 公园外出',
       shots: [],
       title: '静行 · 自闭症儿童外出安抚头戴设备',
       subtitle: '关怀向智能硬件 · 产品设计与用户研究',
@@ -339,7 +342,7 @@ const zh = {
               '第一轮意向偏「防护头盔」，被推翻——孩子看到就躲；第二轮尝试「毛绒玩具化」，再次被推翻——不够日常，家长觉得幼稚。最终收敛到「一顶看起来像棒球帽的设备」：帽檐做镂空以减重散热，帽壳外层用可拆网纱，耳罩与头梁模块化连接。',
               '草图阶段同时把三种模块关系画到同一张图上，确认振动马达、电池与主控的配重位置——重心一旦偏后，孩子跑动时设备就会下滑，这是后面所有造型细节的前提。',
             ],
-            media: { type: 'masonry', items: CALM_SKETCHES, cap: '形态草图与结构推演 · 4 稿' },
+            media: { type: 'masonry', items: CALM_SKETCHES, natural: true, cap: '形态草图与结构推演 · 4 稿完整呈现' },
           },
           {
             no: '06', zh: '产品结构与细节', en: 'STRUCTURE & DETAILS',
@@ -369,7 +372,7 @@ const zh = {
             no: '08', zh: '场景与交互流程', en: 'SCENARIOS & FLOW',
             claim: '三步之内能完成的事，才配叫「应急」。',
             lead: '交互只保留三个动作：戴上、按一下、取下。所有复杂设置都收进家长侧 App，儿童侧永远只有一个大尺寸物理按钮。',
-            media: { type: 'masonry', items: CALM_SCENES, cap: '使用场景 · 居家 / 车内 / 户外 / 收纳充电' },
+            media: { type: 'masonry', items: CALM_SCENES, cap: '使用场景与佩戴流程 · 居家 / 车内 / 户外 / 佩戴 / 收纳充电' },
             steps: [
               { no: '01', t: '佩戴 · 一拉即合', d: '拉伸头梁适配头围，耳罩覆盖双耳，被动降噪腔体即刻生效；电容式佩戴检测自动开机，未佩戴时进入低功耗模式。' },
               { no: '02', t: '安抚 · 按一下就够', d: '短按物理按钮播放白噪音，再次短按切换音轨，长按关机；检测到焦虑前兆时，设备自动渐入白噪音与节律振动。' },
@@ -736,7 +739,7 @@ const en = {
     },
     {
       id: 'calm', index: '02', year: '2026.04 — 06', coverImg: '/calm-cover.jpg',
-      coverVideo: '/calm-intro.mp4', heroWide: true, coverCap: 'Product film · muted autoplay',
+      videoBlock: '/calm-intro.mp4', videoCap: 'Product film · muted autoplay', heroWide: true, coverCap: 'Scenario render · park outing',
       shots: [],
       title: 'Jingxing · Soothing Headset for Autistic Children',
       subtitle: 'Care-oriented smart hardware · Product design & research',
@@ -817,7 +820,7 @@ const en = {
               'The first round leaned towards a protective helmet and was rejected — children fled at the sight of it. The second tried a plush-toy direction and was rejected too — not everyday enough, parents found it childish. The form converged on “a device that looks like a baseball cap”: a perforated brim for weight and heat, a removable mesh outer shell, and modular joints between earcups and headband.',
               'The sketch stage also drew all three module relationships into one drawing to fix the counterweight of vibration motor, battery and main controller — once the centre of mass sits too far back, the device slides when the child runs, and that decides every later detail.',
             ],
-            media: { type: 'masonry', items: CALM_SKETCHES, cap: 'Form sketches & structural studies · 4' },
+            media: { type: 'masonry', items: CALM_SKETCHES, natural: true, cap: 'Form sketches & structural studies · 4, shown in full' },
           },
           {
             no: '06', zh: 'Structure & details', en: 'STRUCTURE & DETAILS',
@@ -847,7 +850,7 @@ const en = {
             no: '08', zh: 'Scenarios & flow', en: 'SCENARIOS & FLOW',
             claim: 'If it takes more than three steps, it isn’t an emergency tool.',
             lead: 'Interaction keeps three actions only: put it on, press once, take it off. Everything complex lives in the parent app; the child side is always one large physical button.',
-            media: { type: 'masonry', items: CALM_SCENES, cap: 'Scenarios · home / car / outdoors / docked' },
+            media: { type: 'masonry', items: CALM_SCENES, cap: 'Scenarios & wearing flow · home / car / outdoors / worn / docked' },
             steps: [
               { no: '01', t: 'Put on · one pull', d: 'Extend the headband to fit, earcups cover both ears and passive isolation works immediately; capacitive wear detection powers it on, and it sleeps when not worn.' },
               { no: '02', t: 'Soothing · one press', d: 'A short press plays white noise, another switches tracks, a long press powers off. When an anxiety precursor is detected, the device fades in white noise and rhythmic vibration by itself.' },
