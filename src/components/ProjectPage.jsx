@@ -101,7 +101,14 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
   const { t } = useLang()
   const { projects, profile, ui } = t
   const s = ui.projectPage || {}
+  /* zoom：{ srcs: string[], i: number } —— 传一组图时放大层可左右翻页 */
   const [zoom, setZoom] = useState(null)
+  const openZoom = (srcs, i = 0) => {
+    const list = (Array.isArray(srcs) ? srcs : [srcs]).filter(Boolean)
+    if (!list.length) return
+    setZoom({ srcs: list, i: Math.max(0, Math.min(i, list.length - 1)) })
+  }
+  const moveZoom = (n) => setZoom((z) => (z ? { ...z, i: n } : z))
 
   const found = projects.findIndex((p) => p.id === projectId)
   const idx = found < 0 ? 0 : found
@@ -203,7 +210,15 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
                 return (
                   <FadeUp key={sh.kind} className="masonry-block">
                     <span className="masonry-cap">{caps[sh.capIndex]} · {sh.items.length}</span>
-                    <Masonry items={sh.items} onOpen={(it) => setZoom(it.img)} />
+                    <Masonry
+                      items={sh.items}
+                      onOpen={(it) =>
+                        openZoom(
+                          sh.items.map((x) => x.img),
+                          Math.max(0, sh.items.findIndex((x) => x.id === it.id))
+                        )
+                      }
+                    />
                   </FadeUp>
                 )
               }
@@ -219,7 +234,7 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
                           alt={sh.cap || caps[sh.capIndex]}
                           loading="lazy"
                           style={{ cursor: 'zoom-in' }}
-                          onClick={() => setZoom(sh.img)}
+                          onClick={() => openZoom([sh.img], 0)}
                         />
                         <figcaption>{sh.cap || caps[sh.capIndex]}</figcaption>
                       </figure>
@@ -255,7 +270,7 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
                         alt={sh.cap || caps[sh.capIndex]}
                         loading="lazy"
                         style={{ cursor: 'zoom-in' }}
-                        onClick={() => setZoom(sh.img)}
+                        onClick={() => openZoom([sh.img], 0)}
                       />
                     ) : (
                       <Shot kind={sh.kind} accent={p.accent} />
@@ -292,7 +307,13 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
         </div>
       </div>
 
-      <Lightbox src={zoom} onClose={() => setZoom(null)} />
+      <Lightbox
+        src={zoom ? zoom.srcs[zoom.i] : null}
+        srcs={zoom ? zoom.srcs : undefined}
+        index={zoom ? zoom.i : 0}
+        onNavigate={moveZoom}
+        onClose={() => setZoom(null)}
+      />
     </section>
   )
 }

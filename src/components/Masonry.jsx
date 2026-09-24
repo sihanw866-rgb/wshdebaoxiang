@@ -59,10 +59,25 @@ const CROP_POOL = [0.78, 1.02, 0.62, 1.36, 0.72, 0.88, 1.18, 0.55, 0.96, 0.8, 1.
 /* 裁剪时的取景位置：有的留上部、有的留中下部，避免每张都居中裁 */
 const POS_POOL = ['50% 22%', '50% 48%', '50% 34%', '50% 62%', '50% 40%', '50% 28%']
 
-export function Lightbox({ src, onClose }) {
+/* 放大查看：支持传入一组图（srcs + index）左右翻页；单图时与原来一致 */
+export function Lightbox({ src, srcs, index = 0, onNavigate, onClose }) {
+  const list = srcs && srcs.length ? srcs : src ? [src] : []
+  const i = list.length ? Math.max(0, Math.min(index, list.length - 1)) : 0
+  const cur = list[i] || null
+  const multi = list.length > 1
+
+  const go = (step) => {
+    if (!multi || !onNavigate) return
+    onNavigate((i + step + list.length) % list.length)
+  }
+
   useEffect(() => {
-    if (!src) return
-    const onKey = (e) => e.key === 'Escape' && onClose()
+    if (!cur) return
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose()
+      else if (e.key === 'ArrowLeft') go(-1)
+      else if (e.key === 'ArrowRight') go(1)
+    }
     window.addEventListener('keydown', onKey)
     const prev = document.body.style.overflow
     document.body.style.overflow = 'hidden'
@@ -70,14 +85,53 @@ export function Lightbox({ src, onClose }) {
       window.removeEventListener('keydown', onKey)
       document.body.style.overflow = prev
     }
-  }, [src, onClose])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cur, i, list, onClose, onNavigate])
 
-  if (!src) return null
+  /* 预取相邻两张，翻页时不会闪白 */
+  useEffect(() => {
+    if (!multi) return
+    ;[i - 1, i + 1].forEach((n) => {
+      const s = list[(n + list.length) % list.length]
+      if (s) { const im = new Image(); im.src = s }
+    })
+  }, [i, multi, list])
+
+  if (!cur) return null
   return (
     <div className="lightbox" onClick={onClose}>
-      <img src={src} alt="" onClick={(e) => e.stopPropagation()} />
+      <img key={cur} src={cur} alt="" onClick={(e) => e.stopPropagation()} />
+
+      {multi && (
+        <>
+          <button
+            className="lightbox-nav prev"
+            onClick={(e) => { e.stopPropagation(); go(-1) }}
+            aria-label="previous"
+          >
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M15 5 L8 12 L15 19" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+          <button
+            className="lightbox-nav next"
+            onClick={(e) => { e.stopPropagation(); go(1) }}
+            aria-label="next"
+          >
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M9 5 L16 12 L9 19" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+          <span className="lightbox-count mono">
+            {String(i + 1).padStart(2, '0')} / {String(list.length).padStart(2, '0')}
+          </span>
+        </>
+      )}
+
       <button className="lightbox-close" onClick={onClose} aria-label="close">✕</button>
-      <span className="lightbox-hint">CLICK ANYWHERE TO CLOSE · ESC</span>
+      <span className="lightbox-hint">
+        {multi ? '← → SWITCH · CLICK TO CLOSE · ESC' : 'CLICK ANYWHERE TO CLOSE · ESC'}
+      </span>
     </div>
   )
 }
