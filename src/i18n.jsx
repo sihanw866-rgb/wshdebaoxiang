@@ -101,8 +101,10 @@ const ST_OVERVIEW = [
   { id: 'so-2', img: 'stereo/s-detail-warm.jpg', width: 1599, height: 819, alt: '面板特写 · 暖光' },
 ]
 const ST_INSPIRE = [
-  { id: 'si-1', img: 'stereo/s-ripple-solo.jpg', width: 1600, height: 1058, alt: '水波节奏器单体' },
-  { id: 'si-2', img: 'stereo/s-detail-flat.jpg', width: 1600, height: 1058, alt: '波纹板平放俯拍' },
+  { id: 'si-1', img: 'stereo/s-idle.jpg', width: 1600, height: 1058, alt: '待机 · 波纹板平伏如镜' },
+  { id: 'si-2', img: 'stereo/s-ripple-solo.jpg', width: 1600, height: 1058, alt: '水波节奏器单体' },
+  { id: 'si-3', img: 'stereo/s-playing.jpg', width: 1600, height: 1058, alt: '播放中 · 波纹随节奏隆起' },
+  { id: 'si-4', img: 'stereo/s-detail-flat.jpg', width: 1600, height: 1058, alt: '波纹板平放俯拍' },
 ]
 const ST_RENDER = [
   { id: 'sr-1', img: 'stereo/s-tilt.jpg', width: 1600, height: 1118, alt: '斜俯视 · 绿面板' },
@@ -1453,7 +1455,7 @@ const en = {
             paras: [
               'All three point to the same gesture: making sound dimensional, holdable, touchable. They converged into the "water-ripple rhythm array" — a black ripple board under glass that swells and settles with the music, so people can finally "see" sound.',
             ],
-            media: { type: 'tile', cols: 2, items: ST_INSPIRE, side: true, cap: 'Rhythm array on its own · flat as a mirror when idle' },
+            media: { type: 'tile', cols: 2, items: ST_INSPIRE, side: true, cap: 'Flat as a mirror at rest, rising with the beat in play — sound made visible' },
           },
           {
             no: '03', zh: 'Form & appearance', en: 'FORM & APPEARANCE',
