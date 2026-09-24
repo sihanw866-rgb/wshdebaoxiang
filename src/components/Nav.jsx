@@ -55,9 +55,10 @@ export default function Nav({ onNav, onHome }) {
           </a>
 
           <nav className="nav-links">
+            {/* 顺序与首页模块一致：关于我（独立页）→ 个人优势 → 精选项目 → 顶部按钮「联系我」 */}
             <a href="#about" onClick={(e) => jump(e, 'about')}>{t.ui.nav.about}</a>
-            <a href="#works" onClick={(e) => jump(e, 'works')}>{t.ui.nav.works}</a>
             <a href="#strengths" onClick={(e) => jump(e, 'strengths')}>{t.ui.nav.strengths}</a>
+            <a href="#works" onClick={(e) => jump(e, 'works')}>{t.ui.nav.works}</a>
           </nav>
 
           <div className="nav-right">
