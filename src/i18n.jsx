@@ -233,6 +233,7 @@ const zh = {
     ],
     contact: {
       no: '04 — Contact', line1: '有想法？', line2pre: '让我们一起把它', line2em: '做出来。',
+      hint: '移动鼠标 · 字重随光标靠近而加重',
       phoneLabel: 'Phone / WeChat', locationLabel: 'Location', lookingLabel: 'Looking for',
       lookingValue: '交互 / AI / 产品设计 实习与校招机会', footerNote: 'Designed & built with intent',
     },
@@ -464,6 +465,7 @@ const en = {
     ],
     contact: {
       no: '04 — Contact', line1: 'Got an idea?', line2pre: "Let's make it ", line2em: 'real.',
+      hint: 'Move your cursor · letters grow heavier as you approach',
       phoneLabel: 'Phone / WeChat', locationLabel: 'Location', lookingLabel: 'Looking for',
       lookingValue: 'Interaction / AI / Product design — internships & new-grad roles', footerNote: 'Designed & built with intent',
     },

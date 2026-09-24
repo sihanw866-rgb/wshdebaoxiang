@@ -506,8 +506,14 @@ img { display: block; max-width: 100%; }
 /* ---------- 联系 ---------- */
 .contact { min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; background: #000; border-top: 1px solid var(--line); position: relative; }
 .contact-top { padding-top: 130px; }
-.contact-big { font-size: clamp(38px, 5.2vw, 88px); font-weight: 400; letter-spacing: -0.03em; line-height: 1.1; max-width: 18ch; color: var(--primary); }
-.contact-big .serif { font-family: var(--font-serif); font-style: italic; }
+/* max-width 用 em 跟字号走：保证「让我们一起把它 做出来。」始终排在一行 */
+.contact-big { font-size: clamp(38px, 5.2vw, 88px); font-weight: 400; letter-spacing: -0.03em; line-height: 1.18; max-width: 14.5em; color: var(--primary); }
+/* 每行独立成块：可变字重的字母是 inline-block nowrap，整行不参与断行 */
+.contact-line { display: block; }
+.contact-big .serif { font-style: italic; }
+.contact-big .serif:not(.is-latin) { font-family: 'Noto Serif SC', var(--font-serif), serif; font-variation-settings: 'wght' 300; }
+.contact-big .serif.is-latin { font-family: 'Instrument Serif', var(--font-serif), serif; }
+.contact-hint { margin-top: 24px; font-size: 10.5px; letter-spacing: 0.2em; color: rgba(225, 224, 204, 0.36); }
 .contact-mail { display: inline-flex; align-items: center; gap: 16px; margin-top: 44px; font-size: clamp(17px, 1.7vw, 26px); color: var(--primary); border-bottom: 1px solid var(--line-strong); padding-bottom: 10px; transition: opacity 0.3s; }
 .contact-mail:hover { opacity: 0.7; }
 .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 76px 0 56px; }
