@@ -3,6 +3,7 @@ import { useLang } from '../i18n'
 import { CharsPullUp, ScrollRevealText, FadeUp, CardIn } from '../anim'
 import { Cover } from './Works'
 import Masonry, { Lightbox } from './Masonry'
+import ScrollTop from './ScrollTop'
 
 /* ---------- 过程物：抽象的暗色 SVG（后续可替换为真实过程截图） ---------- */
 function Shot({ kind, accent }) {
@@ -445,6 +446,8 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
           <span className="mono">{p.year}</span>
         </div>
       </div>
+
+      <ScrollTop label={s.toTop} />
 
       <Lightbox
         src={zoom ? zoom.srcs[zoom.i] : null}

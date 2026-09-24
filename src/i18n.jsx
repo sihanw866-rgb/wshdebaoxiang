@@ -693,6 +693,7 @@ const en = {
       next: 'Next project',
       allWorks: 'View all work',
       labels: { role: 'Role', period: 'Timeline', team: 'Team', deliverables: 'Deliverables' },
+      toTop: 'Back to top',
       shotCaps: ['IA & low-fi wireframes', 'Key flows & state transitions', 'Hi-fi screens & component specs'],
     },
     works: { no: '02 — Selected Works', title: 'Selected work', sub: 'Four representative projects — from a kids learning app to care hardware, hardware-software as one, and an accessible stereo — covering research, interaction, UI and product storytelling.', view: 'View project' },
