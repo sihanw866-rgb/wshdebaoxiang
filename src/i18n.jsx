@@ -695,7 +695,7 @@ const zh = {
     {
       id: 'stereo', index: '04', year: '2025', coverImg: '/stereo-cover.jpg',
       shots: [],
-      heroWide: true, heroSplash: true, splashCuts: ['/stereo/cut-front.png', '/stereo/cut-white.png', '/stereo/cut-vfront.png'], coverCap: '主视觉 · 玻璃罩下的水波节奏器',
+      heroWide: true, heroSplash: true, coverCap: '主视觉 · 玻璃罩下的水波节奏器',
       title: '复古式可触摸音响',
       subtitle: 'STEREO · 可触摸的无障碍音响',
       tags: ['产品设计', '无障碍设计', 'Rhino / Keyshot'],
@@ -1421,7 +1421,7 @@ const en = {
     {
       id: 'stereo', index: '04', year: '2025', coverImg: '/stereo-cover.jpg',
       shots: [],
-      heroWide: true, heroSplash: true, splashCuts: ['/stereo/cut-front.png', '/stereo/cut-white.png', '/stereo/cut-vfront.png'], coverCap: 'Key visual · ripple array under the glass hood',
+      heroWide: true, heroSplash: true, coverCap: 'Key visual · ripple array under the glass hood',
       title: 'Retro Touchable Stereo',
       subtitle: 'STEREO · Inclusive audio you can feel',
       tags: ['Product design', 'Inclusive design', 'Rhino / Keyshot'],

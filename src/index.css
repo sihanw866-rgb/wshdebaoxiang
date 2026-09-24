@@ -1071,8 +1071,8 @@ img { display: block; max-width: 100%; }
   height: 100%;
   object-fit: cover;
   object-position: 50% 62%;
-  opacity: 0.34;
-  filter: blur(1.5px) saturate(0.92);
+  opacity: 0.62;
+  filter: saturate(0.95);
   transform-origin: 58% 46%;
   animation: wash-drift 30s ease-in-out infinite alternate;
   will-change: transform;
@@ -1083,7 +1083,7 @@ img { display: block; max-width: 100%; }
   to { transform: scale(1.13) translate3d(1.4%, -1.2%, 0); }
 }
 
-/* 产品主体：几张同质感、近平视角度的抠图叠放，自动交叉淡入淡出（轮播） */
+/* 产品主体：抠掉背景后单独沉在暗底之上（静态，不再轮播切换） */
 .top-bg-subject {
   position: absolute;
   right: clamp(16px, 3.4vw, 80px);
@@ -1093,31 +1093,6 @@ img { display: block; max-width: 100%; }
   transform: translateY(-50%);
   filter: drop-shadow(0 42px 64px rgba(0, 0, 0, 0.6));
 }
-
-.subject-cut {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: auto;
-  opacity: 0;
-  transform-origin: 50% 70%;
-  animation: cut-crossfade calc(var(--cut-n) * 6s) linear infinite;
-  will-change: opacity, transform;
-  animation-delay: calc(var(--cut-i) * 6s);
-}
-
-@keyframes cut-crossfade {
-  /* 每张占 1/n 周期：淡入 → 停留 → 淡出，全程带极轻的呼吸缩放 */
-  0% { opacity: 0; transform: scale(0.985); }
-  6% { opacity: 1; }
-  28% { opacity: 1; transform: scale(1.012); }
-  36% { opacity: 0; transform: scale(1.02); }
-  100% { opacity: 0; transform: scale(0.985); }
-}
-
-/* 首张在动画未接管前保持可见，避免闪空 */
-.subject-cut:first-child { animation-fill-mode: both; }
 
 /* 暗色纱幕：左侧压暗给文字，右侧留亮给产品，上下渐隐进背景 */
 .top-bg-veil {
@@ -1180,8 +1155,6 @@ img { display: block; max-width: 100%; }
 
 @media (prefers-reduced-motion: reduce) {
   .top-bg-wash { animation: none; }
-  .subject-cut { animation: none; opacity: 0; }
-  .subject-cut:first-child { opacity: 1; }
   .splash-ripple { animation: none; opacity: 0.14; transform: scale(1.2); }
 }
 
