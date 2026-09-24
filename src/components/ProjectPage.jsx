@@ -155,7 +155,7 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
         </FadeUp>
 
         {d.claim ? (
-          <div className="proj-hero">
+          <div className={`proj-hero${p.heroWide ? ' wide' : ''}`}>
             <FadeUp className="proj-hero-text">
               <p className="hero-claim">{d.claim}</p>
               {d.claimLead && <p className="hero-claim-lead">{d.claimLead}</p>}
@@ -168,13 +168,13 @@ export default function ProjectPage({ projectId, onBack, onOpen, onAll }) {
                 ))}
               </div>
             </FadeUp>
-            <FadeUp delay={0.08} className="proj-hero-media">
-              <div className="hero-media-frame">
+            <FadeUp delay={0.08} className={`proj-hero-media${p.heroWide ? ' wide' : ''}`}>
+              <div className={`hero-media-frame${p.heroWide ? ' wide' : ''}`}>
                 <Cover variant={p.cover} accent={p.accent} img={p.coverImg} video={p.coverVideo} />
                 <div className="noise-overlay" />
               </div>
               <span className="hero-media-cap mono">
-                {p.coverVideo ? (s.demoVideo || 'Prototype demo') : (s.coverLabel || 'Cover')}
+                {p.coverCap || (p.coverVideo ? (s.demoVideo || 'Prototype demo') : (s.coverLabel || 'Cover'))}
               </span>
             </FadeUp>
           </div>

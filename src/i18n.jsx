@@ -258,6 +258,7 @@ const zh = {
     },
     {
       id: 'calm', index: '02', year: '2026.04 — 06', coverImg: '/calm-cover.jpg',
+      coverVideo: '/calm-intro.mp4', heroWide: true, coverCap: '产品影片 · 静音自动播放',
       shots: [],
       title: '静行 · 自闭症儿童外出安抚头戴设备',
       subtitle: '关怀向智能硬件 · 产品设计与用户研究',
@@ -388,11 +389,10 @@ const zh = {
             ],
           },
           {
-            no: '10', zh: '产品影片', en: 'PRODUCT FILM',
+            no: '10', zh: '影像叙事与制作', en: 'FILM & CRAFT',
             claim: '把「一顶帽子如何接住一次崩溃」讲成 60 秒。',
-            lead: '影片按外出动线剪辑：从家门出发的场景切换，到商场里的感官过载，再到按下按钮后白噪音渐入、孩子恢复平静，最后回到充电座收尾。',
+            lead: '完整影片在页面抬头循环播放。它按外出动线剪辑：从家门出发的场景切换，到商场里的感官过载，再到按下按钮后白噪音渐入、孩子恢复平静，最后回到充电座收尾。',
             paras: ['用可灵 AI 生成场景与镜头素材，剪映完成后期、配音与字幕。节奏上刻意把崩溃片段剪得很短——重点不是展示问题有多严重，而是展示干预有多及时。'],
-            media: { type: 'video', src: '/calm-intro.mp4', cap: '产品介绍影片 · 可灵 AI + 剪映' },
             items: [
               { no: '01', t: '镜头结构', d: '出门预告 → 通勤噪音 → 商场过载 → 一键安抚 → 平静回家，五个镜头对应旅程图的五个触点。' },
               { no: '02', t: '视听策略', d: '崩溃段落刻意提升环境音的高频，白噪音进入后整体压低——用声音本身演示「降噪」这件事。' },
@@ -736,6 +736,7 @@ const en = {
     },
     {
       id: 'calm', index: '02', year: '2026.04 — 06', coverImg: '/calm-cover.jpg',
+      coverVideo: '/calm-intro.mp4', heroWide: true, coverCap: 'Product film · muted autoplay',
       shots: [],
       title: 'Jingxing · Soothing Headset for Autistic Children',
       subtitle: 'Care-oriented smart hardware · Product design & research',
@@ -866,11 +867,10 @@ const en = {
             ],
           },
           {
-            no: '10', zh: 'Product film', en: 'PRODUCT FILM',
+            no: '10', zh: 'Film & craft', en: 'FILM & CRAFT',
             claim: 'Tell “how a cap catches a meltdown” in 60 seconds.',
-            lead: 'The film is cut along the outing itself: leaving the house, sensory overload in the mall, white noise fading in after a single press, the child settling, and the dock closing the loop.',
+            lead: 'The full film loops at the top of this page. It is cut along the outing itself: leaving the house, sensory overload in the mall, white noise fading in after a single press, the child settling, and the dock closing the loop.',
             paras: ['Kling AI generated the scenes and camera moves; CapCut handled editing, voice-over and subtitles. The meltdown is cut deliberately short — the point is not how severe the problem is, but how quickly the intervention lands.'],
-            media: { type: 'video', src: '/calm-intro.mp4', cap: 'Product film · Kling AI + CapCut' },
             items: [
               { no: '01', t: 'Shot structure', d: 'Leaving-home cue → commute noise → mall overload → one-press soothing → calm return: five shots mapped to five journey touchpoints.' },
               { no: '02', t: 'Sound strategy', d: 'The meltdown section lifts the high end of ambient sound; once white noise enters, everything drops — the sound itself demonstrates what isolation does.' },

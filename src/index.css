@@ -1003,6 +1003,11 @@ img { display: block; max-width: 100%; }
 
 .proj-hero-media { order: 1; justify-self: start; width: 100%; max-width: 320px; }
 
+/* 横版媒体（如 2:1 产品影片）：加宽抬头媒体列，画框改横比例 */
+.proj-hero.wide { grid-template-columns: minmax(300px, 460px) minmax(0, 1fr); }
+.proj-hero-media.wide { max-width: 460px; }
+.hero-media-frame.wide { aspect-ratio: 16 / 10; }
+
 .hero-media-frame {
   position: relative;
   aspect-ratio: 3 / 5;
@@ -1144,8 +1149,10 @@ img { display: block; max-width: 100%; }
 
 @media (max-width: 1100px) {
   .proj-hero { grid-template-columns: 1fr; }
+  .proj-hero.wide { grid-template-columns: 1fr; }
   .proj-hero-text { order: 1; }
   .proj-hero-media { order: 2; justify-self: start; max-width: 300px; }
+  .proj-hero-media.wide { order: 2; justify-self: stretch; max-width: 560px; }
   .chapter-split { grid-template-columns: 1fr; gap: 26px; }
   .chapter-items.cols-4 { grid-template-columns: repeat(2, 1fr); }
   .hero-meta { grid-template-columns: repeat(2, 1fr); }
