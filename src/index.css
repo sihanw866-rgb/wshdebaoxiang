@@ -7,6 +7,8 @@
   --card: #212121;
   --text: #e1e0cc;
   --primary: #dedbc8;
+  /* 主色的 rgb 分量：供需要 alpha 的地方（如光标发光渐变）用 rgba(var(--primary-rgb), x) */
+  --primary-rgb: 222, 219, 200;
   --muted: rgba(225, 224, 204, 0.74);
   --dim: rgba(225, 224, 204, 0.56);
   --line: rgba(225, 224, 204, 0.12);
@@ -50,6 +52,7 @@ body {
   --card: #ffffff;
   --text: #14161a;
   --primary: #23250f;
+  --primary-rgb: 35, 37, 15;
   --muted: rgba(20, 22, 26, 0.62);
   --dim: rgba(20, 22, 26, 0.4);
   --line: rgba(18, 20, 24, 0.1);

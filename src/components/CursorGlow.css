@@ -1,0 +1,75 @@
+/* 首页光标发光：颜色取自站点暖奶油主色（--primary / --primary-rgb），
+   暗底上用 screen 混合，视觉上像一束跟着光标走的暖光 */
+
+.cursor-glow {
+  position: fixed;
+  inset: 0;
+  /* 高于顶部导航（100）与固定按钮（110），低于放大层（200） */
+  z-index: 150;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+.cursor-glow.is-on { opacity: 1; }
+
+.cursor-glow > span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+.cursor-glow i {
+  display: block;
+  border-radius: 50%;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease,
+    border-color 0.4s ease, background-color 0.4s ease;
+  will-change: transform;
+}
+
+/* 大光斑：暖奶油 → 透明 */
+.cg-glow i {
+  width: 360px;
+  height: 360px;
+  margin: -180px 0 0 -180px;
+  background: radial-gradient(
+    circle,
+    rgba(var(--primary-rgb), 0.3) 0%,
+    rgba(var(--primary-rgb), 0.12) 32%,
+    rgba(var(--primary-rgb), 0.04) 58%,
+    transparent 72%
+  );
+  mix-blend-mode: screen;
+  filter: blur(2px);
+}
+.cursor-glow.is-hot .cg-glow i { transform: scale(1.22); }
+.cursor-glow.is-down .cg-glow i { transform: scale(0.86); }
+
+/* 细环：悬停可交互元素时放大提亮 */
+.cg-ring i {
+  width: 30px;
+  height: 30px;
+  margin: -15px 0 0 -15px;
+  border: 1px solid rgba(var(--primary-rgb), 0.32);
+}
+.cursor-glow.is-hot .cg-ring i {
+  transform: scale(1.75);
+  border-color: rgba(var(--primary-rgb), 0.75);
+}
+.cursor-glow.is-down .cg-ring i { transform: scale(0.7); }
+
+/* 核心亮点：几乎实时跟随 */
+.cg-core i {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  background: var(--primary);
+  box-shadow: 0 0 14px rgba(var(--primary-rgb), 0.7);
+}
+.cursor-glow.is-hot .cg-core i { transform: scale(1.7); }
+.cursor-glow.is-down .cg-core i { transform: scale(0.6); }
+
+/* 触屏 / 小屏不启用（组件已在 JS 侧拦截，这里兜底） */
+@media (hover: none), (pointer: coarse) {
+  .cursor-glow { display: none; }
+}
